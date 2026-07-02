@@ -381,8 +381,8 @@ document.body.appendChild(flyEl);
   🔄 Masa dəyiş
 </button>
 
-    <p>Baku - Pirallahi</p>
-    <p>Masa: {table}</p>
+    <p>📍 Baku - Pirallahi</p>
+    <p>🪑 Masa: {table}</p>
     
 <div
   style={{

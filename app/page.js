@@ -382,7 +382,7 @@ document.body.appendChild(flyEl);
 </button>
 </div>
     
-     <span role="img" aria-label="location">📍</span> Baku · Pirallahi
+     <p>{"📍 Baku · Pirallahi"}</p>
       <p>🪑 Masa: {table}</p>
 
 <div

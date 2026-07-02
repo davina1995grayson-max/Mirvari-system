@@ -46,11 +46,6 @@ export default function Page() {
   return () => window.removeEventListener("scroll", handleScroll);
 }, [menuData]);
 
-  const t = {
-  title: "MIRVARI RESTORAN",
-  order: "Заказ"
-};
-
 useEffect(() => {
 
   const loadMenu = async () => {

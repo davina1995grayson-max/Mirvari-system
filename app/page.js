@@ -796,29 +796,30 @@ onMouseLeave={(e) =>
        <div
   onClick={() => setCartOpen(false)}
   style={{
-    position: "fixed",
-    inset: 0,
-    background: "rgba(0,0,0,0.65)",
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    zIndex: 99999,
-    animation: "fadeIn 0.25s ease"
-  }}
+  position: "fixed",
+  inset: 0,
+  background: "rgba(0,0,0,0.4)",
+  backdropFilter: "blur(6px)",
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "flex-end",
+  zIndex: 99999,
+}}
 ><div
   onClick={(e) => e.stopPropagation()}
   style={{
-    background: "#1e1e1e",
-    width: "100%",
-    maxWidth: 420,
-    height: "75vh",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    display: "flex",
-    flexDirection: "column",
-    padding: 20,
-    animation: "slideUp 0.3s ease"
-  }}
+  background: "#141414",
+  width: "100%",
+  maxWidth: 420,
+  height: "80vh",
+  borderTopLeftRadius: 24,
+  borderTopRightRadius: 24,
+  display: "flex",
+  flexDirection: "column",
+  padding: 20,
+  boxShadow: "0 -10px 30px rgba(0,0,0,0.6)",
+  animation: "slideUp 0.3s ease",
+}}
 >
             <div
   style={{

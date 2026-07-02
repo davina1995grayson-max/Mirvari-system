@@ -632,15 +632,21 @@ document.body.appendChild(flyEl);
       }
 style={{
   whiteSpace: "nowrap",
-  padding: "8px 12px",
-  borderRadius: 20,
-  border: "1px solid #f5c542",
+  padding: "10px 14px",
+  borderRadius: 25,
+  border: "1px solid rgba(245,197,66,0.4)",
   cursor: "pointer",
   background:
-    activeCategory === section.title ? "#f5c542" : "#1e1e1e",
+    activeCategory === section.title
+      ? "linear-gradient(135deg, #f5c542, #e0aa2b)"
+      : "#1e1e1e",
   color: activeCategory === section.title ? "#111" : "#f5c542",
   fontWeight: "bold",
-  transition: "0.2s"
+  transition: "0.2s",
+  boxShadow:
+    activeCategory === section.title
+      ? "0 0 12px rgba(245,197,66,0.4)"
+      : "none"
 }}
     >
       {section.title}

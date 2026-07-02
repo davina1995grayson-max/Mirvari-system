@@ -333,22 +333,34 @@ document.body.appendChild(flyEl);
 }}>
 
       {/* HEADER */}
-       <div style={{
-  display: "flex",
-  justifyContent: "space-between",
-  flexWrap: "wrap"
-}}>
-  <h1
+     <div
   style={{
-    color: "#f5c542",
-    cursor: "pointer",
-    userSelect: "none",
-    fontWeight: "bold"
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 15,
+    padding: "10px 0",
+    borderBottom: "1px solid rgba(245,197,66,0.15)"
   }}
-  onClick={handleLogoClick}
 >
-  🍽️ Mirvari Restaurant
-</h1>
+  <h1
+    onClick={handleLogoClick}
+    style={{
+      color: "#f5c542",
+      margin: 0,
+      fontSize: 22,
+      fontWeight: "bold",
+      cursor: "pointer",
+      letterSpacing: "1px"
+    }}
+  >
+    🍽️ Mirvari Restaurant
+  </h1>
+
+  <div style={{ fontSize: 12, opacity: 0.7 }}>
+    🟢 Online menu system
+  </div>
+</div>
 
    <button
   onClick={() => setTable(null)}

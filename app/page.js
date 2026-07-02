@@ -769,39 +769,6 @@ style={{
     +
   </button>
 
-</div>
-          
-                <div>
-  <div
-  style={{
-    fontFamily: "'Playfair Display', serif",
-    fontSize: 20,
-    fontWeight: 500,
-    marginBottom: 4,
-    color: textColor,
-  }}
->
-  {item.name}
-</div>
-
-  <div
-    style={{
-      color: "#f5c542",
-      fontSize: 14,
-      fontWeight: 500,
-    }}
-  >
-    {item.price} AZN
-  </div>
-      {item.description && (
-  <div
-    style={{
-      marginTop: 6,
-      fontSize: 13,
-      opacity: 0.8,
-      whiteSpace: "pre-line",
-    }}
-  >
     {Array.isArray(item.description)
       ? item.description.join("\n")
       : item.description}

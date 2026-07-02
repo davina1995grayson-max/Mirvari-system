@@ -145,14 +145,17 @@ const addToCart = (item, e) => {
   // 🍽️ анимация добавления в корзину
 const flyEl = document.createElement("div");
 flyEl.innerText = "🍽️";
+flyEl.style.borderRadius = "50%";
+flyEl.style.padding = "6px";
+flyEl.style.background = "rgba(245,197,66,0.15)";
 flyEl.style.position = "fixed";
 flyEl.style.left = btn.getBoundingClientRect().left + "px";
 flyEl.style.top = btn.getBoundingClientRect().top + "px";
-flyEl.style.fontSize = "18px";
-flyEl.style.zIndex = 9999;
-flyEl.style.transition = "all 0.8s cubic-bezier(.2,.9,.2,1)";
+flyEl.style.fontSize = "20px";
+flyEl.style.filter = "drop-shadow(0 0 6px rgba(245,197,66,0.6))";
+flyEl.style.transition = "all 0.9s cubic-bezier(0.2, 0.9, 0.2, 1)";
+flyEl.style.transform = "scale(1.2)";
 flyEl.style.pointerEvents = "none";
-flyEl.style.transform = "scale(1)";
 flyEl.style.opacity = "1";
 
 document.body.appendChild(flyEl);
@@ -163,6 +166,7 @@ document.body.appendChild(flyEl);
     flyEl.style.top = cartRect.top + "px";
     flyEl.style.transform = "scale(0.2)";
     flyEl.style.opacity = "0";
+    flyEl.style.zIndex = 99999;
   });
 
   setTimeout(() => {

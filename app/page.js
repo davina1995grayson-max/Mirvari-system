@@ -662,10 +662,9 @@ style={{
       <>
         {section.items
           .filter((item) => {
-            const matchSearch = item.name
-              (item.name || "")
-              .includes(search.toLowerCase());
-
+            const matchSearch = (item.name || "")
+  .toLowerCase()
+  .includes(search.toLowerCase());
             return matchSearch && item.available;
           })
           .map((item) => (

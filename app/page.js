@@ -673,7 +673,7 @@ style={{
         {section.items
           .filter((item) => {
             const matchSearch = item.name
-              .toLowerCase()
+              (item.name || "")
               .includes(search.toLowerCase());
 
             return matchSearch && item.available;

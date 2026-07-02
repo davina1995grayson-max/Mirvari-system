@@ -479,19 +479,6 @@ document.body.appendChild(flyEl);
 
 {menuData.map((section) => (
   <div key={section.title} style={{ marginBottom: 20 }}>
-    <h4
-  onClick={() =>
-    setOpenCategory(
-      openCategory === section.title ? null : section.title
-    )
-  }
-  style={{
-    color: "#f5c542",
-    cursor: "pointer"
-  }}
->
-  {section.title}
-</h4>
 
 {openCategory === section.title && (
   <>

@@ -1014,7 +1014,7 @@ onMouseLeave={(e) =>
 </button>
 
 <button
-  onClick={order}
+ onClick={() => setCheckoutOpen(true)}>
   style={{
     width: "100%",
     padding: 12,
@@ -1054,6 +1054,57 @@ onMouseLeave={(e) =>
 >
   🛒 {cart.length}
 </div>
+
+  {checkoutOpen && (
+  <div
+    onClick={() => setCheckoutOpen(false)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.6)",
+      backdropFilter: "blur(8px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 99999,
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        background: "#141414",
+        padding: 20,
+        borderRadius: 20,
+        width: "90%",
+        maxWidth: 400,
+        boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+        animation: "slideUp 0.3s ease",
+      }}
+    >
+      <h2 style={{ color: "#f5c542" }}>🍽️ Подтверждение заказа</h2>
+
+      <p>🪑 Стол: {table}</p>
+
+      <p style={{ marginTop: 10 }}>💰 Сумма: {total} AZN</p>
+
+      <button
+        onClick={order}
+        style={{
+          width: "100%",
+          marginTop: 20,
+          padding: 12,
+          borderRadius: 12,
+          border: "none",
+          background: "linear-gradient(135deg, #f5c542, #d8a92e)",
+          fontWeight: "bold",
+          cursor: "pointer",
+        }}
+      >
+        Отправить заказ 📲
+      </button>
+    </div>
+  </div>
+)}
 
     </div>
   );

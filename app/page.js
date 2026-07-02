@@ -522,12 +522,27 @@ document.body.appendChild(flyEl);
       >
         <div
   key={item.name}
-  style={{
-    background: "#1e1e1e",
-    padding: 12,
-    borderRadius: 10,
-    marginTop: 6,
-  }}
+ style={{
+  background: "rgba(255,255,255,0.04)",
+  border: "1px solid rgba(245,197,66,0.12)",
+  padding: 14,
+  borderRadius: 18,
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginTop: 10,
+  gap: 12,
+  backdropFilter: "blur(10px)",
+  boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+  transition: "all 0.25s ease",
+  transform: "scale(1)",
+}}
+onMouseEnter={(e) =>
+  (e.currentTarget.style.transform = "scale(1.01)")
+}
+onMouseLeave={(e) =>
+  (e.currentTarget.style.transform = "scale(1)")
+}
 >
   {/* строка блюда */}
   <div style={{ display: "flex", justifyContent: "space-between" }}>

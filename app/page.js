@@ -644,16 +644,21 @@ onMouseLeave={(e) =>
   padding: "10px 0",
 }}>
   
-  <div style={{
-  position: "sticky",
-  top: 0,
-  zIndex: 999,
-  background: "#0b0b0b",
-  padding: "10px 10px",
-  display: "flex",
-  gap: 10,
-  overflowX: "auto",
-}}>
+  <div
+  style={{
+    position: "sticky",
+    top: 0,
+    zIndex: 999,
+    display: "flex",
+    gap: 10,
+    overflowX: "auto",
+    padding: "12px 10px",
+
+    background: "rgba(11,11,11,0.75)",
+    backdropFilter: "blur(12px)",
+    borderBottom: "1px solid rgba(245,197,66,0.12)",
+  }}
+>
     {menuData.map(section => (
       <button
         key={section.title}

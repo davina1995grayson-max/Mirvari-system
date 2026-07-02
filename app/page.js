@@ -18,8 +18,8 @@ export default function Page() {
   const pressTimer = useRef(null);
   const [menuData, setMenuData] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [dark, setDark] = useState(true);
   
-
   useEffect(() => {
   const handleScroll = () => {
     const sections = menuData.map(s => s.title);

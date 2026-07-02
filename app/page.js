@@ -760,7 +760,7 @@ style={{
 ><div
   onClick={(e) => e.stopPropagation()}
   style={{
-    background: card,
+    background: "#1e1e1e",
     width: "100%",
     maxWidth: 420,
     height: "75vh",

@@ -773,7 +773,6 @@ style={{
       ? item.description.join("\n")
       : item.description}
   </div>
-)}
 </div>
 
 <button

@@ -117,22 +117,6 @@ console.log("DATA FROM SUPABASE:", data); // 👈 ВОТ СЮДА
   const logoutAdmin = () => {
   setIsAdmin(false);
 };
-  const translations = {
-AZ: {
-title: "MIRVARI RESTORAN",
-order: "Sifariş",
-},
-RU: {
-title: "РЕСТОРАН MIRVARI",
-order: "Заказ",
-},
-EN: {
-title: "MIRVARI RESTAURANT",
-order: "Order",
-},
-};
-
-const t = translations[lang]
 
 const addToCart = (item, e) => {
   setCart((prev) => {

@@ -382,7 +382,7 @@ document.body.appendChild(flyEl);
 </button>
 </div>
     
-      <p>📍 Baku · Pirallahi</p>
+     <span role="img" aria-label="location">📍</span> Baku · Pirallahi
       <p>🪑 Masa: {table}</p>
 
 <div

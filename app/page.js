@@ -22,6 +22,7 @@ export default function Page() {
   const [openCategory, setOpenCategory] = useState(null);
   const [openedMenu, setOpenedMenu] = useState(null);
   const [search, setSearch] = useState("");
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   
   useEffect(() => {
   const handleScroll = () => {

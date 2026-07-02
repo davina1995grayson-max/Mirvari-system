@@ -625,11 +625,15 @@ document.body.appendChild(flyEl);
 }}>
   
   <div style={{
-    display: "flex",
-    gap: 10,
-    overflowX: "auto",
-    padding: "10px 10px",
-  }}>
+  position: "sticky",
+  top: 0,
+  zIndex: 999,
+  background: "#0b0b0b",
+  padding: "10px 10px",
+  display: "flex",
+  gap: 10,
+  overflowX: "auto",
+}}>
     {menuData.map(section => (
       <button
         key={section.title}

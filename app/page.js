@@ -554,38 +554,6 @@ document.body.appendChild(flyEl);
     ))}
   </>
 )}
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-  <input
-    value={item.name}
-    onChange={(e) =>
-      updateName(section.title, item.name, e.target.value)
-    }
-    style={{
-      padding: 4,
-      borderRadius: 6,
-      border: "1px solid #444",
-      background: "#111",
-      color: "white",
-      width: 180,
-    }}
-  />
-
-  <input
-  type="number"
-  value={item.price}
-  onChange={(e) =>
-    updatePrice(section.title, item.name, e.target.value)
-  }
-  style={{
-    padding: 4,
-    borderRadius: 6,
-    border: "1px solid #444",
-    background: "#111",
-    color: "white",
-    width: 80,
-  }}
-/>
-          </div>
 
         <div style={{ display: "flex", gap: 6 }}>
           <button

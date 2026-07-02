@@ -616,41 +616,50 @@ document.body.appendChild(flyEl);
     ))}
     </div>
 )}
-      <div style={{
-  display: "flex",
-  gap: 10,
-  overflowX: "auto",
+     <div style={{
+  position: "sticky",
+  top: 0,
+  zIndex: 999,
+  background: "#0b0b0b",
   padding: "10px 0",
-  marginBottom: 10
 }}>
-  {menuData.map(section => (
-    <button
-      key={section.title}
-      onClick={() =>
-        document.getElementById(section.title)?.scrollIntoView({ behavior: "smooth" })
-      }
-style={{
-  whiteSpace: "nowrap",
-  padding: "10px 14px",
-  borderRadius: 25,
-  border: "1px solid rgba(245,197,66,0.4)",
-  cursor: "pointer",
-  background:
-    activeCategory === section.title
-      ? "linear-gradient(135deg, #f5c542, #e0aa2b)"
-      : "#1e1e1e",
-  color: activeCategory === section.title ? "#111" : "#f5c542",
-  fontWeight: "bold",
-  transition: "0.2s",
-  boxShadow:
-    activeCategory === section.title
-      ? "0 0 12px rgba(245,197,66,0.4)"
-      : "none"
-}}
-    >
-      {section.title}
-    </button>
-  ))}
+  
+  <div style={{
+    display: "flex",
+    gap: 10,
+    overflowX: "auto",
+    padding: "10px 10px",
+  }}>
+    {menuData.map(section => (
+      <button
+        key={section.title}
+        onClick={() =>
+          document.getElementById(section.title)?.scrollIntoView({ behavior: "smooth" })
+        }
+        style={{
+          whiteSpace: "nowrap",
+          padding: "10px 14px",
+          borderRadius: 25,
+          border: "1px solid rgba(245,197,66,0.4)",
+          cursor: "pointer",
+          background:
+            activeCategory === section.title
+              ? "linear-gradient(135deg, #f5c542, #e0aa2b)"
+              : "#1e1e1e",
+          color: activeCategory === section.title ? "#111" : "#f5c542",
+          fontWeight: "bold",
+          transition: "0.2s",
+          boxShadow:
+            activeCategory === section.title
+              ? "0 0 12px rgba(245,197,66,0.4)"
+              : "none"
+        }}
+      >
+        {section.title}
+      </button>
+    ))}
+  </div>
+
 </div>
 
     {/* MENU */}

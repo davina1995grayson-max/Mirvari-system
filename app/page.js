@@ -288,9 +288,11 @@ document.body.appendChild(flyEl);
     color: "#f5c542",
     cursor: "pointer",
     userSelect: "none",
+    fontWeight: "bold"
   }}
   onClick={handleLogoClick}
 >
+  🍽️ Mirvari Restaurant
 </h1>
       
         <p>Zəhmət olmasa masanı seçin</p>

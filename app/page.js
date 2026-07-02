@@ -1005,7 +1005,7 @@ style={{
     cursor: "pointer",
   }}
 >
-  {t.order}
+  Заказ
 </button>
           </div>
         </div>

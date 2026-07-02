@@ -19,6 +19,9 @@ export default function Page() {
   const [menuData, setMenuData] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [dark, setDark] = useState(true);
+  const [openCategory, setOpenCategory] = useState(null);
+  const [openedMenu, setOpenedMenu] = useState(null);
+  const [search, setSearch] = useState("");
   
   useEffect(() => {
   const handleScroll = () => {

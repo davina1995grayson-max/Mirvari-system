@@ -267,9 +267,7 @@ document.body.appendChild(flyEl);
     `https://wa.me/994553976762?text=${encodeURIComponent(text)}`
   );
 };
-  const bg = dark ? "#0f0f0f" : "#f5f5f5";
   const textColor = dark ? "white" : "black";
-  const card = dark ? "#1e1e1e" : "#ffffff";
 
   if (table === null) {
     return (

@@ -640,24 +640,27 @@ document.body.appendChild(flyEl);
         onClick={() =>
           document.getElementById(section.title)?.scrollIntoView({ behavior: "smooth" })
         }
-        style={{
-          whiteSpace: "nowrap",
-          padding: "10px 14px",
-          borderRadius: 25,
-          border: "1px solid rgba(245,197,66,0.4)",
-          cursor: "pointer",
-          background:
-            activeCategory === section.title
-              ? "linear-gradient(135deg, #f5c542, #e0aa2b)"
-              : "#1e1e1e",
-          color: activeCategory === section.title ? "#111" : "#f5c542",
-          fontWeight: "bold",
-          transition: "0.2s",
-          boxShadow:
-            activeCategory === section.title
-              ? "0 0 12px rgba(245,197,66,0.4)"
-              : "none"
-        }}
+   style={{
+  whiteSpace: "nowrap",
+  padding: "10px 14px",
+  borderRadius: 20,
+  border: "1px solid rgba(245,197,66,0.25)",
+  cursor: "pointer",
+  background:
+    activeCategory === section.title
+      ? "linear-gradient(135deg, #f5c542, #e0aa2b)"
+      : "rgba(255,255,255,0.05)",
+  color: activeCategory === section.title ? "#111" : "#f5c542",
+  fontWeight: "600",
+  transition: "all 0.25s ease",
+  backdropFilter: "blur(10px)",
+  boxShadow:
+    activeCategory === section.title
+      ? "0 8px 20px rgba(245,197,66,0.35)"
+      : "0 0 0 rgba(0,0,0,0)",
+  transform:
+    activeCategory === section.title ? "scale(1.05)" : "scale(1)",
+}}
       >
         {section.title}
       </button>

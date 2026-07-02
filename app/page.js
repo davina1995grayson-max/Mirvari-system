@@ -686,131 +686,113 @@ style={{
   ))}
 </div>
 
-      {/* MENU */}
-      {menuData.map(section => (
-       <div key={section.title} id={section.title}>
-          <h2
-  onClick={() =>
-    setOpenedMenu(
-      openedMenu === section.title
-        ? null
-        : section.title
-    )
-  }
-  style={{
-    fontFamily: "'Playfair Display', serif",
-    fontSize: 22,
-    fontStyle: "italic",
-    color: "#f5c542",
-    cursor: "pointer",
-    padding: 14,
-    borderRadius: 14,
-    background: "rgba(245,197,66,0.08)",
-    marginTop: 24,
-    marginBottom: 8,
-    border: "1px solid rgba(245,197,66,0.15)",
-    letterSpacing: "0.5px",
-    boxShadow: "0 0 12px rgba(245,197,66,0.08)",
-    transition: "all 0.2s ease",
-  }}
->
-  {section.title}
-  {" "}
-  {openedMenu === section.title ? "▲" : "▼"}
-</h2>
+    {/* MENU */}
+{menuData.map((section) => (
+  <div key={section.title} id={section.title}>
+    
+    {/* SECTION HEADER */}
+    <h2
+      onClick={() =>
+        setOpenedMenu(
+          openedMenu === section.title ? null : section.title
+        )
+      }
+      style={{
+        fontFamily: "'Playfair Display', serif",
+        fontSize: 22,
+        fontStyle: "italic",
+        color: "#f5c542",
+        cursor: "pointer",
+        padding: 14,
+        borderRadius: 14,
+        background: "rgba(245,197,66,0.08)",
+        marginTop: 24,
+        marginBottom: 8,
+        border: "1px solid rgba(245,197,66,0.15)",
+        letterSpacing: "0.5px",
+        boxShadow: "0 0 12px rgba(245,197,66,0.08)",
+        transition: "all 0.2s ease",
+      }}
+    >
+      {section.title}{" "}
+      {openedMenu === section.title ? "▲" : "▼"}
+    </h2>
 
-{openedMenu === section.title && (
-  <>
+    {/* ITEMS */}
+    {openedMenu === section.title && (
+      <>
         {section.items
-  .filter(item => {
-    const matchSearch = item.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
+          .filter((item) => {
+            const matchSearch = item.name
+              .toLowerCase()
+              .includes(search.toLowerCase());
 
-    return matchSearch && item.available;
-  })
-  .map(item => (
-             <div
-  key={item.name}
-  style={{
-    background: "#151515",
-    padding: 14,
-    borderRadius: 16,
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginTop: 10,
-    border: "1px solid rgba(245,197,66,0.12)"
-  }}
->
-  
-  <div>
-    <div style={{ color: "white", fontSize: 16 }}>
-      {item.name}
-    </div>
-
-    <div style={{ color: "#f5c542", marginTop: 4 }}>
-      {item.price} AZN
-    </div>
-  </div>
-
-  <button
-    onClick={(e) => addToCart(item, e)}
-    style={{
-      background: "#f5c542",
-      border: "none",
-      borderRadius: 10,
-      width: 38,
-      height: 38,
-      fontWeight: "bold",
-      cursor: "pointer"
-    }}
-  >
-    +
-  </button>
-
-    {Array.isArray(item.description)
-      ? item.description.join("\n")
-      : item.description}
-  </div>
-</div>
-
-<button
-  onClick={(e) => {
-    addToCart(item, e);
-
-    const el = e.currentTarget;
-    el.style.transform = "scale(0.85)";
-    el.style.transition = "0.1s";
-
-    setTimeout(() => {
-      el.style.transform = "scale(1)";
-    }, 120);
-  }}
-  style={{
-  marginLeft: 8,
-  border: "none",
-  borderRadius: 12,
-  width: 42,
-  height: 42,
-  cursor: "pointer",
-  transition: "all 0.2s ease",
-  background: "linear-gradient(135deg, #f5c542, #d8a92e)",
-  color: "#111",
-  fontWeight: "bold",
-  fontSize: 18,
-  boxShadow: "0 0 12px rgba(245,197,66,0.35)",
-}}
->
-  ➕
-</button>
+            return matchSearch && item.available;
+          })
+          .map((item) => (
+            <div
+              key={item.name}
+              style={{
+                background: "#151515",
+                padding: 14,
+                borderRadius: 16,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: 10,
+                border: "1px solid rgba(245,197,66,0.12)",
+                gap: 12,
+              }}
+            >
+              {/* LEFT SIDE */}
+              <div style={{ flex: 1 }}>
+                <div style={{ color: "white", fontSize: 16 }}>
+                  {item.name}
                 </div>
-            ))}
-    </>
-)}
 
-        </div>
-      ))}
+                <div style={{ color: "#f5c542", marginTop: 4 }}>
+                  {item.price} AZN
+                </div>
+
+                {/* DESCRIPTION */}
+                {item.description && (
+                  <div
+                    style={{
+                      marginTop: 6,
+                      fontSize: 13,
+                      opacity: 0.8,
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {Array.isArray(item.description)
+                      ? item.description.join("\n")
+                      : item.description}
+                  </div>
+                )}
+              </div>
+
+              {/* ADD BUTTON */}
+              <button
+                onClick={(e) => addToCart(item, e)}
+                style={{
+                  background: "#f5c542",
+                  border: "none",
+                  borderRadius: 10,
+                  width: 38,
+                  height: 38,
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  flexShrink: 0,
+                }}
+              >
+                +
+              </button>
+            </div>
+          ))}
+      </>
+    )}
+  </div>
+))}
 
       {/* MODAL */}
       {cartOpen && (

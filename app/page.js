@@ -325,7 +325,7 @@ document.body.appendChild(flyEl);
 
   return (
     <div style={{
-  background: "#0b0b0b",
+  background: "radial-gradient(circle at top, #1a1a1a, #0b0b0b)"
   color: "white",
   minHeight: "100vh",
   padding: 20,

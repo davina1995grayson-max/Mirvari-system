@@ -338,8 +338,17 @@ document.body.appendChild(flyEl);
   justifyContent: "space-between",
   flexWrap: "wrap"
 }}>
-  <h1 style={{ color: "#f5c542" }}>
-  </h1>
+  <h1
+  style={{
+    color: "#f5c542",
+    cursor: "pointer",
+    userSelect: "none",
+    fontWeight: "bold"
+  }}
+  onClick={handleLogoClick}
+>
+  🍽️ Mirvari Restaurant
+</h1>
 
    <button
   onClick={() => setTable(null)}

@@ -989,7 +989,7 @@ style={{
     cursor: "pointer",
   }}
 >
-  Заказ
+  Sifariş
 </button>
           </div>
         </div>

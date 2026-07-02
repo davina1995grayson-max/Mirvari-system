@@ -288,7 +288,6 @@ document.body.appendChild(flyEl);
   }}
   onClick={handleLogoClick}
 >
-  🍽️ {t.title}
 </h1>
       
         <p>Zəhmət olmasa masanı seçin</p>
@@ -335,7 +334,6 @@ document.body.appendChild(flyEl);
   flexWrap: "wrap"
 }}>
   <h1 style={{ color: "#f5c542" }}>
-    🍽️ {t.title}
   </h1>
 
    <button

@@ -12,12 +12,13 @@ export default function Page() {
   const [cartOpen, setCartOpen] = useState(false);
   const [logoClicks, setLogoClicks] = useState(0);
   const [newItemName, setNewItemName] = useState("");
-const [newItemPrice, setNewItemPrice] = useState("");
-const [selectedSection, setSelectedSection] = useState("");
+  const [newItemPrice, setNewItemPrice] = useState("");
+  const [selectedSection, setSelectedSection] = useState("");
   const [adminOpen, setAdminOpen] = useState(false);
-const pressTimer = useRef(null);
-    const [menuData, setMenuData] = useState([]);
-const [isAdmin, setIsAdmin] = useState(false);
+  const pressTimer = useRef(null);
+  const [menuData, setMenuData] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false);
+  
 
   useEffect(() => {
   const handleScroll = () => {

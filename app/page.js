@@ -23,31 +23,6 @@ export default function Page() {
   const [search, setSearch] = useState("");
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   
-  useEffect(() => {
-  const handleScroll = () => {
-    const sections = menuData.map(s => s.title);
-
-    let current = null;
-
-    sections.forEach(title => {
-      const el = document.getElementById(title);
-      if (!el) return;
-
-      const rect = el.getBoundingClientRect();
-
-      if (rect.top <= 120 && rect.bottom >= 120) {
-        current = title;
-      }
-    });
-      if (current) {
-       setOpenCategory(current);
-}
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, [menuData]);
-
 useEffect(() => {
 
   const loadMenu = async () => {

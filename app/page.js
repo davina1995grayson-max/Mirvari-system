@@ -1037,7 +1037,7 @@ onMouseLeave={(e) => {
 </button>
 
 <button
- onClick={() => setCheckoutOpen(true)}>
+ onClick={() => setCheckoutOpen(true)}
   style={{
     width: "100%",
     padding: 12,

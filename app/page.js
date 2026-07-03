@@ -513,18 +513,6 @@ document.body.appendChild(flyEl);
 {openCategory === section.title && (
   <>
     {section.items.map((item) => (
-      <div
-        key={item.name}
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: 8,
-          marginTop: 6,
-          background: "#1e1e1e",
-          borderRadius: 8,
-        }}
-      >
         <div
   key={item.name}
  style={{

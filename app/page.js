@@ -508,55 +508,65 @@ document.body.appendChild(flyEl);
 {menuData.map((section) => (
   <div key={section.title} style={{ marginBottom: 20 }}>
 
-{openCategory === section.title && (
-  <>
-    {section.items.map((item) => (
-        <div
-  key={item.name}
- style={{
-  background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(245,197,66,0.12)",
-  padding: 14,
-  borderRadius: 18,
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginTop: 10,
-  gap: 12,
-  backdropFilter: "blur(10px)",
-  boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
-  transition: "all 0.25s ease",
-  transform: "scale(1)",
-}}
-onMouseEnter={(e) =>
-  (e.currentTarget.style.transform = "scale(1.01)")
-}
-onMouseLeave={(e) =>
-  (e.currentTarget.style.transform = "scale(1)")
-}
->
-  {/* строка блюда */}
-  <div style={{ display: "flex", justifyContent: "space-between" }}>
-    <div>
-      <div>{item.name}</div>
-      <div style={{ color: "#f5c542" }}>
-        {item.price} AZN
-      </div>
-    </div>
+    {openCategory === section.title && (
+      <div style={{ animation: "fadeSlide 0.25s ease" }}>
 
-    <button
-      onClick={(e) => addToCart(item, e)}
-      style={{
-        background: "#f5c542",
-        border: "none",
-        borderRadius: 8,
-        padding: "6px 10px",
-        cursor: "pointer",
-      }}
-    >
-      ➕
-    </button>
+        {section.items.map((item) => (
+          <div
+            key={item.name}
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(245,197,66,0.15)",
+              padding: 14,
+              borderRadius: 18,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: 10,
+              gap: 12,
+              backdropFilter: "blur(10px)",
+              boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+              transition: "all 0.25s ease",
+              transform: "scale(1)",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = "scale(1.01)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.transform = "scale(1)")
+            }
+          >
+            {/* строка блюда */}
+            <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+              <div>
+                <div>{item.name}</div>
+                <div style={{ color: "#f5c542" }}>
+                  {item.price} AZN
+                </div>
+              </div>
+
+              <button
+                onClick={(e) => addToCart(item, e)}
+                style={{
+                  background: "#f5c542",
+                  border: "none",
+                  borderRadius: 10,
+                  padding: "6px 10px",
+                  cursor: "pointer",
+                }}
+              >
+                ➕
+              </button>
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+    )}
+
   </div>
+))}
 
 {/* 🍱 СЕТ */}
   {item.type === "set" && (

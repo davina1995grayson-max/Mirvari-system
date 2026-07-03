@@ -579,8 +579,6 @@ document.body.appendChild(flyEl);
   )}
 </div>
     ))}
-  </>
-)}
 
         <div style={{ display: "flex", gap: 6 }}>
           <button

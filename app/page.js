@@ -660,34 +660,34 @@ onMouseLeave={(e) =>
   cursor: "pointer",
 
   background:
-    activeCategory === section.title
+    openCategory === section.title
       ? "linear-gradient(135deg, #f5c542, #e0aa2b)"
       : "rgba(255,255,255,0.04)",
 
-  color: activeCategory === section.title ? "#111" : "#f5c542",
+  color: openCategory === section.title ? "#111" : "#f5c542",
 
   fontWeight: "bold",
   fontSize: 14,
 
   transition: "all 0.25s ease",
   transform:
-    activeCategory === section.title ? "scale(1.08)" : "scale(1)",
+    openCategory === section.title ? "scale(1.08)" : "scale(1)",
 
   boxShadow:
-    activeCategory === section.title
+    openCategory === section.title
       ? "0 0 16px rgba(245,197,66,0.35)"
       : "none",
 
   backdropFilter: "blur(10px)",
 }}
     onMouseEnter={(e) => {
-  if (activeCategory !== section.title) {
+  if (openCategory !== section.title) {
     e.currentTarget.style.transform = "scale(1.05)";
   }
 }}
 
 onMouseLeave={(e) => {
-  if (activeCategory !== section.title) {
+  if (openCategory !== section.title) {
     e.currentTarget.style.transform = "scale(1)";
   }
 }}>

@@ -832,7 +832,8 @@ onMouseLeave={(e) => {
   alignItems: "flex-end",
   zIndex: 99999,
 }}
-><div
+>
+  <div
   onClick={(e) => e.stopPropagation()}
   style={{
   background: "#141414",

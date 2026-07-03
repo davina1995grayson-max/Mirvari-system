@@ -663,7 +663,10 @@ onMouseLeave={(e) =>
       <button
         key={section.title}
         onClick={() =>
-          document.getElementById(section.title)?.scrollIntoView({ behavior: "smooth" })
+         setOpenCategory(
+    openCategory === section.title ? null : section.title
+  )
+}
         }
    style={{
   whiteSpace: "nowrap",

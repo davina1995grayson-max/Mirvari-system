@@ -654,7 +654,6 @@ onMouseLeave={(e) =>
     openCategory === section.title ? null : section.title
   )
 }
-        }
    style={{
   whiteSpace: "nowrap",
   padding: "10px 16px",

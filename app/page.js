@@ -713,7 +713,7 @@ onMouseLeave={(e) => {
 
     {/* MENU */}
 {menuData.map((section) => (
-  <div key={section.title} id={section.title}>
+  <div key={section.title}>
     
     {/* SECTION HEADER */}
     <h2

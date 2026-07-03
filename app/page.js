@@ -6,7 +6,6 @@ import { supabase } from "./supabase";
 
 export default function Page() {
 
-  const [activeCategory, setActiveCategory] = useState(null);
   const [cart, setCart] = useState([]);
   const [table, setTable] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
@@ -40,10 +39,9 @@ export default function Page() {
         current = title;
       }
     });
-
-    if (current) {
-      setActiveCategory(current);
-    }
+      if (current) {
+       setOpenCategory(current);
+}
   };
 
   window.addEventListener("scroll", handleScroll);

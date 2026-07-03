@@ -570,7 +570,6 @@ onMouseLeave={(e) =>
     </div>
   )}
 </div>
-      </div>
     ))}
   </>
 )}

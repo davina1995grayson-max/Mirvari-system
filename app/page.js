@@ -55,7 +55,7 @@ export default function Page() {
 
       const rect = el.getBoundingClientRect();
 
-      if (rect.top <= 140 && rect.bottom >= 140) {
+      if (rect.top <= 160 && rect.bottom >= 160) {
         current = section.title;
       }
     });
@@ -68,6 +68,19 @@ export default function Page() {
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, [menuData]);
+
+ useEffect(() => {
+  if (!activeCategory) return;
+
+  const el = document.getElementById("cat-" + activeCategory);
+  if (!el) return;
+
+  el.scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+    block: "nearest",
+  });
+}, [activeCategory]);
 
   // ===== ADD TO CART =====
   const addToCart = (item, e) => {
@@ -130,31 +143,33 @@ export default function Page() {
   >
     {menuData.map((section) => (
       <button
-        key={section.title}
-        onClick={() => {
-          setActiveCategory(section.title);
+  id={"cat-" + section.title}
+  key={section.title}
+  onClick={() => {
+    setActiveCategory(section.title);
 
-          document
-            .getElementById(section.title)
-            ?.scrollIntoView({ behavior: "smooth", block: "start" });
-        }}
-        style={{
-          flex: "0 0 auto",
-          padding: "10px 14px",
-          borderRadius: 999,
-          border: "1px solid rgba(245,197,66,0.2)",
-          background:
-            activeCategory === section.title
-              ? "#f5c542"
-              : "rgba(255,255,255,0.04)",
-          color: activeCategory === section.title ? "#111" : "#aaa",
-          fontWeight: "600",
-          fontSize: 13,
-          whiteSpace: "nowrap",
-        }}
-      >
-        {section.title}
-      </button>
+    document
+      .getElementById(section.title)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }}
+  style={{
+    flex: "0 0 auto",
+    padding: "10px 14px",
+    borderRadius: 999,
+    border: "1px solid rgba(245,197,66,0.2)",
+    background:
+      activeCategory === section.title
+        ? "#f5c542"
+        : "rgba(255,255,255,0.04)",
+    color: activeCategory === section.title ? "#111" : "#aaa",
+    fontWeight: "600",
+    fontSize: 13,
+    whiteSpace: "nowrap",
+    transition: "0.2s",
+  }}
+>
+  {section.title}
+</button>
     ))}
   </div>
 </div>

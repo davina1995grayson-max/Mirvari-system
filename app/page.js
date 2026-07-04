@@ -238,10 +238,6 @@ export default function Page() {
       <div>
         {menuData.map((section) => (
           <div key={section.title} id={section.title} style={{ scrollMarginTop: 100 }}>
-            
-            <h2 style={{ color: "gold" }}>
-              {section.title}
-            </h2>
 
             {section.items
               .filter((i) =>

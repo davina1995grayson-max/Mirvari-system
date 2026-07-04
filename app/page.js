@@ -186,10 +186,58 @@ export default function Page() {
 </div>
       </div>
 
+<div style={{
+  position: "sticky",
+  top: 0,
+  zIndex: 9999,
+  display: "flex",
+  overflowX: "auto",
+  background: "rgba(10,10,10,0.75)",
+  backdropFilter: "blur(16px)",
+  padding: 10,
+}}>
+
+  <div
+    ref={indicatorRef}
+    style={{
+      position: "absolute",
+      bottom: 0,
+      height: 3,
+      width: 0,
+      background: "#f5c542",
+      transition: "0.3s",
+    }}
+  />
+
+  {menuData.map((section) => (
+    <button
+      key={section.title}
+      ref={(el) => (categoryRefs.current[section.title] = el)}
+      onClick={() => {
+        setActiveCategory(section.title);
+
+        document.getElementById(section.title)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }}
+      style={{
+        padding: "10px 14px",
+        borderRadius: 999,
+        border: "none",
+        background: "transparent",
+        color: activeCategory === section.title ? "#f5c542" : "#aaa",
+        fontWeight: "bold",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {section.title}
+    </button>
+  ))}
+</div>
+
       {/* MENU */}
       <div>
         {menuData.map((section) => (
-          <div key={section.title} id={section.title} style={{ scrollMarginTop: 90 }}>
+          <div key={section.title} id={section.title} style={{ scrollMarginTop: 100 }}>
             
             <h2 style={{ color: "gold" }}>
               {section.title}

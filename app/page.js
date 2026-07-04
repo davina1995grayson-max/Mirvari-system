@@ -12,10 +12,32 @@ export default function Page() {
   const [table, setTable] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const callWaiter = () => {
+  const text = `🔔 OFİSİANT ÇAĞIRILDI\n🪑 Masa: ${table}`;
+  window.open(`https://wa.me/994553976762?text=${encodeURIComponent(text)}`);
+};
+
+const callBill = () => {
+  const text = `💳 HESAB İSTƏNİLDİ\n🪑 Masa: ${table}`;
+  window.open(`https://wa.me/994553976762?text=${encodeURIComponent(text)}`);
+};
   const [activeCategory, setActiveCategory] = useState(null);
   const categoryRefs = useRef({});
   const [search, setSearch] = useState("");
   const cartRef = useRef(null);
+  const [logoClicks, setLogoClicks] = useState(0);
+const handleLogoClick = () => {
+  setLogoClicks((prev) => {
+    const next = prev + 1;
+    if (next >= 3) {
+      router.push("/admin");
+      return 0;
+    }
+    return next;
+  });
+
+  setTimeout(() => setLogoClicks(0), 1500);
+};
 
   // ===== LOAD MENU =====
   useEffect(() => {
@@ -98,6 +120,24 @@ export default function Page() {
       return [...prev, { ...item, qty: 1 }];
     });
   };
+    const flyEl = document.createElement("div");
+flyEl.innerText = "🍽️";
+flyEl.style.position = "fixed";
+flyEl.style.left = btn.getBoundingClientRect().left + "px";
+flyEl.style.top = btn.getBoundingClientRect().top + "px";
+flyEl.style.transition = "all 0.9s ease";
+
+document.body.appendChild(flyEl);
+
+const cartRect = cartEl.getBoundingClientRect();
+
+requestAnimationFrame(() => {
+  flyEl.style.left = cartRect.left + "px";
+  flyEl.style.top = cartRect.top + "px";
+  flyEl.style.opacity = "0";
+});
+
+setTimeout(() => flyEl.remove(), 800);
 
   const total = cart.reduce(
     (sum, i) => sum + i.price * (i.qty || 1),
@@ -106,22 +146,31 @@ export default function Page() {
 
   // ===== LOADING =====
   if (table === null) {
-    return (
-      <div style={{ padding: 20 }}>
-        <h2>Выбери стол</h2>
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((n) => (
-          <button key={n} onClick={() => setTable(n)}>
-            🪑 {n}
+  return (
+    <div>
+      <h1 onClick={handleLogoClick}>🍽️ Mirvari Restaurant</h1>
+      <p>Zəhmət olmasa masanı seçin</p>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+        {Array.from({ length: 20 }, (_, i) => i + 1).map(num => (
+          <button key={num} onClick={() => setTable(num)}>
+            🪑 {num}
           </button>
         ))}
       </div>
-    );
-  }
+    </div>
+  );
+    }
 
   // ===== UI =====
   return (
     <div style={{ background: "#0b0b0b", color: "white", minHeight: "100vh" }}>
 
+<header style={{ position: "sticky", top: 0 }}>
+  <h1 onClick={handleLogoClick}>
+    🍽️ Mirvari Restaurant
+  </h1>
+</header>
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div
   style={{

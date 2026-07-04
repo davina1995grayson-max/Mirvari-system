@@ -197,12 +197,20 @@ setTimeout(() => flyEl.remove(), 800);
   onClick={() => {
     setActiveCategory(section.title);
 
-    onClick={() => {
-  if (typeof window === "undefined") return;
+    <button
+  key={section.title}
+  onClick={() => {
+    if (typeof window === "undefined") return;
 
-  document.getElementById(section.title)
-    ?.scrollIntoView({ behavior: "smooth" });
-}}
+    setActiveCategory(section.title);
+
+    document
+      .getElementById(section.title)
+      ?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  {section.title}
+</button>
   }}
   style={{
     flex: "0 0 auto",

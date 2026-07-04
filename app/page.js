@@ -68,6 +68,8 @@ const handleLogoClick = () => {
 
   // ===== SCROLL SYNC (Glovo logic) =====
   useEffect(() => {
+  if (typeof window === "undefined") return;
+
   const handleScroll = () => {
     let current = null;
 
@@ -77,7 +79,7 @@ const handleLogoClick = () => {
 
       const rect = el.getBoundingClientRect();
 
-      if (rect.top <= 160 && rect.bottom >= 160) {
+      if (rect.top <= 140 && rect.bottom >= 140) {
         current = section.title;
       }
     });
@@ -197,9 +199,10 @@ setTimeout(() => flyEl.remove(), 800);
   onClick={() => {
     setActiveCategory(section.title);
 
-    document
-      .getElementById(section.title)
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (typeof window !== "undefined") {
+  document.getElementById(section.title)
+    ?.scrollIntoView({ behavior: "smooth" });
+}
   }}
   style={{
     flex: "0 0 auto",

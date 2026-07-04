@@ -118,27 +118,61 @@ export default function Page() {
   return (
     <div style={{ background: "#0b0b0b", color: "white", minHeight: "100vh" }}>
 
-      {/* TOP CATEGORIES */}
+{/* CATEGORY BLOCK (GLovo style) */}
 <div
   style={{
     position: "sticky",
     top: 0,
     zIndex: 9999,
-    background: "rgba(15,15,15,0.7)",
-    backdropFilter: "blur(14px)",
+    background: "rgba(15,15,15,0.85)",
+    backdropFilter: "blur(18px)",
     borderBottom: "1px solid rgba(245,197,66,0.15)",
-    padding: "10px 0",
+    padding: "10px 12px",
   }}
 >
+
+  {/* TOP ROW (optional featured categories) */}
   <div
     style={{
-      position: "relative",
       display: "flex",
+      gap: 10,
       overflowX: "auto",
-      padding: "0 10px",
+      marginBottom: 10,
     }}
   >
-    {/* ACTIVE INDICATOR (ОБЯЗАТЕЛЬНО ТОЛЬКО ОДИН!) */}
+    {menuData.slice(0, 3).map((section) => (
+      <button
+        key={section.title}
+        onClick={() =>
+          document.getElementById(section.title)
+            ?.scrollIntoView({ behavior: "smooth" })
+        }
+        style={{
+          padding: "8px 12px",
+          borderRadius: 999,
+          border: "1px solid rgba(245,197,66,0.3)",
+          background: "rgba(255,255,255,0.03)",
+          color: "#f5c542",
+          whiteSpace: "nowrap",
+          fontSize: 13,
+        }}
+      >
+        {section.title}
+      </button>
+    ))}
+  </div>
+
+  {/* MAIN CATEGORY ROW */}
+  <div
+    style={{
+      display: "flex",
+      gap: 10,
+      overflowX: "auto",
+      position: "relative",
+      paddingBottom: 6,
+    }}
+  >
+    {/* indicator (ONLY ONE) */}
     <div
       ref={indicatorRef}
       style={{
@@ -147,7 +181,7 @@ export default function Page() {
         height: 3,
         width: 0,
         left: 0,
-        background: "linear-gradient(90deg, #f5c542, #ffdd77)",
+        background: "linear-gradient(90deg,#f5c542,#ffdd77)",
         borderRadius: 999,
         transition: "all 0.3s ease",
       }}
@@ -162,11 +196,10 @@ export default function Page() {
 
           document
             .getElementById(section.title)
-            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            ?.scrollIntoView({ behavior: "smooth" });
         }}
         style={{
-          padding: "10px 16px",
-          margin: "0 6px",
+          padding: "10px 14px",
           borderRadius: 999,
           border: "none",
           background: "transparent",

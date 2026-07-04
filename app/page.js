@@ -7,6 +7,7 @@ import { supabase } from "./supabase";
 export default function Page() {
   const router = useRouter();
 
+  const isBrowser = typeof window !== "undefined";
   const [menuData, setMenuData] = useState([]);
   const [cart, setCart] = useState([]);
   const [table, setTable] = useState(null);
@@ -68,7 +69,7 @@ const handleLogoClick = () => {
 
   // ===== SCROLL SYNC (Glovo logic) =====
   useEffect(() => {
-  if (typeof window === "undefined") return;
+  if (!isBrowser) return;
 
   const handleScroll = () => {
     let current = null;
@@ -84,15 +85,12 @@ const handleLogoClick = () => {
       }
     });
 
-    if (current) {
-      setActiveCategory(current);
-    }
+    if (current) setActiveCategory(current);
   };
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, [menuData]);
-
  useEffect(() => {
   if (!activeCategory) return;
 
@@ -199,10 +197,12 @@ setTimeout(() => flyEl.remove(), 800);
   onClick={() => {
     setActiveCategory(section.title);
 
-    if (typeof window !== "undefined") {
+    onClick={() => {
+  if (typeof window === "undefined") return;
+
   document.getElementById(section.title)
     ?.scrollIntoView({ behavior: "smooth" });
-}
+}}
   }}
   style={{
     flex: "0 0 auto",

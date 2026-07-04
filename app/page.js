@@ -213,9 +213,6 @@ const addToCart = (item, e) => {
       .getElementById(section.title)
       ?.scrollIntoView({ behavior: "smooth" });
   }}
->
-  {section.title}
-</button>
   style={{
     flex: "0 0 auto",
     padding: "10px 14px",

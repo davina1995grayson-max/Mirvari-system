@@ -119,7 +119,7 @@ export default function Page() {
     <div style={{ background: "#0b0b0b", color: "white", minHeight: "100vh" }}>
 
       {/* TOP CATEGORIES */}
-        <div
+<div
   style={{
     position: "sticky",
     top: 0,
@@ -130,8 +130,15 @@ export default function Page() {
     padding: "10px 0",
   }}
 >
-  <div style={{ position: "relative", display: "flex", overflowX: "auto" }}>
-
+  <div
+    style={{
+      position: "relative",
+      display: "flex",
+      overflowX: "auto",
+      padding: "0 10px",
+    }}
+  >
+    {/* ACTIVE INDICATOR (ОБЯЗАТЕЛЬНО ТОЛЬКО ОДИН!) */}
     <div
       ref={indicatorRef}
       style={{
@@ -167,49 +174,14 @@ export default function Page() {
             activeCategory === section.title ? "#f5c542" : "#aaa",
           fontWeight: "bold",
           whiteSpace: "nowrap",
+          transition: "0.2s",
         }}
       >
         {section.title}
       </button>
     ))}
+  </div>
 </div>
-      </div>
-
-  <div
-    ref={indicatorRef}
-    style={{
-      position: "absolute",
-      bottom: 0,
-      height: 3,
-      width: 0,
-      background: "#f5c542",
-      transition: "0.3s",
-    }}
-  />
-
-  {menuData.map((section) => (
-    <button
-      key={section.title}
-      ref={(el) => (categoryRefs.current[section.title] = el)}
-      onClick={() => {
-        setActiveCategory(section.title);
-
-        document.getElementById(section.title)
-          ?.scrollIntoView({ behavior: "smooth" });
-      }}
-      style={{
-        padding: "10px 14px",
-        borderRadius: 999,
-        border: "none",
-        background: "transparent",
-        color: activeCategory === section.title ? "#f5c542" : "#aaa",
-        fontWeight: "bold",
-        whiteSpace: "nowrap",
-      }}
-    >
-      {section.title}
-    </button>
-  ))}
 
       {/* MENU */}
       <div>

@@ -105,39 +105,49 @@ const handleLogoClick = () => {
 }, [activeCategory]);
 
   // ===== ADD TO CART =====
-  const addToCart = (item, e) => {
-    setCart((prev) => {
-      const exists = prev.find((i) => i.name === item.name);
+const addToCart = (item, e) => {
+  setCart((prev) => {
+    const exists = prev.find((i) => i.name === item.name);
 
-      if (exists) {
-        return prev.map((i) =>
-          i.name === item.name
-            ? { ...i, qty: (i.qty || 1) + 1 }
-            : i
-        );
-      }
+    if (exists) {
+      return prev.map((i) =>
+        i.name === item.name
+          ? { ...i, qty: (i.qty || 1) + 1 }
+          : i
+      );
+    }
 
-      return [...prev, { ...item, qty: 1 }];
-    });
-  };
-    const flyEl = document.createElement("div");
-flyEl.innerText = "🍽️";
-flyEl.style.position = "fixed";
-flyEl.style.left = btn.getBoundingClientRect().left + "px";
-flyEl.style.top = btn.getBoundingClientRect().top + "px";
-flyEl.style.transition = "all 0.9s ease";
+    return [...prev, { ...item, qty: 1 }];
+  });
 
-document.body.appendChild(flyEl);
+  if (typeof window === "undefined") return;
 
-const cartRect = cartEl.getBoundingClientRect();
+  const btn = e.currentTarget;
+  const cartEl = cartRef.current;
 
-requestAnimationFrame(() => {
-  flyEl.style.left = cartRect.left + "px";
-  flyEl.style.top = cartRect.top + "px";
-  flyEl.style.opacity = "0";
-});
+  if (!btn || !cartEl) return;
 
-setTimeout(() => flyEl.remove(), 800);
+  const flyEl = document.createElement("div");
+  flyEl.innerText = "🍽️";
+  flyEl.style.position = "fixed";
+  flyEl.style.left = btn.getBoundingClientRect().left + "px";
+  flyEl.style.top = btn.getBoundingClientRect().top + "px";
+  flyEl.style.transition = "all 0.9s ease";
+  flyEl.style.pointerEvents = "none";
+  flyEl.style.zIndex = "99999";
+
+  document.body.appendChild(flyEl);
+
+  const cartRect = cartEl.getBoundingClientRect();
+
+  requestAnimationFrame(() => {
+    flyEl.style.left = cartRect.left + "px";
+    flyEl.style.top = cartRect.top + "px";
+    flyEl.style.opacity = "0";
+  });
+
+  setTimeout(() => flyEl.remove(), 800);
+};
 
   const total = cart.reduce(
     (sum, i) => sum + i.price * (i.qty || 1),
@@ -193,11 +203,6 @@ setTimeout(() => flyEl.remove(), 800);
     {menuData.map((section) => (
       <button
   id={"cat-" + section.title}
-  key={section.title}
-  onClick={() => {
-    setActiveCategory(section.title);
-
-    <button
   key={section.title}
   onClick={() => {
     if (typeof window === "undefined") return;

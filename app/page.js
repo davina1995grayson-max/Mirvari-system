@@ -221,7 +221,6 @@ export default function Page() {
       {section.title}
     </button>
   ))}
-</div>
 
       {/* MENU */}
       <div>

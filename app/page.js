@@ -186,17 +186,6 @@ export default function Page() {
 </div>
       </div>
 
-<div style={{
-  position: "sticky",
-  top: 0,
-  zIndex: 9999,
-  display: "flex",
-  overflowX: "auto",
-  background: "rgba(10,10,10,0.75)",
-  backdropFilter: "blur(16px)",
-  padding: 10,
-}}>
-
   <div
     ref={indicatorRef}
     style={{

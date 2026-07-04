@@ -119,16 +119,6 @@ export default function Page() {
     <div style={{ background: "#0b0b0b", color: "white", minHeight: "100vh" }}>
 
       {/* TOP CATEGORIES */}
-      <div style={{
-        position: "sticky",
-        top: 0,
-        display: "flex",
-        overflowX: "auto",
-        gap: 10,
-        padding: 10,
-        background: "#111",
-        zIndex: 1000
-      }}>
         <div
   style={{
     position: "sticky",
@@ -182,7 +172,6 @@ export default function Page() {
         {section.title}
       </button>
     ))}
-  </div>
 </div>
       </div>
 

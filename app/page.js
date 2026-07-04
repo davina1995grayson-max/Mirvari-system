@@ -13,7 +13,6 @@ export default function Page() {
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
-  const indicatorRef = useRef(null);
   const categoryRefs = useRef({});
   const [search, setSearch] = useState("");
   const cartRef = useRef(null);
@@ -63,14 +62,6 @@ export default function Page() {
 
     if (current) {
       setActiveCategory(current);
-
-      const btn = categoryRefs.current[current];
-      const indicator = indicatorRef.current;
-
-      if (btn && indicator) {
-        indicator.style.width = btn.offsetWidth + "px";
-        indicator.style.left = btn.offsetLeft + "px";
-      }
     }
   };
 
@@ -118,96 +109,48 @@ export default function Page() {
   return (
     <div style={{ background: "#0b0b0b", color: "white", minHeight: "100vh" }}>
 
-{/* CATEGORY BLOCK (GLovo style) */}
+{/* ULTRA MOBILE CATEGORY BAR */}
 <div
   style={{
     position: "sticky",
     top: 0,
     zIndex: 9999,
-    background: "rgba(15,15,15,0.85)",
+    background: "rgba(10,10,10,0.95)",
     backdropFilter: "blur(18px)",
-    borderBottom: "1px solid rgba(245,197,66,0.15)",
-    padding: "10px 12px",
+    borderBottom: "1px solid rgba(245,197,66,0.12)",
+    padding: "10px 10px",
   }}
 >
-
-  {/* TOP ROW (optional featured categories) */}
   <div
     style={{
       display: "flex",
-      gap: 10,
+      gap: 8,
       overflowX: "auto",
-      marginBottom: 10,
     }}
   >
-    {menuData.slice(0, 3).map((section) => (
-      <button
-        key={section.title}
-        onClick={() =>
-          document.getElementById(section.title)
-            ?.scrollIntoView({ behavior: "smooth" })
-        }
-        style={{
-          padding: "8px 12px",
-          borderRadius: 999,
-          border: "1px solid rgba(245,197,66,0.3)",
-          background: "rgba(255,255,255,0.03)",
-          color: "#f5c542",
-          whiteSpace: "nowrap",
-          fontSize: 13,
-        }}
-      >
-        {section.title}
-      </button>
-    ))}
-  </div>
-
-  {/* MAIN CATEGORY ROW */}
-  <div
-    style={{
-      display: "flex",
-      gap: 10,
-      overflowX: "auto",
-      position: "relative",
-      paddingBottom: 6,
-    }}
-  >
-    {/* indicator (ONLY ONE) */}
-    <div
-      ref={indicatorRef}
-      style={{
-        position: "absolute",
-        bottom: 0,
-        height: 3,
-        width: 0,
-        left: 0,
-        background: "linear-gradient(90deg,#f5c542,#ffdd77)",
-        borderRadius: 999,
-        transition: "all 0.3s ease",
-      }}
-    />
-
     {menuData.map((section) => (
       <button
         key={section.title}
-        ref={(el) => (categoryRefs.current[section.title] = el)}
         onClick={() => {
           setActiveCategory(section.title);
 
           document
             .getElementById(section.title)
-            ?.scrollIntoView({ behavior: "smooth" });
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
         }}
         style={{
+          flex: "0 0 auto",
           padding: "10px 14px",
           borderRadius: 999,
-          border: "none",
-          background: "transparent",
-          color:
-            activeCategory === section.title ? "#f5c542" : "#aaa",
-          fontWeight: "bold",
+          border: "1px solid rgba(245,197,66,0.2)",
+          background:
+            activeCategory === section.title
+              ? "#f5c542"
+              : "rgba(255,255,255,0.04)",
+          color: activeCategory === section.title ? "#111" : "#aaa",
+          fontWeight: "600",
+          fontSize: 13,
           whiteSpace: "nowrap",
-          transition: "0.2s",
         }}
       >
         {section.title}

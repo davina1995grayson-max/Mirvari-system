@@ -7,16 +7,15 @@ import { supabase } from "./supabase";
 export default function Page() {
   const router = useRouter();
 
-  // ===== STATE (ЧИСТЫЙ) =====
   const [menuData, setMenuData] = useState([]);
   const [cart, setCart] = useState([]);
   const [table, setTable] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
-
   const [activeCategory, setActiveCategory] = useState(null);
+  const indicatorRef = useRef(null);
+  const categoryRefs = useRef({});
   const [search, setSearch] = useState("");
-
   const cartRef = useRef(null);
 
   // ===== LOAD MENU =====
@@ -48,26 +47,36 @@ export default function Page() {
 
   // ===== SCROLL SYNC (Glovo logic) =====
   useEffect(() => {
-    const handleScroll = () => {
-      let current = null;
+  const handleScroll = () => {
+    let current = null;
 
-      menuData.forEach((section) => {
-        const el = document.getElementById(section.title);
-        if (!el) return;
+    menuData.forEach((section) => {
+      const el = document.getElementById(section.title);
+      if (!el) return;
 
-        const rect = el.getBoundingClientRect();
+      const rect = el.getBoundingClientRect();
 
-        if (rect.top <= 150 && rect.bottom >= 150) {
-          current = section.title;
-        }
-      });
+      if (rect.top <= 140 && rect.bottom >= 140) {
+        current = section.title;
+      }
+    });
 
-      if (current) setActiveCategory(current);
-    };
+    if (current) {
+      setActiveCategory(current);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [menuData]);
+      const btn = categoryRefs.current[current];
+      const indicator = indicatorRef.current;
+
+      if (btn && indicator) {
+        indicator.style.width = btn.offsetWidth + "px";
+        indicator.style.left = btn.offsetLeft + "px";
+      }
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [menuData]);
 
   // ===== ADD TO CART =====
   const addToCart = (item, e) => {
@@ -120,32 +129,67 @@ export default function Page() {
         background: "#111",
         zIndex: 1000
       }}>
-        {menuData.map((section) => (
-          <button
-            key={section.title}
-            onClick={() => {
-              setActiveCategory(section.title);
-              document.getElementById(section.title)
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            style={{
-              padding: "8px 14px",
-              borderRadius: 20,
-              border: "1px solid gold",
-              background: activeCategory === section.title ? "gold" : "transparent",
-              color: activeCategory === section.title ? "#000" : "gold",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {section.title}
-          </button>
-        ))}
+        <div
+  style={{
+    position: "sticky",
+    top: 0,
+    zIndex: 9999,
+    background: "rgba(15,15,15,0.7)",
+    backdropFilter: "blur(14px)",
+    borderBottom: "1px solid rgba(245,197,66,0.15)",
+    padding: "10px 0",
+  }}
+>
+  <div style={{ position: "relative", display: "flex", overflowX: "auto" }}>
+
+    <div
+      ref={indicatorRef}
+      style={{
+        position: "absolute",
+        bottom: 0,
+        height: 3,
+        width: 0,
+        left: 0,
+        background: "linear-gradient(90deg, #f5c542, #ffdd77)",
+        borderRadius: 999,
+        transition: "all 0.3s ease",
+      }}
+    />
+
+    {menuData.map((section) => (
+      <button
+        key={section.title}
+        ref={(el) => (categoryRefs.current[section.title] = el)}
+        onClick={() => {
+          setActiveCategory(section.title);
+
+          document
+            .getElementById(section.title)
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
+        style={{
+          padding: "10px 16px",
+          margin: "0 6px",
+          borderRadius: 999,
+          border: "none",
+          background: "transparent",
+          color:
+            activeCategory === section.title ? "#f5c542" : "#aaa",
+          fontWeight: "bold",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {section.title}
+      </button>
+    ))}
+  </div>
+</div>
       </div>
 
       {/* MENU */}
       <div>
         {menuData.map((section) => (
-          <div key={section.title} id={section.title} style={{ padding: 10 }}>
+          <div key={section.title} id={section.title} style={{ scrollMarginTop: 90 }}>
             
             <h2 style={{ color: "gold" }}>
               {section.title}

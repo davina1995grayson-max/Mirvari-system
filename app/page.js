@@ -486,6 +486,84 @@ const addToCart = (item, e) => {
     </div>
   </div>
 )}
+  {checkoutOpen && (
+  <div
+    onClick={() => setCheckoutOpen(false)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.6)",
+      backdropFilter: "blur(10px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 99999,
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        background: "#141414",
+        padding: 20,
+        borderRadius: 18,
+        width: "90%",
+        maxWidth: 420,
+        border: "1px solid rgba(245,197,66,0.2)",
+      }}
+    >
+      <h2 style={{ color: "#f5c542" }}>🍽️ Sifarişi təsdiqlə</h2>
+
+      <p>🪑 Masa: {table}</p>
+
+      <div style={{ marginTop: 10 }}>
+        {cart.map((item) => (
+          <div key={item.name}>
+            • {item.name} x{item.qty || 1}
+          </div>
+        ))}
+      </div>
+
+      <h3 style={{ marginTop: 15 }}>💰 {total} AZN</h3>
+
+      <button
+        onClick={() => {
+          const itemsText = cart
+            .map(
+              (i) =>
+                `• ${i.name} x${i.qty || 1} = ${i.price * (i.qty || 1)} AZN`
+            )
+            .join("\n");
+
+          const text =
+            `🍽️ YENİ SİFARİŞ\n` +
+            `🪑 Masa: ${table}\n\n` +
+            `${itemsText}\n\n` +
+            `💰 TOTAL: ${total} AZN`;
+
+          window.open(
+            `https://wa.me/994553976762?text=${encodeURIComponent(text)}`
+          );
+
+          setCart([]);
+          setCheckoutOpen(false);
+          setCartOpen(false);
+        }}
+        style={{
+          width: "100%",
+          marginTop: 15,
+          padding: 14,
+          borderRadius: 14,
+          border: "none",
+          background: "#f5c542",
+          fontWeight: "bold",
+          cursor: "pointer",
+        }}
+      >
+        🚀 Sifarişi göndər
+      </button>
+    </div>
+  </div>
+)}
     </div>
   );
       }

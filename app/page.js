@@ -229,6 +229,19 @@ const addToCart = (item, e) => {
   <h1 onClick={handleLogoClick}>
     🍽️ Mirvari Restaurant
   </h1>
+    <button
+  onClick={() => setTable(null)}
+  style={{
+    background: "#f5c542",
+    border: "none",
+    padding: "6px 10px",
+    borderRadius: 10,
+    cursor: "pointer",
+    fontWeight: "bold"
+  }}
+>
+  🔄 Masa dəyiş
+</button>
 </header>
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div

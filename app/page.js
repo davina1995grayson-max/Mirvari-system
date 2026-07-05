@@ -458,6 +458,22 @@ const addToCart = (item, e) => {
 
       <h3>💰 {total} AZN</h3>
 
+          <button
+  onClick={() => setCheckoutOpen(true)}
+  style={{
+    width: "100%",
+    marginTop: 10,
+    padding: 12,
+    borderRadius: 12,
+    border: "none",
+    background: "linear-gradient(135deg, #f5c542, #d8a92e)",
+    fontWeight: "bold",
+    cursor: "pointer",
+  }}
+>
+  🍽️ Sifariş et
+</button>
+
       <button onClick={() => setCart([])}>
         🗑️ Təmizlə
       </button>

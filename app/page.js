@@ -274,12 +274,12 @@ const addToCart = (item, e) => {
 >
  <div
   style={{
-    display: "flex",
+    display: "grid",
     flexDirection: "column",
-    gap: 10,
+    gap: 8,
     padding: "10px",
     maxHeight: "40vh",
-    overflowY: "auto",
+    gridTemplateColumns: "repeat(3, 1fr)",
   }}
 >
     {menuData.map((section) => (

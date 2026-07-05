@@ -373,3 +373,41 @@ const addToCart = (item, e) => {
     </div>
   );
       }
+{cartOpen && (
+  <div
+    onClick={() => setCartOpen(false)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.6)",
+      display: "flex",
+      justifyContent: "flex-end",
+      zIndex: 99999,
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        width: "100%",
+        maxWidth: 420,
+        height: "100%",
+        background: "#141414",
+        padding: 20,
+      }}
+    >
+      <h2>🛒 Səbət</h2>
+
+      {cart.map((item) => (
+        <div key={item.name}>
+          {item.name} x{item.qty}
+        </div>
+      ))}
+
+      <h3>💰 {total} AZN</h3>
+
+      <button onClick={() => setCart([])}>
+        🗑 Təmizlə
+      </button>
+    </div>
+  </div>
+)}

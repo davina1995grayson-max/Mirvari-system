@@ -372,7 +372,6 @@ const addToCart = (item, e) => {
 
     </div>
   );
-      }
 {cartOpen && (
   <div
     onClick={() => setCartOpen(false)}
@@ -410,4 +409,5 @@ const addToCart = (item, e) => {
       </button>
     </div>
   </div>
-)}
+)};
+      }

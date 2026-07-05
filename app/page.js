@@ -272,13 +272,16 @@ const addToCart = (item, e) => {
     padding: "10px 10px",
   }}
 >
-  <div
-    style={{
-      display: "flex",
-      gap: 8,
-      overflowX: "auto",
-    }}
-  >
+ <div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+    padding: "10px",
+    maxHeight: "40vh",
+    overflowY: "auto",
+  }}
+>
     {menuData.map((section) => (
       <button
   id={"cat-" + section.title}
@@ -292,21 +295,20 @@ const addToCart = (item, e) => {
       .getElementById(section.title)
       ?.scrollIntoView({ behavior: "smooth" });
   }}
-  style={{
-    flex: "0 0 auto",
-    padding: "10px 14px",
-    borderRadius: 999,
-    border: "1px solid rgba(245,197,66,0.2)",
-    background:
-      activeCategory === section.title
-        ? "#f5c542"
-        : "rgba(255,255,255,0.04)",
-    color: activeCategory === section.title ? "#111" : "#aaa",
-    fontWeight: "600",
-    fontSize: 13,
-    whiteSpace: "nowrap",
-    transition: "0.2s",
-  }}
+  <div
+ style={{
+  width: "100%",
+  textAlign: "left",
+  padding: "12px 14px",
+  borderRadius: 12,
+  border: "1px solid rgba(245,197,66,0.2)",
+  background:
+    activeCategory === section.title
+      ? "#f5c542"
+      : "rgba(255,255,255,0.04)",
+  color: activeCategory === section.title ? "#111" : "#aaa",
+  fontWeight: "600",
+}}
 >
   {section.title}
 </button>

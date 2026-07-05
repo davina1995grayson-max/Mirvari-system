@@ -178,6 +178,38 @@ const addToCart = (item, e) => {
 
 <p>Zəhmət olmasa masanı seçin</p>
 
+    <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>
+
+  <button
+    onClick={callWaiter}
+    style={{
+      flex: 1,
+      padding: 10,
+      borderRadius: 10,
+      background: "#1e1e1e",
+      color: "#f5c542",
+      border: "1px solid #f5c542"
+    }}
+  >
+    🔔 Ofisiant
+  </button>
+
+  <button
+    onClick={callBill}
+    style={{
+      flex: 1,
+      padding: 10,
+      borderRadius: 10,
+      background: "#1e1e1e",
+      color: "#f5c542",
+      border: "1px solid #f5c542"
+    }}
+  >
+    💳 Hesab
+  </button>
+
+</div>
+
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map(num => (
           <button key={num} onClick={() => setTable(num)}>

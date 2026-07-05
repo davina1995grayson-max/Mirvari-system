@@ -295,7 +295,7 @@ const addToCart = (item, e) => {
       .getElementById(section.title)
       ?.scrollIntoView({ behavior: "smooth" });
   }}
-  <div
+
  style={{
   width: "100%",
   textAlign: "left",

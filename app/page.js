@@ -157,9 +157,26 @@ const addToCart = (item, e) => {
   // ===== LOADING =====
   if (table === null) {
   return (
-    <div>
-      <h1 onClick={handleLogoClick}>🍽️ Mirvari Restaurant</h1>
-      <p>Zəhmət olmasa masanı seçin</p>
+    <div style={{
+  background: dark ? "#0b0b0b" : "#f6f6f6",
+  color: dark ? "#fff" : "#111",
+  minHeight: "100vh",
+  padding: 24,
+  fontFamily: "'Inter', sans-serif",
+}}>
+
+<h1
+  style={{
+    color: "#f5c542",
+    cursor: "pointer",
+    fontWeight: "bold"
+  }}
+  onClick={handleLogoClick}
+>
+  🍽️ Mirvari Restaurant
+</h1>
+
+<p>Zəhmət olmasa masanı seçin</p>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map(num => (

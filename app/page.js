@@ -7,6 +7,7 @@ import { supabase } from "./supabase";
 export default function Page() {
   const router = useRouter();
 
+  const [dark, setDark] = useState(true);
   const isBrowser = typeof window !== "undefined";
   const [menuData, setMenuData] = useState([]);
   const [cart, setCart] = useState([]);

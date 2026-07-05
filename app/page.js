@@ -458,22 +458,28 @@ const addToCart = (item, e) => {
 
       <h3>💰 {total} AZN</h3>
 
-          <button
+         <button
+  disabled={cart.length === 0}
   onClick={() => setCheckoutOpen(true)}
   style={{
     width: "100%",
     marginTop: 10,
-    padding: 12,
-    borderRadius: 12,
+    padding: 14,
+    borderRadius: 14,
     border: "none",
-    background: "linear-gradient(135deg, #f5c542, #d8a92e)",
     fontWeight: "bold",
-    cursor: "pointer",
+    cursor: cart.length === 0 ? "not-allowed" : "pointer",
+    background:
+      cart.length === 0
+        ? "rgba(255,255,255,0.1)"
+        : "linear-gradient(135deg, #f5c542, #d8a92e)",
+    color: cart.length === 0 ? "#777" : "#111",
+    opacity: cart.length === 0 ? 0.6 : 1,
   }}
 >
   🍽️ Sifariş et
 </button>
-
+    
       <button onClick={() => setCart([])}>
         🗑️ Təmizlə
       </button>

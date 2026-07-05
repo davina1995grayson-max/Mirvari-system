@@ -378,36 +378,92 @@ const addToCart = (item, e) => {
     style={{
       position: "fixed",
       inset: 0,
-      background: "rgba(0,0,0,0.6)",
+      background: "rgba(0,0,0,0.4)",
+      backdropFilter: "blur(6px)",
       display: "flex",
       justifyContent: "flex-end",
+      alignItems: "flex-end",
       zIndex: 99999,
     }}
   >
     <div
       onClick={(e) => e.stopPropagation()}
       style={{
+        background: "#141414",
         width: "100%",
         maxWidth: 420,
-        height: "100%",
-        background: "#141414",
+        height: "80vh",
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
+        display: "flex",
+        flexDirection: "column",
         padding: 20,
       }}
     >
-      <h2>🛒 Səbət</h2>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h2>🛒 Səbət</h2>
+        <button onClick={() => setCartOpen(false)}>✖</button>
+      </div>
 
-      {cart.map((item) => (
-        <div key={item.name}>
-          {item.name} x{item.qty}
-        </div>
-      ))}
+      <div style={{ flex: 1, overflowY: "auto" }}>
+        {cart.map((item) => (
+          <div key={item.name} style={{ marginBottom: 10 }}>
+            <div>{item.name}</div>
+            <div>{item.price} AZN</div>
+
+            <div style={{ display: "flex", gap: 10 }}>
+              <button
+                onClick={() =>
+                  setCart((prev) =>
+                    prev
+                      .map((i) =>
+                        i.name === item.name
+                          ? { ...i, qty: (i.qty || 1) - 1 }
+                          : i
+                      )
+                      .filter((i) => (i.qty || 0) > 0)
+                  )
+                }
+              >
+                ➖
+              </button>
+
+              <span>{item.qty}</span>
+
+              <button
+                onClick={() =>
+                  setCart((prev) =>
+                    prev.map((i) =>
+                      i.name === item.name
+                        ? { ...i, qty: (i.qty || 1) + 1 }
+                        : i
+                    )
+                  )
+                }
+              >
+                ➕
+              </button>
+
+              <button
+                onClick={() =>
+                  setCart((prev) =>
+                    prev.filter((i) => i.name !== item.name)
+                  )
+                }
+              >
+                🗑️
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
 
       <h3>💰 {total} AZN</h3>
 
       <button onClick={() => setCart([])}>
-        🗑 Təmizlə
+        🗑️ Təmizlə
       </button>
     </div>
   </div>
-)};
+)}
       }

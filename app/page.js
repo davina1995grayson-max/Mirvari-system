@@ -280,6 +280,8 @@ const addToCart = (item, e) => {
     padding: "10px",
     maxHeight: "40vh",
     gridTemplateColumns: "repeat(3, 1fr)",
+    fontSize: 12,
+    textAlign: "center",
   }}
 >
     {menuData.map((section) => (

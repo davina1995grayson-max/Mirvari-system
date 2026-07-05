@@ -370,8 +370,6 @@ const addToCart = (item, e) => {
         💰 {total} AZN
       </div>
 
-    </div>
-  );
 {cartOpen && (
   <div
     onClick={() => setCartOpen(false)}
@@ -466,4 +464,6 @@ const addToCart = (item, e) => {
     </div>
   </div>
 )}
+    </div>
+  );
       }

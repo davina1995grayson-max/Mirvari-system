@@ -266,54 +266,64 @@ const addToCart = (item, e) => {
     position: "sticky",
     top: 0,
     zIndex: 9999,
-    background: "rgba(10,10,10,0.95)",
-    backdropFilter: "blur(18px)",
-    borderBottom: "1px solid rgba(245,197,66,0.12)",
-    padding: "10px 10px",
+    background: "#111",
+    padding: 12,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    boxShadow: "0 5px 15px rgba(0,0,0,0.4)",
   }}
 >
- <div
-  style={{
-    display: "grid",
-    flexDirection: "column",
-    gap: 8,
-    padding: "10px",
-    maxHeight: "40vh",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    fontSize: 12,
-    textAlign: "center",
-  }}
->
+  <div
+    style={{
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 10,
+      justifyContent: "flex-start",
+    }}
+  >
     {menuData.map((section) => (
       <button
-  id={"cat-" + section.title}
-  key={section.title}
-  onClick={() => {
-    if (typeof window === "undefined") return;
+        key={section.title}
+        onClick={() => {
+          setActiveCategory(section.title);
 
-    setActiveCategory(section.title);
+          document
+            .getElementById(section.title)
+            ?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+        }}
+        style={{
+          background:
+            activeCategory === section.title
+              ? "#f5c542"
+              : "transparent",
 
-    document
-      .getElementById(section.title)
-      ?.scrollIntoView({ behavior: "smooth" });
-  }}
+          color:
+            activeCategory === section.title
+              ? "#111"
+              : "#fff",
 
- style={{
-  width: "100%",
-  textAlign: "left",
-  padding: "12px 14px",
-  borderRadius: 12,
-  border: "1px solid rgba(245,197,66,0.2)",
-  background:
-    activeCategory === section.title
-      ? "#f5c542"
-      : "rgba(255,255,255,0.04)",
-  color: activeCategory === section.title ? "#111" : "#aaa",
-  fontWeight: "600",
-}}
->
-  {section.title}
-</button>
+          border: "none",
+
+          padding: "8px 14px",
+
+          borderRadius: 30,
+
+          cursor: "pointer",
+
+          fontWeight: "600",
+
+          fontSize: 15,
+
+          whiteSpace: "nowrap",
+
+          transition: "0.25s",
+        }}
+      >
+        {section.title}
+      </button>
     ))}
   </div>
 </div>

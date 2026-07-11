@@ -396,16 +396,6 @@ const addToCart = (item, e) => {
   >
     +
   </button>
-
-  <span
-    style={{
-      color: "#666",
-      fontSize: 24,
-      fontWeight: "bold",
-    }}
-  >
-    ›
-  </span>
 </div>
                 </div>
               ))}

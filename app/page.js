@@ -277,7 +277,7 @@ const addToCart = (item, e) => {
     style={{
       display: "flex",
       flexWrap: "wrap",
-      gap: 10,
+      gap: 6,
       justifyContent: "flex-start",
     }}
   >
@@ -295,24 +295,25 @@ const addToCart = (item, e) => {
             });
         }}
         style={{
-          background:
-            activeCategory === section.title
-              ? "#f5c542"
-              : "transparent",
+  background:
+    activeCategory === section.title
+      ? "#f5c542"
+      : "rgba(255,255,255,0.05)",
 
-          color:
-            activeCategory === section.title
-              ? "#111"
-              : "#fff",
-          border: "none",
-          padding: "8px 14px",
-          borderRadius: 30,
-          cursor: "pointer",
-          fontWeight: "600",
-          fontSize: 15,
-          whiteSpace: "nowrap",
-          transition: "0.25s",
-        }}
+  color:
+    activeCategory === section.title
+      ? "#111"
+      : "#f5c542",
+
+  border: "1px solid rgba(245,197,66,0.25)",
+  padding: "6px 12px",
+  borderRadius: 10,
+  cursor: "pointer",
+  fontWeight: "600",
+  fontSize: 13,
+  whiteSpace: "nowrap",
+  transition: "0.25s",
+}}
       >
         {section.title}
       </button>

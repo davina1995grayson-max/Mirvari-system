@@ -329,7 +329,11 @@ const addToCart = (item, e) => {
 </div>
 
       {/* MENU */}
-      <div>
+<div
+  style={{
+    padding: "12px",
+  }}
+>
         {menuData.map((section) => (
           <div key={section.title} id={section.title} style={{ scrollMarginTop: 100 }}>
 
@@ -341,22 +345,55 @@ const addToCart = (item, e) => {
                 <div
                   key={item.name}
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    padding: 10,
-                    marginTop: 8,
-                    background: "#1a1a1a",
-                    borderRadius: 10,
-                  }}
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "16px",
+  marginBottom: "16px",
+  background: "#181818",
+  border: "1px solid rgba(245,197,66,0.15)",
+  borderRadius: "18px",
+  boxShadow: "0 6px 18px rgba(0,0,0,0.35)",
+  transition: "all .25s ease",
+}}
                 >
-                  <div>
-                    <div>{item.name}</div>
-                    <div style={{ color: "gold" }}>{item.price} AZN</div>
-                  </div>
+                  <div
+  style={{
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#fff",
+  }}
+>
+  {item.name}
+</div>
+                    <div
+  style={{
+    color: "#f5c542",
+    fontWeight: "bold",
+    fontSize: 18,
+    marginTop: 4,
+  }}
+>
+  {item.price} AZN
+</div>
 
-                  <button onClick={(e) => addToCart(item, e)}>
-                    ➕
-                  </button>
+                  <button
+  onClick={(e) => addToCart(item, e)}
+  style={{
+  width: 46,
+  height: 46,
+  borderRadius: 14,
+  border: "none",
+  background: "linear-gradient(135deg,#f5c542,#e0aa2b)",
+  color: "#111",
+  fontSize: 28,
+  fontWeight: "bold",
+  cursor: "pointer",
+  boxShadow: "0 4px 12px rgba(245,197,66,.35)",
+}}
+>
+  ➕️
+</button>
                 </div>
               ))}
           </div>

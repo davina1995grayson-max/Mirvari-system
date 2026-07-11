@@ -260,6 +260,7 @@ const addToCart = (item, e) => {
     💳 Hesab
   </button>
 </header>
+
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div
   style={{
@@ -277,7 +278,8 @@ const addToCart = (item, e) => {
     style={{
       display: "flex",
       flexWrap: "wrap",
-      gap: 6,
+      gap: 8,
+      padding: "8px 0",
       justifyContent: "flex-start",
     }}
   >
@@ -297,8 +299,8 @@ const addToCart = (item, e) => {
         style={{
   background:
     activeCategory === section.title
-      ? "#f5c542"
-      : "rgba(255,255,255,0.05)",
+      ? "linear-gradient(135deg,#f5c542,#e0aa2b)"
+      : "rgba(255,255,255,0.03)",
 
   color:
     activeCategory === section.title
@@ -306,13 +308,17 @@ const addToCart = (item, e) => {
       : "#f5c542",
 
   border: "1px solid rgba(245,197,66,0.25)",
-  padding: "6px 12px",
-  borderRadius: 10,
+  padding: "7px 14px",
+  borderRadius: 14,
   cursor: "pointer",
   fontWeight: "600",
   fontSize: 13,
   whiteSpace: "nowrap",
-  transition: "0.25s",
+  transition: "all .25s ease",
+  boxShadow:
+    activeCategory === section.title
+      ? "0 4px 14px rgba(245,197,66,.35)"
+      : "0 2px 8px rgba(0,0,0,.2)",
 }}
       >
         {section.title}

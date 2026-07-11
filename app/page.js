@@ -304,21 +304,13 @@ const addToCart = (item, e) => {
             activeCategory === section.title
               ? "#111"
               : "#fff",
-
           border: "none",
-
           padding: "8px 14px",
-
           borderRadius: 30,
-
           cursor: "pointer",
-
           fontWeight: "600",
-
           fontSize: 15,
-
           whiteSpace: "nowrap",
-
           transition: "0.25s",
         }}
       >
@@ -357,43 +349,64 @@ const addToCart = (item, e) => {
   transition: "all .25s ease",
 }}
                 >
-                  <div
-  style={{
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#fff",
-  }}
->
-  {item.name}
-</div>
-                    <div
-  style={{
-    color: "#f5c542",
-    fontWeight: "bold",
-    fontSize: 18,
-    marginTop: 4,
-  }}
->
-  {item.price} AZN
+                  <div style={{ flex: 1 }}>
+  <div
+    style={{
+      fontSize: 18,
+      fontWeight: "700",
+      color: "#fff",
+      marginBottom: 6,
+    }}
+  >
+    {item.name}
+  </div>
+
+  <div
+    style={{
+      color: "#f5c542",
+      fontWeight: "700",
+      fontSize: 18,
+    }}
+  >
+    {item.price} AZN
+  </div>
 </div>
 
-                  <button
-  onClick={(e) => addToCart(item, e)}
+                  <div
   style={{
-  width: 46,
-  height: 46,
-  borderRadius: 14,
-  border: "none",
-  background: "linear-gradient(135deg,#f5c542,#e0aa2b)",
-  color: "#111",
-  fontSize: 28,
-  fontWeight: "bold",
-  cursor: "pointer",
-  boxShadow: "0 4px 12px rgba(245,197,66,.35)",
-}}
+    display: "flex",
+    alignItems: "center",
+    gap: 10,
+  }}
 >
-  ➕️
-</button>
+  <button
+    onClick={(e) => addToCart(item, e)}
+    style={{
+      width: 46,
+      height: 46,
+      borderRadius: 14,
+      border: "none",
+      background: "linear-gradient(135deg,#f5c542,#e0aa2b)",
+      color: "#111",
+      fontSize: 28,
+      fontWeight: "bold",
+      cursor: "pointer",
+      boxShadow: "0 4px 12px rgba(245,197,66,.35)",
+    }}
+  >
+    +
+  </button>
+
+  <span
+    style={{
+      color: "#666",
+      fontSize: 24,
+      fontWeight: "bold",
+    }}
+  >
+    ›
+  </span>
+</div>
                 </div>
               ))}
           </div>

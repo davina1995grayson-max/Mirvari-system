@@ -362,25 +362,25 @@ if (el) {
                 >
                   <div style={{ flex: 1 }}>
   <div
-    style={{
-      fontSize: 18,
-      fontWeight: "700",
-      color: "#fff",
-      marginBottom: 6,
-    }}
-  >
-    {item.name}
-  </div>
+  style={{
+    fontSize: 17,
+    fontWeight: "700",
+    color: "#fff",
+    marginBottom: 6,
+  }}
+>
+  {item.name}
+</div>
 
   <div
-    style={{
-      color: "#f5c542",
-      fontWeight: "700",
-      fontSize: 18,
-    }}
-  >
-    {item.price} AZN
-  </div>
+  style={{
+    color: "#f5c542",
+    fontWeight: "700",
+    fontSize: 16,
+  }}
+>
+  {item.price} ₼
+</div>
 </div>
 
                   <div
@@ -405,7 +405,7 @@ if (el) {
       boxShadow: "0 4px 12px rgba(245,197,66,.35)",
     }}
   >
-    +
+    ➕️
   </button>
 </div>
                 </div>

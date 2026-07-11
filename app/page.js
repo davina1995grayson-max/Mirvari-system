@@ -289,12 +289,16 @@ const addToCart = (item, e) => {
         onClick={() => {
           setActiveCategory(section.title);
 
-          document
-            .getElementById(section.title)
-            ?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
+          const el = document.getElementById(section.title);
+
+if (el) {
+  const y = el.getBoundingClientRect().top + window.pageYOffset - 170;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth",
+  });
+}
         }}
         style={{
   background:

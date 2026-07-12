@@ -214,7 +214,16 @@ const addToCart = (item, e) => {
   return (
     <div style={{ background: "#0b0b0b", color: "white", minHeight: "100vh" }}>
 
-<header style={{ position: "sticky", top: 0 }}>
+<header
+  style={{
+    position: "sticky",
+    top: 0,
+    zIndex: 10000,
+    background: "#0b0b0b",
+    padding: "12px 16px",
+    borderBottom: "1px solid rgba(245,197,66,.15)",
+  }}
+>
   <h1 onClick={handleLogoClick}>
     🍽️ Mirvari Restaurant
   </h1>
@@ -265,7 +274,7 @@ const addToCart = (item, e) => {
 <div
   style={{
     position: "sticky",
-    top: 0,
+    top: 150,
     zIndex: 9999,
     background: "#111",
     padding: 12,

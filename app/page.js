@@ -351,13 +351,13 @@ if (el) {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "16px",
-  marginBottom: "16px",
-  background: "#181818",
-  border: "1px solid rgba(245,197,66,0.15)",
-  borderRadius: "18px",
-  boxShadow: "0 6px 18px rgba(0,0,0,0.35)",
-  transition: "all .25s ease",
+  padding: "18px",
+  marginBottom: "14px",
+  background: "linear-gradient(180deg, #1b1b1b, #141414)",
+  border: "1px solid rgba(245,197,66,0.18)",
+  borderRadius: "20px",
+  boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+  transition: "0.25s",
 }}
                 >
                   <div style={{ flex: 1 }}>

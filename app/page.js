@@ -301,7 +301,7 @@ const addToCart = (item, e) => {
           const el = document.getElementById(section.title);
 
 if (el) {
-  const y = el.getBoundingClientRect().top + window.pageYOffset - 340;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - 400;
 
   window.scrollTo({
     top: y,

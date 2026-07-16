@@ -196,7 +196,8 @@ const addToCart = (item, e) => {
     fontWeight: 500,
   }}
 >
-  Zəhmət olmasa masanı seçin
+Xoş gəlmisiniz 
+Zəhmət olmasa masanı seçin
 </p>
 
     <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>

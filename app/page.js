@@ -166,18 +166,38 @@ const addToCart = (item, e) => {
   fontFamily: "'Inter', sans-serif",
 }}>
 
-<h1
-  style={{
-    color: "#f5c542",
-    cursor: "pointer",
-    fontWeight: "bold"
-  }}
+<div
   onClick={handleLogoClick}
+  style={{
+    textAlign: "center",
+    marginBottom: 25,
+    cursor: "pointer",
+  }}
 >
-  🍽️ Mirvari Restaurant
-</h1>
+  <img
+    src="/logo.png"
+    alt="Mirvari Restaurant"
+    style={{
+      width: "100%",
+      maxWidth: 420,
+      height: "auto",
+      display: "block",
+      margin: "0 auto",
+    }}
+  />
+</div>
 
-<p>Zəhmət olmasa masanı seçin</p>
+<p
+  style={{
+    textAlign: "center",
+    color: "#d8b15a",
+    fontSize: 20,
+    marginBottom: 30,
+    fontWeight: 500,
+  }}
+>
+  Zəhmət olmasa masanı seçin
+</p>
 
     <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>
 </div>

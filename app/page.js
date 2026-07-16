@@ -392,12 +392,13 @@ if (el) {
     src={item.image || "/no-image.jpg"}
     alt={item.name}
     style={{
-      width: 90,
-      height: 90,
+      width: 110,
+      height: 110,
       objectFit: "cover",
       borderRadius: 16,
       flexShrink: 0,
       border: "1px solid rgba(245,197,66,.2)",
+      boxShadow: "0 8px 20px rgba(0,0,0,.35)",
     }}
   />
 

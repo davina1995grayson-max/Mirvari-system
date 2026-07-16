@@ -233,62 +233,123 @@ Zəhmət olmasa masanı seçin
 
   // ===== UI =====
   return (
-    <div style={{ background: "#0b0b0b", color: "white", minHeight: "100vh" }}>
-
+  <div
+    style={{
+      background:
+        "linear-gradient(180deg,#0b0b0b 0%, #131313 35%, #191919 100%)",
+      color: "white",
+      minHeight: "100vh",
+    }}
+  >
+    
 <header
   style={{
     position: "sticky",
     top: 0,
     zIndex: 10000,
     background: "#0b0b0b",
-    padding: "12px 16px",
+    padding: "10px 16px",
     borderBottom: "1px solid rgba(245,197,66,.15)",
   }}
 >
-  <h1 onClick={handleLogoClick}>
-    🍽️ Mirvari Restaurant
-  </h1>
-    <button
-  onClick={() => setTable(null)}
-  style={{
-    background: "#f5c542",
-    border: "none",
-    padding: "6px 10px",
-    borderRadius: 10,
-    cursor: "pointer",
-    fontWeight: "bold"
-  }}
->
-  🔄 Masa dəyiş
-</button>
-    
-     <button
-    onClick={callWaiter}
-    style={{
-      flex: 1,
-      padding: 10,
-      borderRadius: 10,
-      background: "#1e1e1e",
-      color: "#f5c542",
-      border: "1px solid #f5c542"
-    }}
-  >
-    🔔 Ofisiant
-  </button>
 
-  <button
-    onClick={callBill}
+  <div
     style={{
-      flex: 1,
-      padding: 10,
-      borderRadius: 10,
-      background: "#1e1e1e",
-      color: "#f5c542",
-      border: "1px solid #f5c542"
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      marginBottom: 10,
     }}
   >
-    💳 Hesab
-  </button>
+    <img
+      src="/logo.png"
+      alt="Mirvari"
+      onClick={handleLogoClick}
+      style={{
+        width: 52,
+        height: 52,
+        borderRadius: "50%",
+        objectFit: "cover",
+        cursor: "pointer",
+      }}
+    />
+
+    <div>
+      <div
+        style={{
+          color: "#f5c542",
+          fontSize: 30,
+          fontFamily: "Georgia, serif",
+          fontWeight: "bold",
+          textShadow:
+            "0 2px 4px rgba(0,0,0,.7), 0 0 12px rgba(245,197,66,.25)",
+          lineHeight: 1,
+        }}
+      >
+        Mirvari
+      </div>
+
+      <div
+        style={{
+          color: "#c9a64d",
+          fontSize: 12,
+          letterSpacing: 3,
+        }}
+      >
+        RESTAURANT
+      </div>
+    </div>
+  </div>
+
+  <div
+    style={{
+      display: "flex",
+      gap: 8,
+    }}
+  >
+    <button
+      onClick={() => setTable(null)}
+      style={{
+        flex: 1,
+        background: "#f5c542",
+        border: "none",
+        padding: 10,
+        borderRadius: 12,
+        fontWeight: "bold",
+      }}
+    >
+      🔄 Masa
+    </button>
+
+    <button
+      onClick={callWaiter}
+      style={{
+        flex: 1,
+        padding: 10,
+        borderRadius: 12,
+        background: "#1e1e1e",
+        color: "#f5c542",
+        border: "1px solid #f5c542",
+      }}
+    >
+      🔔 Ofisiant
+    </button>
+
+    <button
+      onClick={callBill}
+      style={{
+        flex: 1,
+        padding: 10,
+        borderRadius: 12,
+        background: "#1e1e1e",
+        color: "#f5c542",
+        border: "1px solid #f5c542",
+      }}
+    >
+      💳 Hesab
+    </button>
+  </div>
+
 </header>
 
 {/* ULTRA MOBILE CATEGORY BAR */}
@@ -404,8 +465,10 @@ if (el) {
   background: "linear-gradient(180deg, #1b1b1b, #141414)",
   border: "1px solid rgba(245,197,66,0.18)",
   borderRadius: "24px",
-  boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
-  transition: "0.25s",
+  boxShadow: "0 8px 24px rgba(0,0,0,.35)",
+transition: "0.25s",
+overflow: "hidden",
+cursor: "pointer",
 }}
                 >
 <div

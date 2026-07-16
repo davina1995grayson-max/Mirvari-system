@@ -345,20 +345,27 @@ if (el) {
   style={{
     padding: "12px",
   }}
->
-        {menuData.map((section) => (
-          <div key={section.title} id={section.title} style={{ scrollMarginTop: 100 }}>
+>{menuData.map((section) => (
+  <div
+    key={section.title}
+    id={section.title}
+    style={{
+      scrollMarginTop: 170,
+      marginBottom: 24,
+    }}
+  >
 
-<h2
-  style={{
-    fontSize: 24,
-    fontWeight: "700",
-    color: "#fff",
-    margin: "10px 0 18px",
-  }}
->
-  {section.title}
-</h2>
+    <h2
+      style={{
+        color: "#fff",
+        fontSize: 24,
+        fontWeight: "700",
+        marginBottom: 16,
+        marginTop: 8,
+      }}
+    >
+      {section.title}
+    </h2>
 
             {section.items
               .filter((i) =>

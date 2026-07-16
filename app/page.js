@@ -369,7 +369,27 @@ if (el) {
   transition: "0.25s",
 }}
                 >
-                  <div style={{ flex: 1 }}>
+                  <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 10,
+  }}
+>
+  <img
+    src={item.image || "/no-image.jpg"}
+    alt={item.name}
+    style={{
+      width: 90,
+      height: 90,
+      objectFit: "cover",
+      borderRadius: 16,
+      marginRight: 16,
+      border: "1px solid rgba(245,197,66,.2)",
+    }}
+  />
+
+  <div style={{ flex: 1 }}>
   <div
   style={{
     fontSize: 17,

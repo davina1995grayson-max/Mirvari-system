@@ -349,6 +349,17 @@ if (el) {
         {menuData.map((section) => (
           <div key={section.title} id={section.title} style={{ scrollMarginTop: 100 }}>
 
+<h2
+  style={{
+    fontSize: 24,
+    fontWeight: "700",
+    color: "#fff",
+    margin: "10px 0 18px",
+  }}
+>
+  {section.title}
+</h2>
+
             {section.items
               .filter((i) =>
                 i.name.toLowerCase().includes(search.toLowerCase())
@@ -360,20 +371,21 @@ if (el) {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "18px",
-  marginBottom: "14px",
+  padding: "22px",
+  marginBottom: "18px",
   background: "linear-gradient(180deg, #1b1b1b, #141414)",
   border: "1px solid rgba(245,197,66,0.18)",
-  borderRadius: "20px",
+  borderRadius: "24px",
   boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
   transition: "0.25s",
 }}
                 >
-                  <div
+<div
   style={{
     display: "flex",
     alignItems: "center",
-    gap: 10,
+    width: "100%",
+    gap: 16,
   }}
 >
   <img
@@ -384,60 +396,58 @@ if (el) {
       height: 90,
       objectFit: "cover",
       borderRadius: 16,
-      marginRight: 16,
+      flexShrink: 0,
       border: "1px solid rgba(245,197,66,.2)",
     }}
   />
 
-  <div style={{ flex: 1 }}>
   <div
-  style={{
-    fontSize: 17,
-    fontWeight: "700",
-    color: "#fff",
-    marginBottom: 6,
-  }}
->
-  {item.name}
-</div>
+    style={{
+      flex: 1,
+      minWidth: 0,
+    }}
+  >
+    <div
+      style={{
+        fontSize: 18,
+        fontWeight: 700,
+        color: "#fff",
+        marginBottom: 8,
+      }}
+    >
+      {item.name}
+    </div>
 
-  <div
-  style={{
-    color: "#f5c542",
-    fontWeight: "700",
-    fontSize: 16,
-  }}
->
-  {item.price} ₼
-</div>
-</div>
+    <div
+      style={{
+        color: "#f5c542",
+        fontSize: 17,
+        fontWeight: 700,
+      }}
+    >
+      {item.price} ₼
+    </div>
+  </div>
 
-                  <div
-  style={{
-    display: "flex",
-    alignItems: "center",
-    gap: 10,
-  }}
->
   <button
     onClick={(e) => addToCart(item, e)}
     style={{
-      width: 46,
-      height: 46,
-      borderRadius: 14,
+      width: 48,
+      height: 48,
+      borderRadius: 16,
       border: "none",
       background: "linear-gradient(135deg,#f5c542,#e0aa2b)",
       color: "#111",
       fontSize: 28,
       fontWeight: "bold",
       cursor: "pointer",
-      boxShadow: "0 4px 12px rgba(245,197,66,.35)",
+      flexShrink: 0,
+      boxShadow: "0 6px 18px rgba(245,197,66,.35)",
     }}
   >
-    ➕️
+    +
   </button>
 </div>
-                </div>
               ))}
           </div>
         ))}

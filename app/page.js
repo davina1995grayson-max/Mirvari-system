@@ -435,6 +435,19 @@ if (el) {
     >
       {item.price} ₼
     </div>
+
+        {item.description && (
+  <div
+    style={{
+      marginTop: 8,
+      color: "#9f9f9f",
+      fontSize: 13,
+      lineHeight: 1.4,
+    }}
+  >
+    {item.description}
+  </div>
+)}
   </div>
 
   <button

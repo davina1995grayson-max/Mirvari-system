@@ -591,7 +591,7 @@ Zəhmət olmasa masanı seçin
 <div
   style={{
     marginTop: 10,
-    width: "75%",
+    width: "90%",
     height: 3,
     background:
       "linear-gradient(90deg, #f5c542 0%, #f5c542 35%, rgba(245,197,66,.45) 70%, transparent 100%)",

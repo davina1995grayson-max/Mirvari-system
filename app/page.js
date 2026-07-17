@@ -707,26 +707,58 @@ Zəhmət olmasa masanı seçin
         ))}
       </div>
 
-      {/* CART BUTTON */}
+{cart.length > 0 && (
+  <div
+    onClick={() => setCartOpen(true)}
+    style={{
+      position: "fixed",
+      left: 16,
+      right: 16,
+      bottom: 16,
+      height: 68,
+      borderRadius: 22,
+      background: "linear-gradient(135deg,#f5c542,#d8a322)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "0 22px",
+      cursor: "pointer",
+      zIndex: 9999,
+      boxShadow: "0 15px 35px rgba(245,197,66,.35)",
+    }}
+  >
+    <div>
       <div
-        onClick={() => setCartOpen(true)}
         style={{
-          position: "fixed",
-          right: 20,
-          bottom: 20,
-          background: "gold",
-          padding: 15,
-          borderRadius: 50,
-          cursor: "pointer",
+          color: "#111",
+          fontWeight: 700,
+          fontSize: 18,
         }}
       >
-        🛒 {cart.length}
+        🛒 {cart.reduce((sum, item) => sum + (item.qty || 1), 0)} məhsul
       </div>
 
-      {/* TOTAL */}
-      <div style={{ position: "fixed", bottom: 90, right: 20 }}>
-        💰 {total} AZN
+      <div
+        style={{
+          color: "#3b2b00",
+          fontSize: 13,
+        }}
+      >
+        Səbətə bax
       </div>
+    </div>
+
+    <div
+      style={{
+        color: "#111",
+        fontWeight: 800,
+        fontSize: 22,
+      }}
+    >
+      {total} ₼
+    </div>
+  </div>
+)}
 
 {cartOpen && (
   <div
@@ -745,27 +777,64 @@ Zəhmət olmasa masanı seçin
     <div
       onClick={(e) => e.stopPropagation()}
       style={{
-        background: "#141414",
+        background: "linear-gradient(180deg,#1b1b1b,#111)",
         width: "100%",
         maxWidth: 420,
         height: "80vh",
-        borderTopLeftRadius: 24,
-        borderTopRightRadius: 24,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
         display: "flex",
         flexDirection: "column",
-        padding: 20,
+        padding: 24,
       }}
     >
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h2>🛒 Səbət</h2>
+        <h2
+  style={{
+    color: "#f5c542",
+    fontSize: 28,
+    margin: 0,
+    fontWeight: 700,
+  }}
+>
+  🛒 Səbət
+</h2>
         <button onClick={() => setCartOpen(false)}>✖</button>
       </div>
 
       <div style={{ flex: 1, overflowY: "auto" }}>
         {cart.map((item) => (
-          <div key={item.name} style={{ marginBottom: 10 }}>
-            <div>{item.name}</div>
-            <div>{item.price} AZN</div>
+  <div
+    key={item.name}
+    style={{
+      background: "#1c1c1c",
+      border: "1px solid rgba(245,197,66,.15)",
+      borderRadius: 18,
+      padding: 16,
+      marginBottom: 16,
+      boxShadow: "0 8px 20px rgba(0,0,0,.3)",
+    }}
+  >
+            <div
+  style={{
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: 700,
+    marginBottom: 6,
+  }}
+>
+  {item.name}
+</div>
+            <div
+  style={{
+    color: "#f5c542",
+    fontWeight: 700,
+    fontSize: 17,
+    marginBottom: 12,
+  }}
+>
+  {item.price} ₼
+</div>
 
             <div style={{ display: "flex", gap: 10 }}>
               <button

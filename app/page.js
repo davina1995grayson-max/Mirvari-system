@@ -253,11 +253,32 @@ Zəhmət olmasa masanı seçin
 >
 
   <div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 14,
+  }}
+>
+    <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 14,
+  }}
+>
+  <div
     style={{
+      width: 58,
+      height: 58,
+      borderRadius: "50%",
+      background: "rgba(245,197,66,.08)",
       display: "flex",
+      justifyContent: "center",
       alignItems: "center",
-      gap: 12,
-      marginBottom: 10,
+      border: "1px solid rgba(245,197,66,.18)",
+      boxShadow: "0 0 20px rgba(245,197,66,.12)",
+      flexShrink: 0,
     }}
   >
     <img
@@ -265,104 +286,109 @@ Zəhmət olmasa masanı seçin
       alt="Mirvari"
       onClick={handleLogoClick}
       style={{
-        width: 52,
-        height: 52,
-        borderRadius: "50%",
-        objectFit: "cover",
+        width: 42,
+        height: 42,
+        objectFit: "contain",
         cursor: "pointer",
       }}
     />
-
-    <div>
-      <div
-  style={{
-    display: "flex",
-    flexDirection: "column",
-    lineHeight: 1,
-  }}
->
-  <div
-    style={{
-  fontFamily: "'Cormorant Garamond', serif",
-  fontSize: 42,
-  fontWeight: 400,
-  fontStyle: "italic",
-  color: "#f5c542",
-  letterSpacing: 1,
-  textShadow:
-    "0 2px 6px rgba(0,0,0,.6), 0 0 12px rgba(245,197,66,.25)",
-  lineHeight: 1,
-}}
-  >
-    Mirvari
-  </div>
-
-  <div
-    style={{
-  fontFamily: "'Cormorant Garamond', serif",
-  fontSize: 16,
-  fontWeight: 700,
-  fontStyle: "italic",
-  color: "#d4b05a",
-  letterSpacing: 4,
-  textTransform: "uppercase",
-  marginTop: 2,
-}}
-  >
-    Restaurant
-  </div>
-      </div>
-    </div>
   </div>
 
   <div
     style={{
       display: "flex",
-      gap: 8,
+      flexDirection: "column",
+      justifyContent: "center",
     }}
   >
-    <button
-      onClick={() => setTable(null)}
+    <div
       style={{
-        flex: 1,
-        background: "#f5c542",
-        border: "none",
-        padding: 10,
-        borderRadius: 12,
-        fontWeight: "bold",
-      }}
-    >
-      🔄 Masa
-    </button>
-
-    <button
-      onClick={callWaiter}
-      style={{
-        flex: 1,
-        padding: 10,
-        borderRadius: 12,
-        background: "#1e1e1e",
         color: "#f5c542",
-        border: "1px solid #f5c542",
+        fontFamily: "'Playfair Display', serif",
+        fontSize: 34,
+        fontStyle: "italic",
+        fontWeight: 500,
+        letterSpacing: 1,
+        lineHeight: 1,
+        textShadow: "0 2px 8px rgba(245,197,66,.25)",
       }}
     >
-      🔔 Ofisiant
-    </button>
+      Mirvari
+    </div>
 
-    <button
-      onClick={callBill}
+    <div
       style={{
-        flex: 1,
-        padding: 10,
-        borderRadius: 12,
-        background: "#1e1e1e",
-        color: "#f5c542",
-        border: "1px solid #f5c542",
+        color: "#c9a64d",
+        fontSize: 11,
+        letterSpacing: 6,
+        fontWeight: 700,
+        marginTop: 3,
       }}
     >
-      💳 Hesab
-    </button>
+      RESTAURANT
+    </div>
   </div>
+</div>
+  </div>
+
+  <div
+  style={{
+    display: "flex",
+    gap: 10,
+    marginTop: 4,
+  }}
+>
+  <button
+    onClick={() => setTable(null)}
+    style={{
+      flex: 1,
+      height: 44,
+      borderRadius: 22,
+      background: "#f5c542",
+      color: "#111",
+      border: "none",
+      fontWeight: 700,
+      fontSize: 14,
+      cursor: "pointer",
+    }}
+  >
+    🔄 Masa
+  </button>
+
+  <button
+    onClick={callWaiter}
+    style={{
+      flex: 1,
+      height: 44,
+      borderRadius: 22,
+      background: "transparent",
+      color: "#f5c542",
+      border: "1px solid rgba(245,197,66,.4)",
+      fontWeight: 600,
+      fontSize: 14,
+      cursor: "pointer",
+    }}
+  >
+    🔔 Ofisiant
+  </button>
+
+  <button
+    onClick={callBill}
+    style={{
+      flex: 1,
+      height: 44,
+      borderRadius: 22,
+      background: "transparent",
+      color: "#f5c542",
+      border: "1px solid rgba(245,197,66,.4)",
+      fontWeight: 600,
+      fontSize: 14,
+      cursor: "pointer",
+    }}
+  >
+    💳 Hesab
+  </button>
+</div>
 
 </header>
 
@@ -517,14 +543,15 @@ cursor: "pointer",
     src={item.image || "/no-image.jpg"}
     alt={item.name}
     style={{
-      width: 110,
-      height: 110,
-      objectFit: "cover",
-      borderRadius: 16,
-      flexShrink: 0,
-      border: "1px solid rgba(245,197,66,.2)",
-      boxShadow: "0 8px 20px rgba(0,0,0,.35)",
-    }}
+  width: 110,
+  height: 110,
+  objectFit: "cover",
+  borderRadius: 18,
+  marginRight: 16,
+  border: "2px solid rgba(245,197,66,.25)",
+  boxShadow: "0 8px 20px rgba(0,0,0,.35)",
+  flexShrink: 0,
+}}
   />
 
   <div
@@ -535,8 +562,10 @@ cursor: "pointer",
   >
     <div
       style={{
-        fontSize: 18,
-        fontWeight: 700,
+        fontSize: 19,
+fontWeight: "600",
+letterSpacing: 0.3,
+lineHeight: 1.3,
         color: "#fff",
         marginBottom: 8,
       }}
@@ -547,8 +576,9 @@ cursor: "pointer",
     <div
       style={{
         color: "#f5c542",
-        fontSize: 17,
-        fontWeight: 700,
+fontWeight: "700",
+fontSize: 20,
+textShadow: "0 0 8px rgba(245,197,66,.25)",
       }}
     >
       {item.price} ₼
@@ -557,10 +587,11 @@ cursor: "pointer",
         {item.description && (
   <div
     style={{
-      marginTop: 8,
-      color: "#9f9f9f",
-      fontSize: 13,
-      lineHeight: 1.4,
+      color: "#9c9c9c",
+      fontSize: 14,
+      lineHeight: 1.5,
+      marginBottom: 10,
+      marginTop: 4,
     }}
   >
     {item.description}

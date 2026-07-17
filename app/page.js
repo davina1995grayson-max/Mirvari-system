@@ -540,19 +540,19 @@ cursor: "pointer",
   }}
 >
   <img
-    src={item.image || "/no-image.jpg"}
-    alt={item.name}
-    style={{
-  width: 110,
-  height: 110,
-  objectFit: "cover",
-  borderRadius: 18,
-  marginRight: 16,
-  border: "2px solid rgba(245,197,66,.25)",
-  boxShadow: "0 8px 20px rgba(0,0,0,.35)",
-  flexShrink: 0,
-}}
-  />
+  src={item.image || "/no-image.jpg"}
+  alt={item.name}
+  style={{
+    width: 120,
+    height: 120,
+    objectFit: "cover",
+    borderRadius: 22,
+    border: "2px solid rgba(245,197,66,.15)",
+    boxShadow:
+      "0 12px 30px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.03)",
+    flexShrink: 0,
+  }}
+/>
 
   <div
     style={{
@@ -562,13 +562,13 @@ cursor: "pointer",
   >
     <div
       style={{
-        fontSize: 19,
-fontWeight: "600",
-letterSpacing: 0.3,
-lineHeight: 1.3,
-        color: "#fff",
-        marginBottom: 8,
-      }}
+  fontSize: 22,
+  fontWeight: "700",
+  color: "#ffffff",
+  lineHeight: 1.25,
+  letterSpacing: ".2px",
+  marginBottom: 8,
+}}
     >
       {item.name}
     </div>
@@ -596,31 +596,33 @@ lineHeight: 1.3,
 >
   <div
     style={{
-      color: "#f5c542",
-      fontWeight: "700",
-      fontSize: 22,
-      textShadow: "0 0 8px rgba(245,197,66,.25)",
-    }}
+  color: "#F4C542",
+  fontSize: 24,
+  fontWeight: "700",
+  letterSpacing: ".3px",
+  textShadow: "0 0 14px rgba(244,197,66,.25)",
+}}
   >
     {item.price} ₼
   </div>
       <button
   onClick={(e) => addToCart(item, e)}
   style={{
-    width: 54,
-    height: 54,
-    borderRadius: 18,
-    border: "none",
-    background: "linear-gradient(180deg,#f8d86a,#d8a322)",
-    color: "#111",
-    fontSize: 32,
-    fontWeight: "700",
-    cursor: "pointer",
-    flexShrink: 0,
-    boxShadow:
-      "0 8px 20px rgba(245,197,66,.35), inset 0 1px 2px rgba(255,255,255,.4)",
-    transition: ".25s",
-  }}
+  width: 58,
+  height: 58,
+  borderRadius: 20,
+  border: "none",
+  background:
+    "linear-gradient(180deg,#FFE28A 0%,#F5C542 55%,#C99216 100%)",
+  color: "#111",
+  fontSize: 34,
+  fontWeight: "700",
+  cursor: "pointer",
+  flexShrink: 0,
+  boxShadow:
+    "0 12px 24px rgba(245,197,66,.35), inset 0 2px 3px rgba(255,255,255,.55)",
+  transition: ".25s",
+}}
 >
   +
 </button>

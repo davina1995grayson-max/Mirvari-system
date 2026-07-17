@@ -73,23 +73,21 @@ const handleLogoClick = () => {
   if (!isBrowser) return;
 
   const handleScroll = () => {
-    let current = null;
+  let current = menuData[0]?.title;
 
-    for (const section of menuData) {
-  const el = document.getElementById(section.title);
-  if (!el) continue;
+  menuData.forEach((section) => {
+    const el = document.getElementById(section.title);
+    if (!el) return;
 
-  const rect = el.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
 
-  if (rect.top <= 220) {
-    current = section.title;
-  } else {
-    break;
-  }
+    if (rect.top <= 220) {
+      current = section.title;
     }
+  });
 
-    if (current) setActiveCategory(current);
-  };
+  setActiveCategory(current);
+};
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);

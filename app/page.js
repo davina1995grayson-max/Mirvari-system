@@ -583,6 +583,18 @@ Zəhmət olmasa masanı seçin
 >
   {section.title}
 </h2>
+  <div
+  style={{
+    width: 70,
+    height: 3,
+    marginTop: 8,
+    background:
+      "linear-gradient(90deg,#f5c542,#fff0a6,#f5c542)",
+    borderRadius: 10,
+    boxShadow:
+      "0 0 12px rgba(245,197,66,.6)",
+  }}
+/>
   </div>
 )}
             {section.items

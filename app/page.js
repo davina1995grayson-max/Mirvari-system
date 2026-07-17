@@ -269,25 +269,27 @@ Zəhmət olmasa masanı seçin
 >
   <div
     style={{
-      width: 58,
-      height: 58,
-      borderRadius: "50%",
-      background: "rgba(245,197,66,.08)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      border: "1px solid rgba(245,197,66,.18)",
-      boxShadow: "0 0 20px rgba(245,197,66,.12)",
-      flexShrink: 0,
-    }}
+  width: 68,
+  height: 68,
+  borderRadius: "50%",
+  background:
+    "linear-gradient(180deg, rgba(255,255,255,.05), rgba(245,197,66,.08))",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  border: "1px solid rgba(245,197,66,.25)",
+  boxShadow:
+    "0 12px 28px rgba(0,0,0,.45), inset 0 1px 1px rgba(255,255,255,.05)",
+  flexShrink: 0,
+}}
   >
     <img
       src="/logo(1).png"
       alt="Mirvari"
       onClick={handleLogoClick}
       style={{
-        width: 42,
-        height: 42,
+        width: 52,
+        height: 52,
         objectFit: "contain",
         cursor: "pointer",
       }}
@@ -305,12 +307,13 @@ Zəhmət olmasa masanı seçin
       style={{
         color: "#f5c542",
         fontFamily: "'Playfair Display', serif",
-        fontSize: 34,
+        fontSize: 42,
         fontStyle: "italic",
-        fontWeight: 500,
+        fontWeight: 600,
         letterSpacing: 1,
         lineHeight: 1,
         textShadow: "0 2px 8px rgba(245,197,66,.25)",
+        filter: "drop-shadow(0 0 12px rgba(245,197,66,.2))",
       }}
     >
       Mirvari
@@ -319,14 +322,30 @@ Zəhmət olmasa masanı seçin
     <div
       style={{
         color: "#c9a64d",
-        fontSize: 11,
-        letterSpacing: 6,
+        fontSize: 13,
+        letterSpacing: 8,
         fontWeight: 700,
         marginTop: 3,
       }}
     >
       RESTAURANT
     </div>
+        <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 8,
+    color: "#d9b86a",
+    fontSize: 12,
+    fontWeight: 500,
+  }}
+>
+  ⭐⭐⭐⭐⭐
+  <span style={{ opacity: .75 }}>
+    Premium Restaurant
+  </span>
+</div>
   </div>
 </div>
   </div>

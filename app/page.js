@@ -439,14 +439,17 @@ Zəhmət olmasa masanı seçin
   OUR MENU
 </div>
   <div
-    style={{
-      display: "flex",
-      flexWrap: "wrap",
-      gap: 8,
-      padding: "8px 0",
-      justifyContent: "flex-start",
-    }}
-  >
+  style={{
+    display: "flex",
+    gap: 10,
+    overflowX: "auto",
+    overflowY: "hidden",
+    whiteSpace: "nowrap",
+    padding: "6px 2px",
+    scrollbarWidth: "none",
+    msOverflowStyle: "none",
+  }}
+>
     {menuData.map((section) => (
       <button
         key={section.title}
@@ -464,7 +467,8 @@ if (el) {
   });
 }
         }}
-        style={{
+        style={{     
+  flexShrink: 0,
   background:
     activeCategory === section.title
       ? "linear-gradient(135deg,#f5c542,#e0aa2b)"

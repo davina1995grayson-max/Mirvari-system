@@ -75,16 +75,18 @@ const handleLogoClick = () => {
   const handleScroll = () => {
     let current = null;
 
-    menuData.forEach((section) => {
-      const el = document.getElementById(section.title);
-      if (!el) return;
+    for (const section of menuData) {
+  const el = document.getElementById(section.title);
+  if (!el) continue;
 
-      const rect = el.getBoundingClientRect();
+  const rect = el.getBoundingClientRect();
 
-      if (rect.top <= 180 && rect.bottom > 180) {
-  current = section.title;
-      }
-    });
+  if (rect.top <= 220) {
+    current = section.title;
+  } else {
+    break;
+  }
+    }
 
     if (current) setActiveCategory(current);
   };

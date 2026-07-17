@@ -590,14 +590,15 @@ Zəhmət olmasa masanı seçin
 
  <div
   style={{
-    width: 180,
-    height: 3,
-    marginTop: 8,
+    width: "70%",
+    maxWidth: 170,
+    height: 2,
+    marginTop: 6,
     background:
-      "linear-gradient(90deg, #f5c542 0%, rgba(245,197,66,0.7) 35%, rgba(245,197,66,0.25) 70%, transparent 100%)",
+      "linear-gradient(90deg, #f5c542 0%, rgba(245,197,66,.5) 55%, transparent 100%)",
     borderRadius: 20,
     boxShadow:
-      "0 0 12px rgba(245,197,66,.45)",
+      "0 0 10px rgba(245,197,66,.35)",
   }}
 />
 </div>

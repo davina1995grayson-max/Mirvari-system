@@ -451,53 +451,53 @@ Zəhmət olmasa masanı seçin
     scrollbarWidth: "none",
     msOverflowStyle: "none",
   }}
->
-    {menuData.map((section) => (
-      <button
-        key={section.title}
-        onClick={() => {
-          setActiveCategory(section.title);
+>{menuData.map((section) => (
+  <button
+    key={section.title}
+    onClick={() => {
+      const el = document.getElementById(section.title);
 
-          const el = document.getElementById(section.title);
+      if (el) {
+        const y =
+          el.getBoundingClientRect().top +
+          window.pageYOffset -
+          280;
 
-if (el) {
-  const y = el.getBoundingClientRect().top + window.pageYOffset - 280;
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }
+    }}
+    style={{
+      flexShrink: 0,
+      background:
+        activeCategory === section.title
+          ? "linear-gradient(135deg,#f5c542,#e0aa2b)"
+          : "rgba(255,255,255,0.03)",
 
-  window.scrollTo({
-    top: y,
-    behavior: "smooth",
-  });
-}
-        }}
-        style={{     
-  flexShrink: 0,
-  background:
-    activeCategory === section.title
-      ? "linear-gradient(135deg,#f5c542,#e0aa2b)"
-      : "rgba(255,255,255,0.03)",
+      color:
+        activeCategory === section.title
+          ? "#111"
+          : "#f5c542",
 
-  color:
-    activeCategory === section.title
-      ? "#111"
-      : "#f5c542",
-
-  border: "1px solid rgba(245,197,66,0.25)",
-  padding: "10px 18px",
-  borderRadius: 18,
-  cursor: "pointer",
-  fontWeight: "700",
-  fontSize: 14,
-  whiteSpace: "nowrap",
-  transition: "all .25s ease",
-  boxShadow:
-  activeCategory === section.title
-    ? "0 10px 24px rgba(245,197,66,.45), inset 0 1px 1px rgba(255,255,255,.3)"
-    : "0 6px 18px rgba(0,0,0,.35)",
-}}
-      >
-        {section.title}
-      </button>
-    ))}
+      border: "1px solid rgba(245,197,66,0.25)",
+      padding: "10px 18px",
+      borderRadius: 18,
+      cursor: "pointer",
+      fontWeight: "700",
+      fontSize: 14,
+      whiteSpace: "nowrap",
+      transition: "all .25s ease",
+      boxShadow:
+        activeCategory === section.title
+          ? "0 10px 24px rgba(245,197,66,.45), inset 0 1px 1px rgba(255,255,255,.3)"
+          : "0 6px 18px rgba(0,0,0,.35)",
+    }}
+  >
+    {section.title}
+  </button>
+))}
   </div>
 </div>
 
@@ -512,7 +512,7 @@ if (el) {
     key={section.title}
     id={section.title}
     style={{
-      scrollMarginTop: 170,
+      scrollMarginTop: 230,
       marginBottom: 24,
     }}
   >

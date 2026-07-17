@@ -573,50 +573,60 @@ lineHeight: 1.3,
       {item.name}
     </div>
 
-    <div
-      style={{
-        color: "#f5c542",
-fontWeight: "700",
-fontSize: 20,
-textShadow: "0 0 8px rgba(245,197,66,.25)",
-      }}
-    >
-      {item.price} ₼
-    </div>
-
-        {item.description && (
+    {item.description && (
   <div
     style={{
       color: "#9c9c9c",
       fontSize: 14,
       lineHeight: 1.5,
-      marginBottom: 10,
-      marginTop: 4,
+      marginTop: 6,
+      marginBottom: 16,
     }}
   >
     {item.description}
   </div>
 )}
-  </div>
 
-  <button
-    onClick={(e) => addToCart(item, e)}
+<div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+  <div
     style={{
-      width: 48,
-      height: 48,
-      borderRadius: 16,
-      border: "none",
-      background: "linear-gradient(135deg,#f5c542,#e0aa2b)",
-      color: "#111",
-      fontSize: 28,
-      fontWeight: "bold",
-      cursor: "pointer",
-      flexShrink: 0,
-      boxShadow: "0 6px 18px rgba(245,197,66,.35)",
+      color: "#f5c542",
+      fontWeight: "700",
+      fontSize: 22,
+      textShadow: "0 0 8px rgba(245,197,66,.25)",
     }}
   >
-    +
-  </button>
+    {item.price} ₼
+  </div>
+      <button
+  onClick={(e) => addToCart(item, e)}
+  style={{
+    width: 54,
+    height: 54,
+    borderRadius: 18,
+    border: "none",
+    background: "linear-gradient(180deg,#f8d86a,#d8a322)",
+    color: "#111",
+    fontSize: 32,
+    fontWeight: "700",
+    cursor: "pointer",
+    flexShrink: 0,
+    boxShadow:
+      "0 8px 20px rgba(245,197,66,.35), inset 0 1px 2px rgba(255,255,255,.4)",
+    transition: ".25s",
+  }}
+>
+  +
+</button>
+</div>
+  </div>
+
 </div>
 </div>
               ))}

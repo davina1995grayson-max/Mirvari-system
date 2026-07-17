@@ -594,7 +594,7 @@ Zəhmət olmasa masanı seçin
     width: "100%",
     height: 3,
     background:
-      "linear-gradient(90deg, #f5c542 0%, #f5c542 35%, rgba(245,197,66,.45) 70%, transparent 100%)",
+      "linear-gradient(90deg, #f5c542 0%, #f5c542 45%, rgba(245,197,66,.35) 80%, transparent 100%)",
     borderRadius: 20,
     boxShadow:
       "0 0 12px rgba(245,197,66,.45)",

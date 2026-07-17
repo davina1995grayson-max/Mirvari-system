@@ -196,7 +196,6 @@ const addToCart = (item, e) => {
     fontWeight: 500,
   }}
 >
-Xoş gəlmisiniz 
 Zəhmət olmasa masanı seçin
 </p>
 
@@ -262,7 +261,7 @@ Zəhmət olmasa masanı seçin
     }}
   >
     <img
-      src="/logo.png"
+      src="/logo(1).png"
       alt="Mirvari"
       onClick={handleLogoClick}
       style={{

@@ -310,6 +310,7 @@ Zəhmət olmasa masanı seçin
   >
     Restaurant
   </div>
+      </div>
     </div>
   </div>
 

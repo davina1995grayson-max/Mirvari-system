@@ -410,6 +410,31 @@ Zəhmət olmasa masanı seçin
 </div>
 
 </header>
+<div
+  style={{
+    padding: "16px",
+    background: "#0b0b0b",
+  }}
+>
+  <input
+    type="text"
+    placeholder="🔍 Yemək axtar..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    style={{
+      width: "100%",
+      height: 52,
+      borderRadius: 18,
+      border: "1px solid rgba(245,197,66,.2)",
+      background: "#1b1b1b",
+      color: "#fff",
+      padding: "0 18px",
+      fontSize: 16,
+      outline: "none",
+      boxSizing: "border-box",
+    }}
+  />
+</div>
 
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div

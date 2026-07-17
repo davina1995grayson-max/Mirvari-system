@@ -414,16 +414,30 @@ Zəhmət olmasa masanı seçin
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div
   style={{
-    position: "sticky",
-    top: 150,
-    zIndex: 9999,
-    background: "#111",
-    padding: 12,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    boxShadow: "0 5px 15px rgba(0,0,0,0.4)",
+  position: "sticky",
+  top: 156,
+  zIndex: 9999,
+  background: "rgba(18,18,18,.95)",
+  backdropFilter: "blur(18px)",
+  padding: "14px 14px 12px",
+  borderBottomLeftRadius: 24,
+  borderBottomRightRadius: 24,
+  borderBottom: "1px solid rgba(245,197,66,.08)",
+  boxShadow: "0 12px 30px rgba(0,0,0,.45)",
+}}
+>
+  <div
+  style={{
+    color: "#c6a85d",
+    fontSize: 12,
+    letterSpacing: 4,
+    textTransform: "uppercase",
+    marginBottom: 10,
+    fontWeight: 600,
   }}
 >
+  OUR MENU
+</div>
   <div
     style={{
       display: "flex",
@@ -462,17 +476,17 @@ if (el) {
       : "#f5c542",
 
   border: "1px solid rgba(245,197,66,0.25)",
-  padding: "7px 14px",
-  borderRadius: 14,
+  padding: "10px 18px",
+  borderRadius: 18,
   cursor: "pointer",
-  fontWeight: "600",
-  fontSize: 13,
+  fontWeight: "700",
+  fontSize: 14,
   whiteSpace: "nowrap",
   transition: "all .25s ease",
   boxShadow:
-    activeCategory === section.title
-      ? "0 4px 14px rgba(245,197,66,.35)"
-      : "0 2px 8px rgba(0,0,0,.2)",
+  activeCategory === section.title
+    ? "0 10px 24px rgba(245,197,66,.45), inset 0 1px 1px rgba(255,255,255,.3)"
+    : "0 6px 18px rgba(0,0,0,.35)",
 }}
       >
         {section.title}

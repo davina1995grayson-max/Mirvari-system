@@ -566,16 +566,18 @@ Zəhmət olmasa masanı seçin
     />
 
     <h2
-      style={{
-        position: "absolute",
-        bottom: 18,
-        left: 20,
-        margin: 0,
-        color: "#fff",
-        fontSize: 28,
-        fontWeight: 700,
-        textShadow: "0 3px 10px rgba(0,0,0,.7)",
-      }}
+     style={{
+  position: "absolute",
+  bottom: 18,
+  left: 20,
+  margin: 0,
+  fontSize: 28,
+  fontWeight: 800,
+  color: "#f5c542",
+  letterSpacing: 1,
+  textShadow:
+    "0 2px 8px rgba(0,0,0,.8), 0 0 18px rgba(245,197,66,.45)",
+}}
     >
       {section.title}
     </h2>

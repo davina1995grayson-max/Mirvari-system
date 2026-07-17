@@ -566,21 +566,23 @@ Zəhmət olmasa masanı seçin
     />
 
     <h2
-     style={{
-  position: "absolute",
-  bottom: 18,
-  left: 20,
-  margin: 0,
-  fontSize: 28,
-  fontWeight: 800,
-  color: "#f5c542",
-  letterSpacing: 1,
-  textShadow:
-    "0 2px 8px rgba(0,0,0,.8), 0 0 18px rgba(245,197,66,.45)",
-}}
-    >
-      {section.title}
-    </h2>
+  style={{
+    position: "absolute",
+    bottom: 18,
+    left: 20,
+    margin: 0,
+    fontFamily: "'Cormorant Garamond', serif",
+    fontSize: 34,
+    fontStyle: "italic",
+    fontWeight: 700,
+    color: "#f5c542",
+    letterSpacing: 1,
+    textShadow:
+      "0 2px 8px rgba(0,0,0,.8), 0 0 18px rgba(245,197,66,.45)",
+  }}
+>
+  {section.title}
+</h2>
   </div>
 )}
             {section.items

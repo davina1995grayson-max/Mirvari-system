@@ -81,7 +81,7 @@ const handleLogoClick = () => {
 
       const rect = el.getBoundingClientRect();
 
-      if (rect.top <= 80 && rect.bottom >= 80) {
+      if (rect.top <= 40 && rect.bottom >= 40) {
         current = section.title;
       }
     });

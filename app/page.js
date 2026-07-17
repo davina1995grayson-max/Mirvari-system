@@ -459,7 +459,7 @@ Zəhmət olmasa masanı seçin
           const el = document.getElementById(section.title);
 
 if (el) {
-  const y = el.getBoundingClientRect().top + window.pageYOffset - 160;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - 180;
 
   window.scrollTo({
     top: y,

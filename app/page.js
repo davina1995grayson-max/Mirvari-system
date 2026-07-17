@@ -455,6 +455,7 @@ Zəhmət olmasa masanı seçin
   <button
     key={section.title}
     onClick={() => {
+      setActiveCategory(section.title);
       const el = document.getElementById(section.title);
 
       if (el) {

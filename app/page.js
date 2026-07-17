@@ -504,7 +504,9 @@ Zəhmət olmasa masanı seçin
       {/* MENU */}
 <div
   style={{
-    padding: "12px",
+    padding: "18px",
+    maxWidth: 900,
+    margin: "0 auto",
   }}
 >
 {menuData.map((section) => (
@@ -559,27 +561,17 @@ Zəhmət olmasa masanı seçin
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-
   padding: "26px",
-
   marginBottom: 22,
-
   background:
-    "linear-gradient(180deg,#1f1f1f 0%,#181818 45%,#121212 100%)",
-
+  "linear-gradient(180deg, rgba(33,33,33,.96), rgba(18,18,18,.98))",
   border: "1px solid rgba(245,197,66,.12)",
-
   borderRadius: 28,
-
   boxShadow:
-    "0 20px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03)",
-
+  "0 18px 40px rgba(0,0,0,.45), 0 0 1px rgba(255,255,255,.05)",
   transition: ".35s",
-
   overflow: "hidden",
-
   cursor: "pointer",
-
   position: "relative",
 }}
                 >

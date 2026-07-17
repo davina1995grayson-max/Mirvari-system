@@ -81,8 +81,8 @@ const handleLogoClick = () => {
 
       const rect = el.getBoundingClientRect();
 
-      if (rect.top <= 40 && rect.bottom >= 40) {
-        current = section.title;
+      if (rect.top <= 180 && rect.bottom > 180) {
+  current = section.title;
       }
     });
 
@@ -459,7 +459,7 @@ Zəhmət olmasa masanı seçin
           const el = document.getElementById(section.title);
 
 if (el) {
-  const y = el.getBoundingClientRect().top + window.pageYOffset - 400;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - 160;
 
   window.scrollTo({
     top: y,

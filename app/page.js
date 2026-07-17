@@ -520,38 +520,54 @@ if (el) {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "22px",
-  marginBottom: "18px",
-  background: "linear-gradient(180deg, #1b1b1b, #141414)",
-  border: "1px solid rgba(245,197,66,0.18)",
-  borderRadius: "24px",
-  boxShadow: "0 8px 24px rgba(0,0,0,.35)",
-transition: "0.25s",
-overflow: "hidden",
-cursor: "pointer",
+
+  padding: "26px",
+
+  marginBottom: 22,
+
+  background:
+    "linear-gradient(180deg,#1f1f1f 0%,#181818 45%,#121212 100%)",
+
+  border: "1px solid rgba(245,197,66,.12)",
+
+  borderRadius: 28,
+
+  boxShadow:
+    "0 20px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03)",
+
+  transition: ".35s",
+
+  overflow: "hidden",
+
+  cursor: "pointer",
+
+  position: "relative",
 }}
                 >
 <div
   style={{
-    display: "flex",
-    alignItems: "center",
-    width: "100%",
-    gap: 16,
-  }}
+  display: "flex",
+  alignItems: "center",
+  width: "100%",
+  gap: 22,
+}}
 >
   <img
   src={item.image || "/no-image.jpg"}
   alt={item.name}
   style={{
-    width: 120,
-    height: 120,
-    objectFit: "cover",
-    borderRadius: 22,
-    border: "2px solid rgba(245,197,66,.15)",
-    boxShadow:
-      "0 12px 30px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.03)",
-    flexShrink: 0,
-  }}
+  width: 125,
+  height: 125,
+  objectFit: "cover",
+  borderRadius: 24,
+  border: "2px solid rgba(245,197,66,.18)",
+  flexShrink: 0,
+
+  boxShadow:
+    "0 18px 35px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.03)",
+
+  transition: ".35s",
+}}
 />
 
   <div
@@ -571,17 +587,28 @@ cursor: "pointer",
 }}
     >
       {item.name}
-    </div>
-
+</div>
+<div
+  style={{
+    width: 36,
+    height: 2,
+    marginTop: 8,
+    marginBottom: 12,
+    borderRadius: 5,
+    background:
+      "linear-gradient(90deg,#f5c542,rgba(245,197,66,0))",
+  }}
+/>
     {item.description && (
   <div
     style={{
-      color: "#9c9c9c",
-      fontSize: 14,
-      lineHeight: 1.5,
-      marginTop: 6,
-      marginBottom: 16,
-    }}
+  color: "#b5b5b5",
+  fontSize: 15,
+  lineHeight: 1.7,
+  marginTop: 8,
+  marginBottom: 18,
+  opacity: .9,
+}}
   >
     {item.description}
   </div>
@@ -594,17 +621,30 @@ cursor: "pointer",
     alignItems: "center",
   }}
 >
+  <div>
   <div
     style={{
-  color: "#F4C542",
-  fontSize: 24,
-  fontWeight: "700",
-  letterSpacing: ".3px",
-  textShadow: "0 0 14px rgba(244,197,66,.25)",
-}}
+      color: "#777",
+      fontSize: 11,
+      letterSpacing: 2,
+      marginBottom: 4,
+      textTransform: "uppercase",
+    }}
+  >
+    Price
+  </div>
+
+  <div
+    style={{
+      color: "#F4C542",
+      fontSize: 26,
+      fontWeight: "700",
+      textShadow: "0 0 15px rgba(245,197,66,.25)",
+    }}
   >
     {item.price} ₼
   </div>
+</div>
       <button
   onClick={(e) => addToCart(item, e)}
   style={{
@@ -624,7 +664,7 @@ cursor: "pointer",
   transition: ".25s",
 }}
 >
-  +
+  ＋
 </button>
 </div>
   </div>

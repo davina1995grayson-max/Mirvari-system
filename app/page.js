@@ -155,6 +155,23 @@ const addToCart = (item, e) => {
     0
   );
 
+  const categoryImages = {
+  "🥗 Soyuq Qəlyanaltılar": "/category/soyuqqelyan.jpg",
+  "🥙 Salatlar": "/category/salad.jpg",
+  "🍲 Şorbalar": "/category/soup.jpg",
+  "🍔 Street Food / Fast Food": "/category/fastfood.jpg",
+  "🔥 İsti Qəlyanaltılar": "/category/istiqelyan.jpg",
+  "🍚 Qarnirlər": "/category/qarnir.jpg", 
+  "🍖 Sac": "/category/sac.jpg",
+  "🍢 Kabablar": "/category/kabab.jpg",
+  "🍛 İsti Yeməklər": "/category/istiyemek.jpg",
+  "🐟 Balıq Yeməkləri": "/category/fish.jpg",
+  "🍹 İçkilər": "/category/drink.jpg",
+  "🍰 Desertlər": "/category/desert.jpg",
+  "🍺 Pivə Məzələri": "/category/pivo.jpg",
+  "🍻 Pivə & İçkilər": "/category/vodka.jpg",
+};
+
   // ===== LOADING =====
   if (table === null) {
   return (
@@ -518,7 +535,20 @@ Zəhmət olmasa masanı seçin
       marginBottom: 24,
     }}
   >
-
+{categoryImages[section.title] && (
+  <img
+    src={categoryImages[section.title]}
+    alt={section.title}
+    style={{
+      width: "100%",
+      height: 180,
+      objectFit: "cover",
+      borderRadius: 22,
+      marginBottom: 18,
+      boxShadow: "0 10px 30px rgba(0,0,0,.35)",
+    }}
+  />
+)}
     <div
   style={{
     display: "flex",

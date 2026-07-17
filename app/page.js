@@ -452,6 +452,7 @@ Zəhmət olmasa masanı seçin
 >{menuData.map((section) => (
   <button
     key={section.title}
+    id={"cat-" + section.title}
     onClick={() => {
       setActiveCategory(section.title);
       const el = document.getElementById(section.title);

@@ -588,17 +588,16 @@ Zəhmət olmasa masanı seçin
     {section.title}
   </h2>
 
- <div
+<div
   style={{
-    width: "70%",
-    maxWidth: 170,
-    height: 2,
-    marginTop: 6,
+    marginTop: 10,
+    width: "75%",
+    height: 3,
     background:
-      "linear-gradient(90deg, #f5c542 0%, rgba(245,197,66,.5) 55%, transparent 100%)",
+      "linear-gradient(90deg, #f5c542 0%, #f5c542 35%, rgba(245,197,66,.45) 70%, transparent 100%)",
     borderRadius: 20,
     boxShadow:
-      "0 0 10px rgba(245,197,66,.35)",
+      "0 0 12px rgba(245,197,66,.45)",
   }}
 />
 </div>

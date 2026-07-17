@@ -275,25 +275,28 @@ Zəhmət olmasa masanı seçin
 
     <div>
       <div
-        style={{
-          color: "#f5c542",
-          fontSize: 30,
-          fontFamily: "Georgia, serif",
-          fontWeight: "bold",
-          textShadow:
-            "0 2px 4px rgba(0,0,0,.7), 0 0 12px rgba(245,197,66,.25)",
-          lineHeight: 1,
-        }}
-      >
-        Mirvari
-      </div>
+  style={{
+    color: "#f5c542",
+    fontSize: 34,
+    fontFamily: "'Playfair Display', serif",
+    fontStyle: "italic",
+    fontWeight: 700,
+    letterSpacing: 1,
+    textShadow:
+      "0 2px 6px rgba(0,0,0,.6), 0 0 14px rgba(245,197,66,.35)",
+    lineHeight: 1,
+  }}
+>
+  Mirvari
+</div>
 
       <div
         style={{
-          color: "#c9a64d",
-          fontSize: 12,
-          letterSpacing: 3,
-        }}
+  color: "#caa64b",
+  fontSize: 11,
+  letterSpacing: 5,
+  fontFamily: "'Inter', sans-serif",
+}}
       >
         RESTAURANT
       </div>

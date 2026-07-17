@@ -427,7 +427,8 @@ if (el) {
   style={{
     padding: "12px",
   }}
->{menuData.map((section) => (
+>
+{menuData.map((section) => (
   <div
     key={section.title}
     id={section.title}
@@ -437,18 +438,37 @@ if (el) {
     }}
   >
 
-    <h2
-      style={{
-        color: "#fff",
-        fontSize: 24,
-        fontWeight: "700",
-        marginBottom: 16,
-        marginTop: 8,
-      }}
-    >
-      {section.title}
-    </h2>
+    <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 14,
+    marginTop: 10,
+    marginBottom: 22,
+  }}
+>
+  <h2
+    style={{
+      color: "#f5c542",
+      fontSize: 24,
+      fontWeight: "700",
+      margin: 0,
+      whiteSpace: "nowrap",
+      textShadow: "0 2px 8px rgba(245,197,66,.25)",
+    }}
+  >
+    {section.title}
+  </h2>
 
+  <div
+    style={{
+      flex: 1,
+      height: 1,
+      background:
+        "linear-gradient(to right, rgba(245,197,66,.9), rgba(245,197,66,.05))",
+    }}
+  />
+</div>
             {section.items
               .filter((i) =>
                 i.name.toLowerCase().includes(search.toLowerCase())

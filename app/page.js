@@ -536,18 +536,50 @@ Zəhmət olmasa masanı seçin
     }}
   >
 {categoryImages[section.title] && (
-  <img
-    src={categoryImages[section.title]}
-    alt={section.title}
+  <div
     style={{
-      width: "100%",
+      position: "relative",
       height: 180,
-      objectFit: "cover",
       borderRadius: 22,
+      overflow: "hidden",
       marginBottom: 18,
       boxShadow: "0 10px 30px rgba(0,0,0,.35)",
     }}
-  />
+  >
+    <img
+      src={categoryImages[section.title]}
+      alt={section.title}
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+      }}
+    />
+
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        background:
+          "linear-gradient(to top, rgba(0,0,0,.75), transparent)",
+      }}
+    />
+
+    <h2
+      style={{
+        position: "absolute",
+        bottom: 18,
+        left: 20,
+        margin: 0,
+        color: "#fff",
+        fontSize: 28,
+        fontWeight: 700,
+        textShadow: "0 3px 10px rgba(0,0,0,.7)",
+      }}
+    >
+      {section.title}
+    </h2>
+  </div>
 )}
     <div
   style={{

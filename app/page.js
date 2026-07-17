@@ -565,36 +565,42 @@ Zəhmət olmasa masanı seçin
       }}
     />
 
-    <h2
+    <div
   style={{
     position: "absolute",
     bottom: 18,
     left: 20,
-    margin: 0,
-    fontFamily: "'Cormorant Garamond', serif",
-    fontSize: 34,
-    fontStyle: "italic",
-    fontWeight: 700,
-    color: "#f5c542",
-    letterSpacing: 1,
-    textShadow:
-      "0 2px 8px rgba(0,0,0,.8), 0 0 18px rgba(245,197,66,.45)",
   }}
 >
-  {section.title}
-</h2>
+  <h2
+    style={{
+      margin: 0,
+      fontFamily: "'Cormorant Garamond', serif",
+      fontSize: 34,
+      fontStyle: "italic",
+      fontWeight: 700,
+      color: "#f5c542",
+      letterSpacing: 1,
+      textShadow:
+        "0 2px 8px rgba(0,0,0,.8), 0 0 18px rgba(245,197,66,.45)",
+    }}
+  >
+    {section.title}
+  </h2>
+
   <div
-  style={{
-    width: 70,
-    height: 3,
-    marginTop: 8,
-    background:
-      "linear-gradient(90deg,#f5c542,#fff0a6,#f5c542)",
-    borderRadius: 10,
-    boxShadow:
-      "0 0 12px rgba(245,197,66,.6)",
-  }}
-/>
+    style={{
+      width: 80,
+      height: 3,
+      marginTop: 6,
+      background:
+        "linear-gradient(90deg,#f5c542,#fff0a6,#f5c542)",
+      borderRadius: 10,
+      boxShadow:
+        "0 0 12px rgba(245,197,66,.6)",
+    }}
+  />
+</div>
   </div>
 )}
             {section.items

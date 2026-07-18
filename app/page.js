@@ -621,7 +621,7 @@ Zəhmət olmasa masanı seçin
   border: "1px solid rgba(245,197,66,.12)",
   borderRadius: 28,
   boxShadow:
-  "0 18px 40px rgba(0,0,0,.45), 0 0 1px rgba(255,255,255,.05)",
+  "0 10px 30px rgba(0,0,0,.45), inset 0 0 25px rgba(245,197,66,.05)",
   transition: ".35s",
   overflow: "hidden",
   cursor: "pointer",

@@ -166,7 +166,7 @@ const addToCart = (item, e) => {
   "🍢 Kabablar": "/category/kabab.jpg",
   "🍛 İsti Yeməklər": "/category/istiyemek.jpg",
   "🐟 Balıq Yeməkləri": "/category/fish.jpg",
-  "🥤 İçkilər": "/categories/ickiler.jpg",
+  "🥤 İçkilər": "/category/ickiler.jpg",
   "🍰 Desertlər": "/category/desert.jpg",
   "🍺 Pivə Məzələri": "/category/pivo.jpg",
   "🍻 Pivə & İçkilər": "/category/vodka.jpg",

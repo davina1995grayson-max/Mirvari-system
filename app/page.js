@@ -365,9 +365,7 @@ Zəhmət olmasa masanı seçin
 </div>
   </div>
 </div>
-  </div>
-
-  <div
+        <div
 style={{
   display:"flex",
   gap:12,
@@ -434,6 +432,7 @@ style={{
     💳
   </button>
 </div>
+  </div>
 
 </header>
 

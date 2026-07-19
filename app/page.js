@@ -326,7 +326,7 @@ Zəhmət olmasa masanı seçin
         fontFamily: "'Playfair Display', serif",
         fontSize: 42,
         fontStyle: "italic",
-        fontWeight: 600,
+        fontWeight: 300,
         letterSpacing: 1,
         lineHeight: 1,
         textShadow: "0 2px 8px rgba(245,197,66,.25)",

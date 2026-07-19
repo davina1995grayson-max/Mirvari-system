@@ -251,29 +251,7 @@ Zəhmət olmasa masanı seçin
   return (
   <div
     style={{
-     background: `
-linear-gradient(
-120deg,
-rgba(255,255,255,0.95),
-rgba(245,240,230,0.95)
-),
-repeating-linear-gradient(
-115deg,
-transparent 0px,
-transparent 120px,
-rgba(120,120,120,0.12) 125px,
-transparent 135px,
-transparent 220px
-),
-repeating-linear-gradient(
-35deg,
-transparent 0px,
-transparent 180px,
-rgba(212,170,70,0.18) 185px,
-transparent 200px,
-transparent 350px
-)
-`,
+     background: "#faf8f4",
 minHeight: "100vh",
       color: "#222",
     }}

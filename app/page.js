@@ -258,15 +258,26 @@ Zəhmət olmasa masanı seçin
     
 <header
   style={{
+  style={{
   position: "sticky",
   top: 0,
   zIndex: 10000,
-  background: "rgba(255,255,255,.82)",
-  backdropFilter: "blur(18px)",
-  WebkitBackdropFilter: "blur(18px)",
-  padding: "14px 18px",
-  borderBottom: "1px solid rgba(212,175,55,.25)",
-  boxShadow: "0 8px 30px rgba(0,0,0,.06)",
+
+  background: `
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.98), transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(245,223,170,.35), transparent 40%),
+    linear-gradient(135deg,#fffefc 0%,#faf7f1 35%,#fdfbf8 70%,#fffefc 100%)
+  `,
+
+  backdropFilter: "blur(20px)",
+  WebkitBackdropFilter: "blur(20px)",
+
+  padding: "18px 20px",
+
+  borderBottom: "1px solid rgba(212,175,55,.22)",
+
+  boxShadow:
+    "0 12px 35px rgba(0,0,0,.05), inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 8px rgba(212,175,55,.08)",
 }}
 >
 

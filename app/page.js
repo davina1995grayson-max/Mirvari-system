@@ -251,8 +251,16 @@ Zəhmət olmasa masanı seçin
   return (
   <div
     style={{
-      background:
-        "linear-gradient(180deg,#0b0b0b 0%, #131313 35%, #191919 100%)",
+      background: `
+linear-gradient(
+135deg,
+#faf8f4 0%,
+#f4f1eb 25%,
+#ffffff 50%,
+#f8f6f2 75%,
+#fdfcf9 100%
+)`,
+minHeight: "100vh",
       color: "white",
       minHeight: "100vh",
     }}

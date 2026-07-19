@@ -251,22 +251,27 @@ Zəhmət olmasa masanı seçin
   return (
   <div
     style={{
-      background: `
+     background: `
 linear-gradient(
-135deg,
-#faf8f4 0%,
-#ffffff 25%,
-#f5efe5 50%,
-#ffffff 75%,
-#faf8f4 100%
+120deg,
+rgba(255,255,255,0.95),
+rgba(245,240,230,0.95)
 ),
-linear-gradient(
-45deg,
-transparent 20%,
-rgba(80,80,80,0.08) 35%,
-transparent 50%,
-rgba(245,197,66,0.12) 65%,
-transparent 80%
+repeating-linear-gradient(
+115deg,
+transparent 0px,
+transparent 120px,
+rgba(120,120,120,0.12) 125px,
+transparent 135px,
+transparent 220px
+),
+repeating-linear-gradient(
+35deg,
+transparent 0px,
+transparent 180px,
+rgba(212,170,70,0.18) 185px,
+transparent 200px,
+transparent 350px
 )
 `,
 minHeight: "100vh",

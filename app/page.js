@@ -258,13 +258,16 @@ Zəhmət olmasa masanı seçin
     
 <header
   style={{
-    position: "sticky",
-    top: 0,
-    zIndex: 10000,
-    background: "#0b0b0b",
-    padding: "10px 16px",
-    borderBottom: "1px solid rgba(245,197,66,.15)",
-  }}
+  position: "sticky",
+  top: 0,
+  zIndex: 10000,
+  background: "rgba(255,255,255,.82)",
+  backdropFilter: "blur(18px)",
+  WebkitBackdropFilter: "blur(18px)",
+  padding: "14px 18px",
+  borderBottom: "1px solid rgba(212,175,55,.25)",
+  boxShadow: "0 8px 30px rgba(0,0,0,.06)",
+}}
 >
 
   <div
@@ -284,17 +287,14 @@ Zəhmət olmasa masanı seçin
 >
   <div
     style={{
-  width: 68,
-  height: 68,
+  width: 60,
+  height: 60,
   borderRadius: "50%",
-  background:
-    "linear-gradient(180deg, rgba(255,255,255,.05), rgba(245,197,66,.08))",
-  display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  border: "1px solid rgba(245,197,66,.25)",
-  boxShadow:
-    "0 12px 28px rgba(0,0,0,.45), inset 0 1px 1px rgba(255,255,255,.05)",
+  background: "rgba(255,255,255,.92)",
+  border: "1px solid rgba(212,175,55,.35)",
+  boxShadow: "0 10px 30px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.9)",
   flexShrink: 0,
 }}
   >
@@ -320,14 +320,14 @@ Zəhmət olmasa masanı seçin
   >
     <div
       style={{
-        color: "#f5c542",
+        color: "#b88a2a",
         fontFamily: "'Playfair Display', serif",
-        fontSize: 42,
+        fontSize: 38,
         fontStyle: "italic",
         fontWeight: 300,
         letterSpacing: 1,
         lineHeight: 1,
-        textShadow: "0 2px 8px rgba(245,197,66,.25)",
+        textShadow: "0 2px 10px rgba(184,138,42,.15)",
         filter: "drop-shadow(0 0 12px rgba(245,197,66,.2))",
       }}
     >

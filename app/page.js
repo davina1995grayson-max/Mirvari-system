@@ -333,7 +333,7 @@ Zəhmət olmasa masanı seçin
         filter: "drop-shadow(0 0 12px rgba(245,197,66,.2))",
       }}
     >
-      ˙·٠•●𝓜 𝓲 𝓻 𝓿 𝓪 𝓻 𝓲 ●•٠·˙
+      𝓜 𝓲 𝓻 𝓿 𝓪 𝓻 𝓲
     </div>
 
     <div

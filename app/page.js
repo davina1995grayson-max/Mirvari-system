@@ -388,14 +388,14 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 44,
-  height: 44,
+  width: 36,
+  height: 36,
   borderRadius: "50%",
   background: "linear-gradient(145deg, rgba(245,197,66,.25), rgba(245,197,66,.05))",
   color: "#f5c542",
   border: "1px solid rgba(245,197,66,.5)",
   fontWeight: 700,
-  fontSize: 20,
+  fontSize: 16,
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
@@ -422,13 +422,13 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 44,
-  height: 44,
+  width: 36,
+  height: 36,
   borderRadius: "50%",
   background: "transparent",
   color: "#f5c542",
   border: "1px solid rgba(245,197,66,.5)",
-  fontSize: 20,
+  fontSize: 16,
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
@@ -455,13 +455,13 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 44,
-  height: 44,
+  width: 36,
+  height: 36,
   borderRadius: "50%",
   background: "transparent",
   color: "#f5c542",
   border: "1px solid rgba(245,197,66,.5)",
-  fontSize: 20,
+  fontSize: 16,
   cursor: "pointer",
   display: "flex",
   alignItems: "center",

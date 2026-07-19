@@ -258,7 +258,6 @@ Zəhmət olmasa masanı seçin
     
 <header
   style={{
-  style={{
   position: "sticky",
   top: 0,
   zIndex: 10000,

@@ -255,14 +255,22 @@ Zəhmət olmasa masanı seçin
 linear-gradient(
 135deg,
 #faf8f4 0%,
-#f4f1eb 25%,
-#ffffff 50%,
-#f8f6f2 75%,
-#fdfcf9 100%
-)`,
+#ffffff 25%,
+#f5efe5 50%,
+#ffffff 75%,
+#faf8f4 100%
+),
+linear-gradient(
+45deg,
+transparent 20%,
+rgba(80,80,80,0.08) 35%,
+transparent 50%,
+rgba(245,197,66,0.12) 65%,
+transparent 80%
+)
+`,
 minHeight: "100vh",
-      color: "white",
-      minHeight: "100vh",
+      color: "#222",
     }}
   >
     

@@ -411,7 +411,6 @@ style={{
   alignItems: "center",
   justifyContent: "center",
 }}
-    }}
   >
     🔔
   </button>
@@ -431,7 +430,6 @@ style={{
   alignItems: "center",
   justifyContent: "center",
 }}
-    }}
   >
     💳
   </button>

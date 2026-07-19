@@ -250,9 +250,8 @@ Zəhmət olmasa masanı seçin
   // ===== UI =====
   return (
   <div
+    className="marble-background"
     style={{
-     background: "#faf8f4",
-minHeight: "100vh",
       color: "#222",
     }}
   >

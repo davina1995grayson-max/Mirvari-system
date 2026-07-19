@@ -392,7 +392,6 @@ style={{
   justifyContent: "center",
   boxShadow: "0 0 15px rgba(245,197,66,.45)",
 }}
-    }}
   >
     🪑
   </button>

@@ -368,7 +368,7 @@ Zəhmət olmasa masanı seçin
         <div
 style={{
   display:"flex",
-  gap:12,
+  gap:6,
   justifyContent:"flex-end",
   alignItems:"center",
 }}

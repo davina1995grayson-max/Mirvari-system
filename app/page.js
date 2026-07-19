@@ -375,6 +375,18 @@ style={{
 >
   <button
     onClick={() => setTable(null)}
+
+onMouseDown={(e) => {
+  e.currentTarget.style.transform = "scale(0.88)";
+}}
+
+onMouseUp={(e) => {
+  e.currentTarget.style.transform = "scale(1)";
+}}
+
+onMouseLeave={(e) => {
+  e.currentTarget.style.transform = "scale(1)";
+}}
     style={{
   width: 44,
   height: 44,
@@ -388,8 +400,8 @@ style={{
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  boxShadow:
-  "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
+  boxShadow: "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
+  transition: "transform .15s ease, box-shadow .15s ease",
 }}
   >
     🪑
@@ -397,6 +409,18 @@ style={{
 
   <button
     onClick={callWaiter}
+
+onMouseDown={(e) => {
+  e.currentTarget.style.transform = "scale(0.88)";
+}}
+
+onMouseUp={(e) => {
+  e.currentTarget.style.transform = "scale(1)";
+}}
+
+onMouseLeave={(e) => {
+  e.currentTarget.style.transform = "scale(1)";
+}}
     style={{
   width: 44,
   height: 44,
@@ -409,8 +433,8 @@ style={{
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-boxShadow:
-  "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
+  boxShadow:"0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
+  transition: "transform .15s ease, box-shadow .15s ease",
 }}
   >
     🔔
@@ -418,6 +442,18 @@ boxShadow:
 
   <button
     onClick={callBill}
+
+onMouseDown={(e) => {
+  e.currentTarget.style.transform = "scale(0.88)";
+}}
+
+onMouseUp={(e) => {
+  e.currentTarget.style.transform = "scale(1)";
+}}
+
+onMouseLeave={(e) => {
+  e.currentTarget.style.transform = "scale(1)";
+}}
     style={{
   width: 44,
   height: 44,
@@ -430,8 +466,8 @@ boxShadow:
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
- boxShadow:
-  "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
+  boxShadow: "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
+  transition: "transform .15s ease, box-shadow .15s ease",
 }}
   >
     💳

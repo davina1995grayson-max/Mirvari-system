@@ -368,61 +368,73 @@ Zəhmət olmasa masanı seçin
   </div>
 
   <div
-  style={{
-    display: "flex",
-    gap: 10,
-    marginTop: 4,
-  }}
+style={{
+  display:"flex",
+  gap:12,
+  justifyContent:"flex-end",
+  alignItems:"center",
+}}
 >
   <button
     onClick={() => setTable(null)}
     style={{
-      flex: 1,
-      height: 44,
-      borderRadius: 22,
-      background: "#f5c542",
-      color: "#111",
-      border: "none",
-      fontWeight: 700,
-      fontSize: 14,
-      cursor: "pointer",
+  width: 48,
+  height: 48,
+  borderRadius: "50%",
+  background: "#f5c542",
+  color: "#111",
+  border: "none",
+  fontWeight: 700,
+  fontSize: 20,
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0 0 15px rgba(245,197,66,.45)",
+}}
     }}
   >
-    🔄 Masa
+    🪑
   </button>
 
   <button
     onClick={callWaiter}
     style={{
-      flex: 1,
-      height: 44,
-      borderRadius: 22,
-      background: "transparent",
-      color: "#f5c542",
-      border: "1px solid rgba(245,197,66,.4)",
-      fontWeight: 600,
-      fontSize: 14,
-      cursor: "pointer",
+  width: 48,
+  height: 48,
+  borderRadius: "50%",
+  background: "transparent",
+  color: "#f5c542",
+  border: "1px solid rgba(245,197,66,.5)",
+  fontSize: 20,
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}}
     }}
   >
-    🔔 Ofisiant
+    🔔
   </button>
 
   <button
     onClick={callBill}
     style={{
-      flex: 1,
-      height: 44,
-      borderRadius: 22,
-      background: "transparent",
-      color: "#f5c542",
-      border: "1px solid rgba(245,197,66,.4)",
-      fontWeight: 600,
-      fontSize: 14,
-      cursor: "pointer",
+  width: 48,
+  height: 48,
+  borderRadius: "50%",
+  background: "transparent",
+  color: "#f5c542",
+  border: "1px solid rgba(245,197,66,.5)",
+  fontSize: 20,
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}}
     }}
   >
-    💳 Hesab
+    💳
   </button>
 </div>
 

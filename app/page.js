@@ -376,19 +376,20 @@ style={{
   <button
     onClick={() => setTable(null)}
     style={{
-  width: 48,
-  height: 48,
+  width: 44,
+  height: 44,
   borderRadius: "50%",
-  background: "#f5c542",
-  color: "#111",
-  border: "none",
+  background: "linear-gradient(145deg, rgba(245,197,66,.25), rgba(245,197,66,.05))",
+  color: "#f5c542",
+  border: "1px solid rgba(245,197,66,.5)",
   fontWeight: 700,
   fontSize: 20,
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  boxShadow: "0 0 15px rgba(245,197,66,.45)",
+  boxShadow:
+  "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
 }}
   >
     🪑
@@ -397,8 +398,8 @@ style={{
   <button
     onClick={callWaiter}
     style={{
-  width: 48,
-  height: 48,
+  width: 44,
+  height: 44,
   borderRadius: "50%",
   background: "transparent",
   color: "#f5c542",
@@ -408,6 +409,8 @@ style={{
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+boxShadow:
+  "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
 }}
   >
     🔔
@@ -416,8 +419,8 @@ style={{
   <button
     onClick={callBill}
     style={{
-  width: 48,
-  height: 48,
+  width: 44,
+  height: 44,
   borderRadius: "50%",
   background: "transparent",
   color: "#f5c542",
@@ -427,6 +430,8 @@ style={{
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+ boxShadow:
+  "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
 }}
   >
     💳

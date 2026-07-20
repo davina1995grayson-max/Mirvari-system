@@ -11,14 +11,10 @@
 .marble-background {
   min-height: 100vh;
 
-  background-image:
-  linear-gradient(
-    rgba(255,255,255,0.35),
-    rgba(255,255,255,0.35)
-  ),
-  url("/images/pearl-background.webp");
-
+  background-image: url("/images/marble-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+
+  background-attachment: fixed;
 }

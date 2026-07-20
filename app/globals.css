@@ -11,46 +11,14 @@
 .marble-background {
   min-height: 100vh;
 
-  background:
-    radial-gradient(
-      ellipse at 15% 20%,
-      rgba(255,255,255,.95),
-      transparent 35%
-    ),
+  background-image:
+  linear-gradient(
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.35)
+  ),
+  url("/images/pearl-background.webp");
 
-    radial-gradient(
-      ellipse at 85% 80%,
-      rgba(218,180,80,.18),
-      transparent 35%
-    ),
-
-    linear-gradient(
-      120deg,
-      transparent 35%,
-      rgba(190,160,100,.18) 38%,
-      transparent 42%
-    ),
-
-    linear-gradient(
-      35deg,
-      transparent 45%,
-      rgba(160,140,110,.12) 48%,
-      transparent 52%
-    ),
-
-    linear-gradient(
-      135deg,
-      #f6f0e5,
-      #fffdf8 45%,
-      #efe6d7
-    );
-
-  background-size:
-    100% 100%,
-    100% 100%,
-    700px 700px,
-    900px 900px,
-    100% 100%;
-
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
 }

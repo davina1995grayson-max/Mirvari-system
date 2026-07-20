@@ -414,7 +414,6 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  wistyle={{
   width: 48,
   height: 48,
   borderRadius: "50%",

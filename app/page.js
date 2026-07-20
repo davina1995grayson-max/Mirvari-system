@@ -262,10 +262,39 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 10000,
 
-    backgroundImage: "url('/images/pearl-header.webp')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
+   background: `
+  radial-gradient(
+    ellipse at 20% 20%,
+    rgba(255,255,255,1),
+    transparent 35%
+  ),
+  radial-gradient(
+    ellipse at 80% 70%,
+    rgba(212,175,55,.18),
+    transparent 30%
+  ),
+  linear-gradient(
+    125deg,
+    transparent 30%,
+    rgba(190,160,100,.18) 42%,
+    transparent 50%
+  ),
+  linear-gradient(
+    45deg,
+    transparent 55%,
+    rgba(255,255,255,.8) 65%,
+    transparent 75%
+  ),
+  linear-gradient(
+    135deg,
+    #f1eadc,
+    #fffaf0 45%,
+    #e9ddc8
+  )
+`,
+
+backgroundSize: "cover",
+backgroundPosition: "center",
 
     backdropFilter: "blur(18px)",
     WebkitBackdropFilter: "blur(18px)",

@@ -291,7 +291,6 @@ Zəhmət olmasa masanı seçin
     `,
   }}
 >
->
 
   <div
   style={{

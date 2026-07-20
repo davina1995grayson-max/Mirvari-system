@@ -262,35 +262,46 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 10000,
 
-   background: `
-  radial-gradient(
-    ellipse at 20% 20%,
-    rgba(255,255,255,1),
-    transparent 35%
-  ),
-  radial-gradient(
-    ellipse at 80% 70%,
-    rgba(212,175,55,.18),
-    transparent 30%
-  ),
-  linear-gradient(
-    125deg,
-    transparent 30%,
-    rgba(190,160,100,.18) 42%,
-    transparent 50%
-  ),
-  linear-gradient(
-    45deg,
-    transparent 55%,
-    rgba(255,255,255,.8) 65%,
-    transparent 75%
-  ),
-  linear-gradient(
-    135deg,
-    #f1eadc,
-    #fffaf0 45%,
-    #e9ddc8
-  )
+  background: `
+radial-gradient(
+  ellipse at 20% 30%,
+  rgba(255,255,255,.95),
+  transparent 35%
+),
+
+radial-gradient(
+  ellipse at 80% 40%,
+  rgba(240,220,170,.35),
+  transparent 30%
+),
+
+linear-gradient(
+  120deg,
+  transparent 35%,
+  rgba(190,150,70,.20) 37%,
+  transparent 39%
+),
+
+linear-gradient(
+  60deg,
+  transparent 55%,
+  rgba(210,180,120,.18) 57%,
+  transparent 59%
+),
+
+linear-gradient(
+  140deg,
+  transparent 20%,
+  rgba(255,255,255,.8) 45%,
+  transparent 70%
+),
+
+linear-gradient(
+  135deg,
+  #efe4d0,
+  #fffaf1 45%,
+  #eadbc2
+)
 `,
 
 backgroundSize: "cover",
@@ -313,11 +324,10 @@ backgroundPosition: "center",
     borderBottom: "1px solid rgba(212,175,55,.25)",
 
     boxShadow: `
-      0 15px 40px rgba(0,0,0,.08),
-      0 3px 10px rgba(212,175,55,.08),
-      inset 0 1px 0 rgba(255,255,255,.95),
-      inset 0 -2px 8px rgba(255,255,255,.6)
-    `,
+0 20px 45px rgba(80,60,30,.12),
+0 0 30px rgba(212,175,55,.15),
+inset 0 2px 15px rgba(255,255,255,.9)
+`,
   }}
 >
 

@@ -257,7 +257,6 @@ Zəhmət olmasa masanı seçin
   >
     
 <header
-  <header
   style={{
     position: "sticky",
     top: 0,

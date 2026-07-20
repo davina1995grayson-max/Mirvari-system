@@ -348,12 +348,12 @@ rgba(242,235,220,.9) 100%)
   >
     <div
       style={{
-        color: "#b88a2a",
+        color: "#9d7424",
         fontFamily: "'Playfair Display', serif",
-        fontSize: 38,
+        fontSize: 42,
+        letterSpacing: 0.5,
         fontStyle: "italic",
         fontWeight: 300,
-        letterSpacing: 1,
         lineHeight: 1,
         textShadow: "0 2px 10px rgba(184,138,42,.15)",
         filter: "drop-shadow(0 0 12px rgba(245,197,66,.2))",
@@ -364,9 +364,9 @@ rgba(242,235,220,.9) 100%)
 
     <div
       style={{
-        color: "#c9a64d",
+        color: "#b4934d",
         fontSize: 13,
-        letterSpacing: 8,
+        letterSpacing: 10,
         fontWeight: 700,
         marginTop: 3,
       }}
@@ -414,20 +414,29 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 36,
-  height: 36,
+  wistyle={{
+  width: 48,
+  height: 48,
   borderRadius: "50%",
-  background: "linear-gradient(145deg, rgba(245,197,66,.25), rgba(245,197,66,.05))",
-  color: "#f5c542",
-  border: "1px solid rgba(245,197,66,.5)",
-  fontWeight: 700,
-  fontSize: 16,
+  background: `
+    radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,1),
+    rgba(250,247,241,.98) 55%,
+    rgba(242,235,220,.92) 100%)
+  `,
+  color: "#b88a2a",
+  border: "1px solid rgba(212,175,55,.25)",
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  boxShadow: "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
-  transition: "transform .15s ease, box-shadow .15s ease",
+  fontSize: 20,
+  boxShadow: `
+    0 8px 20px rgba(0,0,0,.08),
+    inset 0 2px 4px rgba(255,255,255,.95),
+    inset 0 -2px 6px rgba(212,175,55,.08)
+  `,
+  transition: "all .2s ease",
 }}
   >
     🪑
@@ -448,19 +457,28 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 36,
-  height: 36,
+  width: 48,
+  height: 48,
   borderRadius: "50%",
-  background: "transparent",
-  color: "#f5c542",
-  border: "1px solid rgba(245,197,66,.5)",
-  fontSize: 16,
+  background: `
+    radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,1),
+    rgba(250,247,241,.98) 55%,
+    rgba(242,235,220,.92) 100%)
+  `,
+  color: "#b88a2a",
+  border: "1px solid rgba(212,175,55,.25)",
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  boxShadow:"0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
-  transition: "transform .15s ease, box-shadow .15s ease",
+  fontSize: 20,
+  boxShadow: `
+    0 8px 20px rgba(0,0,0,.08),
+    inset 0 2px 4px rgba(255,255,255,.95),
+    inset 0 -2px 6px rgba(212,175,55,.08)
+  `,
+  transition: "all .2s ease",
 }}
   >
     🔔
@@ -481,19 +499,28 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 36,
-  height: 36,
+  width: 48,
+  height: 48,
   borderRadius: "50%",
-  background: "transparent",
-  color: "#f5c542",
-  border: "1px solid rgba(245,197,66,.5)",
-  fontSize: 16,
+  background: `
+    radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,1),
+    rgba(250,247,241,.98) 55%,
+    rgba(242,235,220,.92) 100%)
+  `,
+  color: "#b88a2a",
+  border: "1px solid rgba(212,175,55,.25)",
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  boxShadow: "0 0 15px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.15)",
-  transition: "transform .15s ease, box-shadow .15s ease",
+  fontSize: 20,
+  boxShadow: `
+    0 8px 20px rgba(0,0,0,.08),
+    inset 0 2px 4px rgba(255,255,255,.95),
+    inset 0 -2px 6px rgba(212,175,55,.08)
+  `,
+  transition: "all .2s ease",
 }}
   >
     💳

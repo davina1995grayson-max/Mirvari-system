@@ -272,12 +272,24 @@ Zəhmət olmasa masanı seçin
   WebkitBackdropFilter: "blur(20px)",
 
   padding: "18px 20px",
+ borderBottomLeftRadius: 30,
+borderBottomRightRadius: 30,
+
+marginLeft: 12,
+marginRight: 12,
+marginTop: 10,
+
+overflow: "hidden", 
 
   borderBottom: "1px solid rgba(212,175,55,.22)",
-
-  boxShadow:
-    "0 12px 35px rgba(0,0,0,.05), inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 8px rgba(212,175,55,.08)",
-}}
+boxShadow:
+`
+0 15px 40px rgba(0,0,0,.08),
+0 3px 10px rgba(212,175,55,.08),
+inset 0 1px 0 rgba(255,255,255,.95),
+inset 0 -2px 8px rgba(255,255,255,.6)
+`,
+  }}
 >
 
   <div
@@ -302,7 +314,13 @@ Zəhmət olmasa masanı seçin
   borderRadius: "50%",
   justifyContent: "center",
   alignItems: "center",
-  background: "rgba(255,255,255,.92)",
+  background: `
+radial-gradient(circle at 30% 30%,
+rgba(255,255,255,1),
+rgba(253,250,245,.95) 55%,
+rgba(242,235,220,.9) 100%)
+`,
+      backdropFilter: "blur(10px)",
   border: "1px solid rgba(212,175,55,.35)",
   boxShadow: "0 10px 30px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.9)",
   flexShrink: 0,

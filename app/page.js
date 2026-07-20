@@ -262,50 +262,43 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 10000,
 
-  background: `
+background: `
 radial-gradient(
-  ellipse at 20% 30%,
-  rgba(255,255,255,.95),
+  ellipse at 30% 40%,
+  rgba(255,255,255,0.95) 0%,
+  transparent 45%
+),
+
+radial-gradient(
+  ellipse at 75% 20%,
+  rgba(235,210,160,0.25),
   transparent 35%
 ),
 
-radial-gradient(
-  ellipse at 80% 40%,
-  rgba(240,220,170,.35),
-  transparent 30%
+linear-gradient(
+  110deg,
+  transparent 0%,
+  rgba(180,150,90,0.12) 18%,
+  transparent 35%
 ),
 
 linear-gradient(
-  120deg,
-  transparent 35%,
-  rgba(190,150,70,.20) 37%,
-  transparent 39%
-),
-
-linear-gradient(
-  60deg,
-  transparent 55%,
-  rgba(210,180,120,.18) 57%,
-  transparent 59%
-),
-
-linear-gradient(
-  140deg,
+  250deg,
   transparent 20%,
-  rgba(255,255,255,.8) 45%,
-  transparent 70%
+  rgba(255,255,255,0.8) 40%,
+  transparent 60%
 ),
 
 linear-gradient(
   135deg,
-  #efe4d0,
-  #fffaf1 45%,
-  #eadbc2
+  #eee3d1,
+  #fffaf2 45%,
+  #e8dcc8
 )
 `,
-
 backgroundSize: "cover",
 backgroundPosition: "center",
+backgroundBlendMode: "soft-light, normal, overlay, normal, normal",
 
     backdropFilter: "blur(18px)",
     WebkitBackdropFilter: "blur(18px)",

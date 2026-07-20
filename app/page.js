@@ -257,39 +257,41 @@ Zəhmət olmasa masanı seçin
   >
     
 <header
+  <header
   style={{
-  position: "sticky",
-  top: 0,
-  zIndex: 10000,
+    position: "sticky",
+    top: 0,
+    zIndex: 10000,
 
-  background: `
-    radial-gradient(circle at 15% 20%, rgba(255,255,255,.98), transparent 35%),
-    radial-gradient(circle at 85% 80%, rgba(245,223,170,.35), transparent 40%),
-    linear-gradient(135deg,#fffefc 0%,#faf7f1 35%,#fdfbf8 70%,#fffefc 100%)
-  `,
+    backgroundImage: "url('/images/pearl-header.webp')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
 
-  backdropFilter: "blur(20px)",
-  WebkitBackdropFilter: "blur(20px)",
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
 
-  padding: "18px 20px",
- borderBottomLeftRadius: 30,
-borderBottomRightRadius: 30,
+    padding: "18px 20px",
 
-marginLeft: 12,
-marginRight: 12,
-marginTop: 10,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
 
-overflow: "hidden", 
+    marginLeft: 12,
+    marginRight: 12,
+    marginTop: 10,
 
-  borderBottom: "1px solid rgba(212,175,55,.22)",
-boxShadow:
-`
-0 15px 40px rgba(0,0,0,.08),
-0 3px 10px rgba(212,175,55,.08),
-inset 0 1px 0 rgba(255,255,255,.95),
-inset 0 -2px 8px rgba(255,255,255,.6)
-`,
+    overflow: "hidden",
+
+    borderBottom: "1px solid rgba(212,175,55,.25)",
+
+    boxShadow: `
+      0 15px 40px rgba(0,0,0,.08),
+      0 3px 10px rgba(212,175,55,.08),
+      inset 0 1px 0 rgba(255,255,255,.95),
+      inset 0 -2px 8px rgba(255,255,255,.6)
+    `,
   }}
+>
 >
 
   <div

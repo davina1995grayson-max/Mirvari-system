@@ -589,7 +589,6 @@ onMouseLeave={(e) => {
   </div>
 </div>
 </div>
-</div>
 
       {/* MENU */}
 <div

@@ -497,14 +497,34 @@ onMouseLeave={(e) => {
 
 </div>
 
-{/* ULTRA MOBILE CATEGORY BAR */}
+{/* CATEGORY BAR */}
 <div
   style={{
-  padding: "0 20px 10px",
-  marginTop: 0,
-  marginBottom: 8,
-}}
+    position: "sticky",
+    top: 0,
+    zIndex: 9998,
+
+    padding: "0 20px 18px",
+
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
+  }}
 >
+  <div
+    style={{
+      background:
+        "rgba(255,255,255,.35)",
+
+      border: "1px solid rgba(255,255,255,.35)",
+
+      borderRadius: 26,
+
+      padding: "14px",
+
+      boxShadow:
+        "0 10px 35px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.5)",
+    }}
+  >
   <div
   style={{
     display: "flex",
@@ -567,6 +587,8 @@ onMouseLeave={(e) => {
   </button>
 ))}
   </div>
+</div>
+</div>
 </div>
 
       {/* MENU */}

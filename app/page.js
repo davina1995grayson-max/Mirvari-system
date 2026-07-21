@@ -175,13 +175,20 @@ const addToCart = (item, e) => {
   // ===== LOADING =====
   if (table === null) {
   return (
-    <div style={{
-  background: dark ? "#0b0b0b" : "#f6f6f6",
-  color: dark ? "#fff" : "#111",
-  minHeight: "100vh",
-  padding: 24,
-  fontFamily: "'Inter', sans-serif",
-}}>
+  <div
+    style={{
+      backgroundImage: dark ? "none" : "url('/images/marble-bg.webp')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "repeat",
+      backgroundColor: dark ? "#0b0b0b" : "transparent",
+
+      color: dark ? "#fff" : "#111",
+      minHeight: "100vh",
+      padding: 24,
+      fontFamily: "'Inter', sans-serif",
+    }}
+>
 
 <div
   onClick={handleLogoClick}
@@ -250,9 +257,15 @@ Zəhmət olmasa masanı seçin
   // ===== UI =====
   return (
   <div
-    className="marble-background"
     style={{
+      backgroundImage: "url('/images/marble-bg.webp')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "fixed",
+
       color: "#222",
+      minHeight: "100vh",
     }}
   >
     

@@ -275,29 +275,16 @@ Zəhmət olmasa masanı seçin
     position: "sticky",
     top: 0,
     zIndex: 10000,
-    background: "rgba(255,255,255,.12)",
-
+    background: "transparent",
 backdropFilter: "blur(18px)",
 WebkitBackdropFilter: "blur(18px)",
     backdropFilter: "blur(18px)",
     WebkitBackdropFilter: "blur(18px)",
-
-    padding: "18px 20px",
-
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-
-    marginLeft: 12,
-    marginRight: 12,
-    marginTop: 10,
-
+    padding: "28px 26px 20px",
+    borderRadius: 0,
+margin: 0,
     overflow: "hidden",
-
-    border: "1px solid rgba(255,255,255,.35)",
-    boxShadow: `
-0 18px 40px rgba(0,0,0,.10),
-inset 0 1px 0 rgba(255,255,255,.45)
-`,
+    boxShadow: "none",
   }}
 >
 

@@ -295,9 +295,8 @@ WebkitBackdropFilter: "blur(18px)",
 
     border: "1px solid rgba(255,255,255,.35)",
     boxShadow: `
-0 20px 45px rgba(80,60,30,.12),
-0 0 30px rgba(212,175,55,.15),
-inset 0 2px 15px rgba(255,255,255,.9)
+0 18px 40px rgba(0,0,0,.10),
+inset 0 1px 0 rgba(255,255,255,.45)
 `,
   }}
 >

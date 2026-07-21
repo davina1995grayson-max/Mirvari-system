@@ -272,8 +272,8 @@ Zəhmət olmasa masanı seçin
     
 <div
   style={{
-  padding: "40px 26px 0",
-}}
+  padding:"18px 22px 0",
+  }}
 >
 
   <div
@@ -281,7 +281,7 @@ Zəhmət olmasa masanı seçin
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 14,
+    marginBottom: 6,
   }}
 >
     <div
@@ -500,9 +500,9 @@ onMouseLeave={(e) => {
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div
   style={{
-  padding: "18px 20px",
-  marginTop: 20,
-  marginBottom: 24,
+  padding: "0 20px 10px",
+  marginTop: 0,
+  marginBottom: 8,
 }}
 >
   <div

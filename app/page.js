@@ -260,31 +260,25 @@ Zəhmət olmasa masanı seçin
     style={{
       backgroundImage: "url('/images/marble-bg.webp')",
       backgroundSize: "cover",
-      backgroundPosition: "center",
+      backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundAttachment: "fixed",
 
-      color: "#222",
       minHeight: "100vh",
+
+      color: "#222",
     }}
-  >
+>
     
 <header
   style={{
     position: "sticky",
     top: 0,
     zIndex: 10000,
-    backgroundImage: `
-linear-gradient(
-rgba(255,255,255,0.25),
-rgba(255,255,255,0.25)
-),
-url("/images/pearl-header.webp")
-`,
+    background: "rgba(255,255,255,.12)",
 
-backgroundSize: "cover",
-backgroundPosition: "center",
-backgroundRepeat: "no-repeat",
+backdropFilter: "blur(18px)",
+WebkitBackdropFilter: "blur(18px)",
     backdropFilter: "blur(18px)",
     WebkitBackdropFilter: "blur(18px)",
 
@@ -299,8 +293,7 @@ backgroundRepeat: "no-repeat",
 
     overflow: "hidden",
 
-    borderBottom: "1px solid rgba(212,175,55,.25)",
-
+    border: "1px solid rgba(255,255,255,.35)",
     boxShadow: `
 0 20px 45px rgba(80,60,30,.12),
 0 0 30px rgba(212,175,55,.15),

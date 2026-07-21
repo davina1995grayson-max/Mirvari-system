@@ -270,22 +270,10 @@ Zəhmət olmasa masanı seçin
     }}
 >
     
-<header
+<div
   style={{
-    position: "sticky",
-    top: 0,
-    zIndex: 10000,
-    background: "transparent",
-backdropFilter: "blur(18px)",
-WebkitBackdropFilter: "blur(18px)",
-    backdropFilter: "blur(18px)",
-    WebkitBackdropFilter: "blur(18px)",
-    padding: "28px 26px 20px",
-    borderRadius: 0,
-margin: 0,
-    overflow: "hidden",
-    boxShadow: "none",
-  }}
+  padding: "40px 26px 0",
+}}
 >
 
   <div
@@ -523,7 +511,7 @@ onMouseLeave={(e) => {
 </div>
   </div>
 
-</header>
+</div>
 
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div

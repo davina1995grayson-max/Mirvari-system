@@ -357,22 +357,6 @@ rgba(242,235,220,.9) 100%)
     >
       RESTAURANT
     </div>
-        <div
-  style={{
-    display: "flex",
-    alignItems: "center",
-    gap: 6,
-    marginTop: 8,
-    color: "#d9b86a",
-    fontSize: 12,
-    fontWeight: 500,
-  }}
->
-  ⭐⭐⭐⭐⭐
-  <span style={{ opacity: .75 }}>
-    Premium Restaurant
-  </span>
-</div>
   </div>
 </div>
         <div
@@ -516,30 +500,11 @@ onMouseLeave={(e) => {
 {/* ULTRA MOBILE CATEGORY BAR */}
 <div
   style={{
-  position: "sticky",
-  top: 156,
-  zIndex: 9999,
-  background: "rgba(18,18,18,.95)",
-  backdropFilter: "blur(18px)",
-  padding: "14px 14px 12px",
-  borderBottomLeftRadius: 24,
-  borderBottomRightRadius: 24,
-  borderBottom: "1px solid rgba(245,197,66,.08)",
-  boxShadow: "0 12px 30px rgba(0,0,0,.45)",
+  padding: "18px 20px",
+  marginTop: 20,
+  marginBottom: 24,
 }}
 >
-  <div
-  style={{
-    color: "#c6a85d",
-    fontSize: 12,
-    letterSpacing: 4,
-    textTransform: "uppercase",
-    marginBottom: 10,
-    fontWeight: 600,
-  }}
->
-  OUR MENU
-</div>
   <div
   style={{
     display: "flex",
@@ -551,7 +516,8 @@ onMouseLeave={(e) => {
     scrollbarWidth: "none",
     msOverflowStyle: "none",
   }}
->{menuData.map((section) => (
+>
+{menuData.map((section) => (
   <button
     key={section.title}
     id={"cat-" + section.title}

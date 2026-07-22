@@ -498,16 +498,22 @@ onMouseLeave={(e) => {
 </div>
 
 {/* CATEGORY BAR */}
-<div
+<header
   style={{
     position: "sticky",
     top: 0,
-    zIndex: 9998,
+    zIndex: 10000,
 
-    padding: "0 20px 18px",
+    padding: "26px 20px 18px",
 
-    backdropFilter: "blur(18px)",
-    WebkitBackdropFilter: "blur(18px)",
+    background: "rgba(255,255,255,.08)",
+    backdropFilter: "blur(28px)",
+    WebkitBackdropFilter: "blur(28px)",
+
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+
+    boxShadow: "0 10px 35px rgba(0,0,0,.08)",
   }}
 >
   <div
@@ -588,7 +594,7 @@ onMouseLeave={(e) => {
 ))}
   </div>
 </div>
-</div>
+    </header>
 
       {/* MENU */}
 <div

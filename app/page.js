@@ -270,12 +270,24 @@ Zəhmət olmasa masanı seçin
     }}
 >
     
-<div
+<header
   style={{
-  padding:"18px 22px 0",
+    position: "sticky",
+    top: 0,
+    zIndex: 10000,
+
+    padding: "18px 22px 18px",
+
+    background: "rgba(255,255,255,.08)",
+    backdropFilter: "blur(28px)",
+    WebkitBackdropFilter: "blur(28px)",
+
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+
+    boxShadow: "0 10px 35px rgba(0,0,0,.08)",
   }}
 >
-
   <div
   style={{
     display: "flex",
@@ -495,42 +507,23 @@ onMouseLeave={(e) => {
 </div>
   </div>
 
-</div>
-
 {/* CATEGORY BAR */}
-<header
+  <div
   style={{
     position: "sticky",
     top: 0,
     zIndex: 10000,
-
-    padding: "26px 20px 18px",
-
-    background: "rgba(255,255,255,.08)",
-    backdropFilter: "blur(28px)",
-    WebkitBackdropFilter: "blur(28px)",
-
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-
-    boxShadow: "0 10px 35px rgba(0,0,0,.08)",
+    background: "rgba(255,255,255,.25)",
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
+    borderRadius: 26,
+    padding: "14px",
+    margin: "0 20px 20px",
+    border: "1px solid rgba(255,255,255,.35)",
+    boxShadow:
+      "0 10px 35px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.5)",
   }}
 >
-  <div
-    style={{
-      background:
-        "rgba(255,255,255,.35)",
-
-      border: "1px solid rgba(255,255,255,.35)",
-
-      borderRadius: 26,
-
-      padding: "14px",
-
-      boxShadow:
-        "0 10px 35px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.5)",
-    }}
-  >
   <div
   style={{
     display: "flex",

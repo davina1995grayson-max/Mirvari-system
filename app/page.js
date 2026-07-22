@@ -481,21 +481,17 @@ onMouseLeave={(e) => {
   </div>
 
 {/* CATEGORY BAR */}
-  <div
-  style={{
-    position: "sticky",
-    top: 0,
-    zIndex: 10000,
-    background: "rgba(255,255,255,.25)",
-    backdropFilter: "blur(18px)",
-    WebkitBackdropFilter: "blur(18px)",
-    padding: "6px 10px",
-    borderRadius: 22,
-    margin: "0 20px 10px",
-    border: "1px solid rgba(255,255,255,.35)",
-    boxShadow:
-      "0 10px 35px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.5)",
-  }}
+<div
+style={{
+  position: "sticky",
+  top: 0,
+  zIndex: 10000,
+
+  padding: "8px 20px",
+
+  background: "transparent",
+
+}}
 >
   <div
   style={{
@@ -532,21 +528,21 @@ onMouseLeave={(e) => {
     style={{
       flexShrink: 0,
       background:
-        activeCategory === section.title
-          ? "linear-gradient(135deg,#f5c542,#e0aa2b)"
-          : "rgba(255,255,255,0.03)",
+ activeCategory === section.title
+ ? "linear-gradient(135deg,#f5c542,#d8a322)"
+ : "rgba(255,255,255,.35)",
 
       color:
-        activeCategory === section.title
-          ? "#111"
-          : "#f5c542",
+ activeCategory === section.title
+ ? "#2b2418"
+ : "#8c6a22",
 
       border: "1px solid rgba(245,197,66,0.25)",
-      padding: "10px 18px",
-      borderRadius: 18,
+      padding: "8px 16px",
+      borderRadius: 20,
+      fontSize: 13,
       cursor: "pointer",
       fontWeight: "700",
-      fontSize: 14,
       whiteSpace: "nowrap",
       transition: "all .25s ease",
       boxShadow:

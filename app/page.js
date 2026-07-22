@@ -671,21 +671,19 @@ onMouseLeave={(e) => {
               .map((item) => (
                 <div
   key={item.name}
-  style={{
+style={{
   display: "flex",
   alignItems: "center",
-  gap: 18,
+  gap: 20,
   padding: "18px",
   marginBottom: 18,
   background:
-    "linear-gradient(135deg, rgba(255,255,255,.75), rgba(248,242,230,.85))",
-
+    "linear-gradient(135deg,rgba(255,255,255,.85),rgba(248,242,230,.9))",
   border: "1px solid rgba(212,175,55,.25)",
-  borderRadius: 26,
+  borderRadius: 28,
   boxShadow:
-    "0 15px 35px rgba(0,0,0,.12), inset 0 1px 3px rgba(255,255,255,.8)",
+    "0 12px 30px rgba(0,0,0,.12), inset 0 1px 2px rgba(255,255,255,.8)",
   overflow: "hidden",
-  position: "relative",
 }}
 >
   
@@ -694,18 +692,17 @@ onMouseLeave={(e) => {
   display: "flex",
   alignItems: "center",
   width: "100%",
-  gap: 22,
+  gap: 16,
 }}
 >
-  <div
+<div
 style={{
-  width: 125,
-  height: 125,
+  width: 120,
+  height: 120,
   borderRadius: 24,
   background:
-    "linear-gradient(135deg,#f8f3e8,#e9ddc4)",
-  border:
-    "1px solid rgba(212,175,55,.25)",
+    "linear-gradient(135deg,#fff,#eee5d0)",
+  border:"1px solid rgba(212,175,55,.25)",
   display:"flex",
   alignItems:"center",
   justifyContent:"center",
@@ -720,17 +717,18 @@ style={{
     style={{
       flex: 1,
       minWidth: 0,
+      paddingLeft: 4,
     }}
   >
     <div
       style={{
-  color:"#222",
   lineHeight: 1.25,
   letterSpacing: ".2px",
   marginBottom: 8,
-  fontFamily:"'Cormorant Garamond', serif",
-  fontSize:26,
-  fontWeight:700,
+  fontSize: 24,
+  fontWeight: "700",
+  color: "#2b2418",
+  fontFamily: "'Cormorant Garamond', serif",
 }}
     >
       {item.name}

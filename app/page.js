@@ -585,27 +585,24 @@ style={{
                 <div
   key={item.name}
   style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "26px",
-    marginBottom: 22,
-    background:
-      "rgba(255,255,255,0.22)",
-    backdropFilter:
-      "blur(18px)",
-    WebkitBackdropFilter:
-      "blur(18px)",
-    border:
-      "1px solid rgba(255,255,255,.45)",
-    borderRadius: 30,
-    boxShadow:
-      "0 10px 35px rgba(212,175,55,.18), inset 0 1px 2px rgba(255,255,255,.7)",
-    transition: ".35s",
-    overflow: "hidden",
-    cursor: "pointer",
-    position: "relative",
-  }}
+ display:"flex",
+ justifyContent:"space-between",
+ alignItems:"center",
+ padding:"26px",
+ marginBottom:22,
+ background:
+ "linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35))",
+ backdropFilter:"blur(12px)",
+ WebkitBackdropFilter:"blur(12px)",
+ border:"1px solid rgba(212,175,55,.35)",
+ borderRadius:28,
+ boxShadow:
+ "0 12px 35px rgba(212,175,55,.18), inset 0 0 20px rgba(255,255,255,.5)",
+ transition:".35s",
+ overflow:"hidden",
+ cursor:"pointer",
+ position:"relative",
+}}
 >
   
 <div

@@ -155,23 +155,6 @@ const addToCart = (item, e) => {
     0
   );
 
-  const categoryImages = {
-  "🥗 Soyuq Qəlyanaltılar": "/category/soyuqqelyan.jpg",
-  "🥙 Salatlar": "/category/salad.jpg",
-  "🍲 Şorbalar": "/category/soup.jpg",
-  "🍔 Street Food / Fast Food": "/category/fastfood.jpg",
-  "🔥 İsti Qəlyanaltılar": "/category/istiqelyan.jpg",
-  "🍚 Qarnirlər": "/category/qarnir.jpg", 
-  "🍖 Sac": "/category/sac.jpg",
-  "🍢 Kabablar": "/category/kabab.jpg",
-  "🍛 İsti Yeməklər": "/category/istiyemek.jpg",
-  "🐟 Balıq Yeməkləri": "/category/fish.jpg",
-  "🥤 İçkilər": "/category/ickiler.jpg",
-  "🍰 Desertlər": "/category/desert.jpg",
-  "🍺 Pivə Məzələri": "/category/pivo.jpg",
-  "🍻 Pivə & İçkilər": "/category/vodka.jpg",
-};
-
   // ===== LOADING =====
   if (table === null) {
   return (
@@ -596,74 +579,6 @@ onMouseLeave={(e) => {
       marginBottom: 24,
     }}
   >
-{categoryImages[section.title] && (
-  <div
-    style={{
-      position: "relative",
-      height: 180,
-      borderRadius: 22,
-      overflow: "hidden",
-      marginBottom: 18,
-      boxShadow: "0 10px 30px rgba(0,0,0,.35)",
-    }}
-  >
-    <img
- src={categoryImages[section.title]}
- alt={section.title}
- style={{
- width:"100%",
- height:"100%",
- objectFit:"cover"
- }}
-/>
-
-    <div
-      style={{
-        position: "absolute",
-        inset: 0,
-        background:
-          "linear-gradient(to top, rgba(0,0,0,.75), transparent)",
-      }}
-    />
-
-    <div
-  style={{
-    position: "absolute",
-    bottom: 18,
-    left: 20,
-  }}
->
-  <h2
-    style={{
-      margin: 0,
-      fontFamily: "'Cormorant Garamond', serif",
-      fontSize: 34,
-      fontStyle: "italic",
-      fontWeight: 700,
-      color: "#f5c542",
-      letterSpacing: 1,
-      textShadow:
-        "0 2px 8px rgba(0,0,0,.8), 0 0 18px rgba(245,197,66,.45)",
-    }}
-  >
-    {section.title}
-  </h2>
-
-<div
-  style={{
-    marginTop: 10,
-    width: "100%",
-    height: 3,
-    background:
-      "linear-gradient(90deg, #f5c542 0%, #f5c542 45%, rgba(245,197,66,.35) 80%, transparent 100%)",
-    borderRadius: 20,
-    boxShadow:
-      "0 0 12px rgba(245,197,66,.45)",
-  }}
-/>
-</div>
-  </div>
-)}
             {section.items
               .filter((i) =>
                 i.name.toLowerCase().includes(search.toLowerCase())
@@ -673,17 +588,28 @@ onMouseLeave={(e) => {
   key={item.name}
 style={{
   display: "flex",
+  justifyContent: "space-between",
   alignItems: "center",
-  gap: 20,
   padding: "18px",
   marginBottom: 18,
+
   background:
-    "linear-gradient(135deg,rgba(255,255,255,.85),rgba(248,242,230,.9))",
-  border: "1px solid rgba(212,175,55,.25)",
+    "rgba(255,255,255,0.22)",
+
+  backdropFilter: "blur(12px)",
+  WebkitBackdropFilter: "blur(12px)",
+
+  border:
+    "1px solid rgba(212,175,55,.25)",
+
   borderRadius: 28,
+
   boxShadow:
-    "0 12px 30px rgba(0,0,0,.12), inset 0 1px 2px rgba(255,255,255,.8)",
+    "0 10px 30px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.7)",
+
   overflow: "hidden",
+  cursor: "pointer",
+  position: "relative",
 }}
 >
   

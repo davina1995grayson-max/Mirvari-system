@@ -588,11 +588,7 @@ activeCategory === section.title
  alignItems:"center",
  padding:"20px 24px",
  marginBottom:22,
- background:"linear-gradient(180deg,
-rgba(255,255,255,0.38),
-rgba(255,255,255,0.22)
-)" 
-     ,
+ background: "linear-gradient(180deg, rgba(255,255,255,0.38), rgba(255,255,255,0.22))",
  backdropFilter:"blur(12px)",
  WebkitBackdropFilter:"blur(12px)",
  border:"1px solid rgba(212,175,55,.35)",

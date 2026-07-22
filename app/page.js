@@ -592,7 +592,7 @@ onMouseLeave={(e) => {
     key={section.title}
     id={section.title}
     style={{
-      scrollMarginTop: 230,
+      scrollMarginTop: 150,
       marginBottom: 24,
     }}
   >
@@ -607,15 +607,40 @@ onMouseLeave={(e) => {
       boxShadow: "0 10px 30px rgba(0,0,0,.35)",
     }}
   >
-    <img
-      src={categoryImages[section.title]}
-      alt={section.title}
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",
-      }}
-    />
+    {item.image ? (
+  <img
+    src={item.image}
+    alt={item.name}
+    style={{
+      width: 105,
+      height: 105,
+      objectFit: "cover",
+      borderRadius: 24,
+      border: "2px solid rgba(245,197,66,.18)",
+      flexShrink: 0,
+      boxShadow:
+        "0 18px 35px rgba(0,0,0,.55)",
+    }}
+  />
+) : (
+  <div
+    style={{
+      width: 105,
+      height: 105,
+      borderRadius: 24,
+      border: "2px solid rgba(245,197,66,.18)",
+      background:
+        "linear-gradient(135deg,#222,#111)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: 38,
+      flexShrink: 0,
+    }}
+  >
+    🍽️
+  </div>
+)}
 
     <div
       style={{

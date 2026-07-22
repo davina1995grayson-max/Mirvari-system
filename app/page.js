@@ -546,9 +546,9 @@ style={{
       whiteSpace: "nowrap",
       transition: "all .25s ease",
       boxShadow:
-        activeCategory === section.title
-          ? "0 10px 24px rgba(245,197,66,.45), inset 0 1px 1px rgba(255,255,255,.3)"
-          : "0 6px 18px rgba(0,0,0,.35)",
+  activeCategory === section.title
+    ? "inset 0 1px 2px rgba(255,255,255,.5)"
+    : "none",
     }}
   >
     {section.title}
@@ -590,19 +590,16 @@ style={{
   marginBottom: 18,
 
   background:
-    "rgba(255,255,255,0.22)",
+  "rgba(255,255,255,0.12)",
 
-  backdropFilter: "blur(12px)",
-  WebkitBackdropFilter: "blur(12px)",
+backdropFilter: "blur(18px)",
+WebkitBackdropFilter: "blur(18px)",
 
-  border:
-    "1px solid rgba(212,175,55,.25)",
+border:
+  "1px solid rgba(212,175,55,.18)",
 
-  borderRadius: 28,
-
-  boxShadow:
-    "0 10px 30px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.7)",
-
+boxShadow:
+  "inset 0 1px 2px rgba(255,255,255,.35)",
   overflow: "hidden",
   cursor: "pointer",
   position: "relative",

@@ -724,7 +724,7 @@ style={{
   >
     <div
       style={{
-  color:"#222"
+  color:"#222",
   lineHeight: 1.25,
   letterSpacing: ".2px",
   marginBottom: 8,

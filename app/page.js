@@ -589,7 +589,8 @@ activeCategory === section.title
  padding:"20px 24px",
  marginBottom:22,
  background:
-"linear-gradient(180deg,
+"linear-gradient(
+180deg,
 rgba(255,255,255,0.38),
 rgba(255,255,255,0.22)
 )" 

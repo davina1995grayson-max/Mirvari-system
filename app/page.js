@@ -670,25 +670,24 @@ onMouseLeave={(e) => {
               )
               .map((item) => (
                 <div
-                  key={item.name}
-                  style={{
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "26px",
-  marginBottom: 22,
-  background:
-  "linear-gradient(180deg, rgba(33,33,33,.96), rgba(18,18,18,.98))",
-  border: "1px solid rgba(245,197,66,.12)",
-  borderRadius: 28,
-  boxShadow:
-  "0 10px 30px rgba(0,0,0,.45), inset 0 0 25px rgba(245,197,66,.05)",
-  transition: ".35s",
-  overflow: "hidden",
-  cursor: "pointer",
-  position: "relative",
-}}
-                >
+  key={item.name}
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 16,
+    padding: "18px",
+    marginBottom: 18,
+    background:
+      "linear-gradient(145deg, rgba(35,35,35,.98), rgba(15,15,15,.98))",
+    border:
+      "1px solid rgba(245,197,66,.15)",
+    borderRadius: 26,
+    boxShadow:
+      "0 12px 30px rgba(0,0,0,.45), inset 0 0 20px rgba(245,197,66,.04)",
+    overflow: "hidden",
+  }}
+>
+  
 <div
   style={{
   display: "flex",
@@ -701,10 +700,10 @@ onMouseLeave={(e) => {
   src={item.image || "/no-image.jpg"}
   alt={item.name}
   style={{
-  width: 125,
-  height: 125,
+  width: 95,
+  height: 95,
   objectFit: "cover",
-  borderRadius: 24,
+  borderRadius: 20,
   border: "2px solid rgba(245,197,66,.18)",
   flexShrink: 0,
 
@@ -723,7 +722,7 @@ onMouseLeave={(e) => {
   >
     <div
       style={{
-  fontSize: 22,
+  fontSize: 20,
   fontWeight: "700",
   color: "#ffffff",
   lineHeight: 1.25,
@@ -782,7 +781,7 @@ onMouseLeave={(e) => {
   <div
     style={{
       color: "#F4C542",
-      fontSize: 26,
+      fontSize: 22,
       fontWeight: "700",
       textShadow: "0 0 15px rgba(245,197,66,.25)",
     }}
@@ -793,14 +792,14 @@ onMouseLeave={(e) => {
       <button
   onClick={(e) => addToCart(item, e)}
   style={{
-  width: 58,
-  height: 58,
+  width: 52,
+  height: 52,
   borderRadius: 20,
   border: "none",
   background:
     "linear-gradient(180deg,#FFE28A 0%,#F5C542 55%,#C99216 100%)",
   color: "#111",
-  fontSize: 34,
+  fontSize: 30,
   fontWeight: "700",
   cursor: "pointer",
   flexShrink: 0,

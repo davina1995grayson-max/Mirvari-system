@@ -546,11 +546,9 @@ style={{
       whiteSpace: "nowrap",
       transition: "all .25s ease",
       boxShadow:
- activeCategory === section.title
- ? 
- "0 0 25px rgba(245,197,66,.55), inset 0 1px 3px rgba(255,255,255,.8)"
- :
- "0 0 18px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.5)",
+activeCategory === section.title
+? "0 10px 24px rgba(245,197,66,.45), inset 0 1px 1px rgba(255,255,255,.3)"
+: "0 8px 22px rgba(212,175,55,.25), inset 0 1px 8px rgba(255,255,255,.6)"
     }}
   >
     {section.title}

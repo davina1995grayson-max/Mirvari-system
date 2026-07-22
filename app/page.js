@@ -674,17 +674,19 @@ onMouseLeave={(e) => {
   style={{
     display: "flex",
     alignItems: "center",
-    gap: 16,
+    gap: 20,
     padding: "18px",
     marginBottom: 18,
     background:
-      "linear-gradient(145deg, rgba(35,35,35,.98), rgba(15,15,15,.98))",
+      "linear-gradient(135deg, rgba(255,255,255,.75), rgba(250,245,235,.55))",
+    backdropFilter: "blur(14px)",
     border:
-      "1px solid rgba(245,197,66,.15)",
-    borderRadius: 26,
+      "1px solid rgba(212,175,55,.25)",
+    borderRadius: 28,
     boxShadow:
-      "0 12px 30px rgba(0,0,0,.45), inset 0 0 20px rgba(245,197,66,.04)",
+      "0 15px 35px rgba(0,0,0,.12), inset 0 1px 8px rgba(255,255,255,.8)",
     overflow: "hidden",
+    position: "relative",
   }}
 >
   
@@ -704,7 +706,7 @@ onMouseLeave={(e) => {
   height: 95,
   objectFit: "cover",
   borderRadius: 20,
-  border: "2px solid rgba(245,197,66,.18)",
+  border: "1px solid rgba(212,175,55,.35)",
   flexShrink: 0,
 
   boxShadow:
@@ -724,7 +726,7 @@ onMouseLeave={(e) => {
       style={{
   fontSize: 20,
   fontWeight: "700",
-  color: "#ffffff",
+  color:"#2b2418",
   lineHeight: 1.25,
   letterSpacing: ".2px",
   marginBottom: 8,
@@ -780,7 +782,7 @@ onMouseLeave={(e) => {
 
   <div
     style={{
-      color: "#F4C542",
+      color:"#b88a2a",
       fontSize: 22,
       fontWeight: "700",
       textShadow: "0 0 15px rgba(245,197,66,.25)",
@@ -794,10 +796,10 @@ onMouseLeave={(e) => {
   style={{
   width: 52,
   height: 52,
-  borderRadius: 20,
+  borderRadius: 18,
   border: "none",
   background:
-    "linear-gradient(180deg,#FFE28A 0%,#F5C542 55%,#C99216 100%)",
+"linear-gradient(135deg,#f5d77a,#c9962d)",
   color: "#111",
   fontSize: 30,
   fontWeight: "700",

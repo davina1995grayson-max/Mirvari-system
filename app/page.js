@@ -672,22 +672,21 @@ onMouseLeave={(e) => {
                 <div
   key={item.name}
   style={{
-    display: "flex",
-    alignItems: "center",
-    gap: 20,
-    padding: "18px",
-    marginBottom: 18,
-    background:
-      "linear-gradient(135deg, rgba(255,255,255,.75), rgba(250,245,235,.55))",
-    backdropFilter: "blur(14px)",
-    border:
-      "1px solid rgba(212,175,55,.25)",
-    borderRadius: 28,
-    boxShadow:
-      "0 15px 35px rgba(0,0,0,.12), inset 0 1px 8px rgba(255,255,255,.8)",
-    overflow: "hidden",
-    position: "relative",
-  }}
+  display: "flex",
+  alignItems: "center",
+  gap: 18,
+  padding: "18px",
+  marginBottom: 18,
+  background:
+    "linear-gradient(135deg, rgba(255,255,255,.75), rgba(248,242,230,.85))",
+
+  border: "1px solid rgba(212,175,55,.25)",
+  borderRadius: 26,
+  boxShadow:
+    "0 15px 35px rgba(0,0,0,.12), inset 0 1px 3px rgba(255,255,255,.8)",
+  overflow: "hidden",
+  position: "relative",
+}}
 >
   
 <div
@@ -698,23 +697,24 @@ onMouseLeave={(e) => {
   gap: 22,
 }}
 >
-  <img
-  src={item.image || "/no-image.jpg"}
-  alt={item.name}
-  style={{
-  width: 95,
-  height: 95,
-  objectFit: "cover",
-  borderRadius: 20,
-  border: "1px solid rgba(212,175,55,.35)",
-  flexShrink: 0,
-
-  boxShadow:
-    "0 18px 35px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.03)",
-
-  transition: ".35s",
+  <div
+style={{
+  width: 125,
+  height: 125,
+  borderRadius: 24,
+  background:
+    "linear-gradient(135deg,#f8f3e8,#e9ddc4)",
+  border:
+    "1px solid rgba(212,175,55,.25)",
+  display:"flex",
+  alignItems:"center",
+  justifyContent:"center",
+  fontSize:40,
+  flexShrink:0,
 }}
-/>
+>
+🍽️
+</div>
 
   <div
     style={{
@@ -724,12 +724,13 @@ onMouseLeave={(e) => {
   >
     <div
       style={{
-  fontSize: 20,
-  fontWeight: "700",
-  color:"#2b2418",
+  color:"#222"
   lineHeight: 1.25,
   letterSpacing: ".2px",
   marginBottom: 8,
+  fontFamily:"'Cormorant Garamond', serif",
+  fontSize:26,
+  fontWeight:700,
 }}
     >
       {item.name}
@@ -783,7 +784,7 @@ onMouseLeave={(e) => {
   <div
     style={{
       color:"#b88a2a",
-      fontSize: 22,
+      fontSize: 24,
       fontWeight: "700",
       textShadow: "0 0 15px rgba(245,197,66,.25)",
     }}

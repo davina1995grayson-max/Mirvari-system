@@ -586,16 +586,22 @@ activeCategory === section.title
  display:"flex",
  justifyContent:"space-between",
  alignItems:"center",
- padding:"26px",
+ padding:"20px 24px",
  marginBottom:22,
  background:
- "linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35))",
+"linear-gradient(180deg,
+rgba(255,255,255,0.38),
+rgba(255,255,255,0.22)
+)" 
+     ,
  backdropFilter:"blur(12px)",
  WebkitBackdropFilter:"blur(12px)",
  border:"1px solid rgba(212,175,55,.35)",
  borderRadius:28,
  boxShadow:
- "0 12px 35px rgba(212,175,55,.18), inset 0 0 20px rgba(255,255,255,.5)",
+"0 15px 40px rgba(212,175,55,.16),
+ inset 0 1px 20px rgba(255,255,255,.7),
+ 0 0 25px rgba(212,175,55,.08)",
  transition:".35s",
  overflow:"hidden",
  cursor:"pointer",

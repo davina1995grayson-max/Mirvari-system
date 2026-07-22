@@ -506,9 +506,9 @@ onMouseLeave={(e) => {
     background: "rgba(255,255,255,.25)",
     backdropFilter: "blur(18px)",
     WebkitBackdropFilter: "blur(18px)",
-    padding: "10px",
+    padding: "6px 10px",
     borderRadius: 22,
-    margin: "0 20px 20px",
+    margin: "0 20px 10px",
     border: "1px solid rgba(255,255,255,.35)",
     boxShadow:
       "0 10px 35px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.5)",

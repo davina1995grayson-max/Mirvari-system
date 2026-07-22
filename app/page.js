@@ -586,14 +586,19 @@ activeCategory === section.title
  display:"flex",
  justifyContent:"space-between",
  alignItems:"center",
- padding:"20px 24px",
+ padding:"18px",
  marginBottom:22,
- background: "linear-gradient(180deg, rgba(255,255,255,0.38), rgba(255,255,255,0.22))",
+ background: "rgba(255,255,255,0.08)",
  backdropFilter:"blur(12px)",
  WebkitBackdropFilter:"blur(12px)",
- border:"1px solid rgba(212,175,55,.35)",
+ border: "1px solid rgba(255,255,255,.35)",
  borderRadius:28,
- boxShadow:"0 15px 40px rgba(212,175,55,.16),inset 0 1px 20px rgba(255,255,255,.7), 0 0 25px rgba(212,175,55,.08)",
+ boxShadow:
+`
+0 10px 30px rgba(255,215,120,.12),
+0 0 18px rgba(255,230,170,.18),
+inset 0 1px 0 rgba(255,255,255,.45)
+`,
  transition:".35s",
  overflow:"hidden",
  cursor:"pointer",
@@ -637,10 +642,10 @@ backdropFilter:"blur(10px)",
   >
     <div
       style={{
-  lineHeight: 1.25,
+  lineHeight: 1.2,
   letterSpacing: ".2px",
   marginBottom: 8,
-  fontSize: 24,
+  fontSize: "clamp(20px,4vw,28px)",
   fontWeight: "700",
   color: "#2b2418",
   fontFamily: "'Cormorant Garamond', serif",
@@ -720,7 +725,10 @@ backdropFilter:"blur(10px)",
   cursor: "pointer",
   flexShrink: 0,
   boxShadow:
-    "0 12px 24px rgba(245,197,66,.35), inset 0 2px 3px rgba(255,255,255,.55)",
+`
+0 8px 18px rgba(218,170,40,.35),
+0 0 12px rgba(255,220,120,.28)
+`,
   transition: ".25s",
 }}
 >

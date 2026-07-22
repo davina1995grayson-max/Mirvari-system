@@ -582,7 +582,7 @@ onMouseLeave={(e) => {
       {/* MENU */}
 <div
   style={{
-    padding: "18px",
+    padding: "0 18px",
     maxWidth: 900,
     margin: "0 auto",
   }}

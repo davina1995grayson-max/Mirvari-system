@@ -546,9 +546,11 @@ style={{
       whiteSpace: "nowrap",
       transition: "all .25s ease",
       boxShadow:
-  activeCategory === section.title
-    ? "inset 0 1px 2px rgba(255,255,255,.5)"
-    : "none",
+ activeCategory === section.title
+ ? 
+ "0 0 25px rgba(245,197,66,.55), inset 0 1px 3px rgba(255,255,255,.8)"
+ :
+ "0 0 18px rgba(245,197,66,.18), inset 0 1px 3px rgba(255,255,255,.5)",
     }}
   >
     {section.title}
@@ -582,28 +584,28 @@ style={{
               .map((item) => (
                 <div
   key={item.name}
-style={{
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "18px",
-  marginBottom: 18,
-
-  background:
-  "rgba(255,255,255,0.12)",
-
-backdropFilter: "blur(18px)",
-WebkitBackdropFilter: "blur(18px)",
-
-border:
-  "1px solid rgba(212,175,55,.18)",
-
-boxShadow:
-  "inset 0 1px 2px rgba(255,255,255,.35)",
-  overflow: "hidden",
-  cursor: "pointer",
-  position: "relative",
-}}
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "26px",
+    marginBottom: 22,
+    background:
+      "rgba(255,255,255,0.22)",
+    backdropFilter:
+      "blur(18px)",
+    WebkitBackdropFilter:
+      "blur(18px)",
+    border:
+      "1px solid rgba(255,255,255,.45)",
+    borderRadius: 30,
+    boxShadow:
+      "0 10px 35px rgba(212,175,55,.18), inset 0 1px 2px rgba(255,255,255,.7)",
+    transition: ".35s",
+    overflow: "hidden",
+    cursor: "pointer",
+    position: "relative",
+  }}
 >
   
 <div
@@ -620,7 +622,8 @@ style={{
   height: 120,
   borderRadius: 24,
   background:
-    "linear-gradient(135deg,#fff,#eee5d0)",
+"rgba(255,255,255,.18)",
+backdropFilter:"blur(10px)",
   border:"1px solid rgba(212,175,55,.25)",
   display:"flex",
   alignItems:"center",

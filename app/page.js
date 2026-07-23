@@ -588,16 +588,16 @@ activeCategory === section.title
  alignItems:"center",
  padding:"18px",
  marginBottom:22,
- background:"rgba(255,255,255,0.18)",
- backdropFilter:"blur(8px)",
- WebkitBackdropFilter:"blur(12px)",
- border: "1px solid rgba(255,255,255,.35)",
+ background:"rgba(255,255,255,0.12)",
+ backdropFilter:"blur(4px)",
+ WebkitBackdropFilter:"blur(4px)",
+ border:"1px solid rgba(212,175,55,.25)",
  borderRadius:28,
  boxShadow:
 `
-0 10px 30px rgba(255,215,120,.12),
-0 0 18px rgba(255,230,170,.18),
-inset 0 1px 0 rgba(255,255,255,.45)
+0 15px 35px rgba(0,0,0,.12),
+0 0 25px rgba(245,197,66,.18),
+inset 0 1px 0 rgba(255,255,255,.6)
 `,
  transition:".35s",
  overflow: "visible",
@@ -605,6 +605,19 @@ inset 0 1px 0 rgba(255,255,255,.45)
  position:"relative",
 }}
 >
+  <div
+style={{
+ position:"absolute",
+ top:0,
+ left:0,
+ right:0,
+ height:"45%",
+ background:
+ "linear-gradient(to bottom, rgba(255,255,255,.18), transparent)",
+ borderRadius:28,
+ pointerEvents:"none",
+}}
+/>
   
 <div
   style={{
@@ -693,25 +706,27 @@ style={{
     alignItems:"stretch",
   }}
 >
-  <div>
+<div>
   <div
     style={{
-      color: "#777",
-      fontSize: 11,
-      letterSpacing: 2,
-      marginBottom: 4,
-      textTransform: "uppercase",
+      fontSize:11,
+      letterSpacing:3,
+      color:"rgba(120,90,40,.65)",
+      marginBottom:5,
+      textTransform:"uppercase",
     }}
   >
-    Price
+    PRICE
   </div>
 
   <div
     style={{
       color:"#b88a2a",
-      fontSize: 24,
-      fontWeight: "700",
-      textShadow: "0 0 15px rgba(245,197,66,.25)",
+      fontSize:28,
+      fontWeight:700,
+      fontFamily:"'Cormorant Garamond', serif",
+      textShadow:
+      "0 0 14px rgba(245,197,66,.35)",
     }}
   >
     {item.price} ₼

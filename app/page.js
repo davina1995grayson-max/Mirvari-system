@@ -588,8 +588,8 @@ activeCategory === section.title
  alignItems:"center",
  padding:"18px",
  marginBottom:22,
- background: "rgba(255,255,255,0.08)",
- backdropFilter:"blur(12px)",
+ background:"rgba(255,255,255,0.18)",
+ backdropFilter:"blur(8px)",
  WebkitBackdropFilter:"blur(12px)",
  border: "1px solid rgba(255,255,255,.35)",
  borderRadius:28,
@@ -690,7 +690,7 @@ style={{
   style={{
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems:"stretch",
   }}
 >
   <div>
@@ -720,26 +720,36 @@ style={{
       <button
   onClick={(e) => addToCart(item, e)}
   style={{
-  width: 52,
-  height: 52,
-  borderRadius: 18,
-  border: "none",
-  background:
-"linear-gradient(135deg,#f5d77a,#c9962d)",
-  color: "#111",
-  fontSize: 30,
-  fontWeight: "700",
-  cursor: "pointer",
-  flexShrink: 0,
-  boxShadow:
-`
-0 8px 18px rgba(218,170,40,.35),
-0 0 12px rgba(255,220,120,.28)
-`,
-  transition: ".25s",
-}}
+    width:52,
+    height:52,
+    borderRadius:"50%",
+    border:"1px solid rgba(255,255,255,.55)",
+    background:
+    "linear-gradient(145deg,#fff4c7,#e8b83e)",
+    color:"#7d5a12",
+    fontSize:30,
+    fontWeight:"500",
+    cursor:"pointer",
+    flexShrink:0,
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+    boxShadow:
+    `
+    0 8px 20px rgba(212,175,55,.35),
+    inset 0 3px 5px rgba(255,255,255,.8),
+    0 0 18px rgba(245,197,66,.35)
+    `,
+    transition:"all .25s ease",
+  }}
+  onMouseDown={(e)=>{
+    e.currentTarget.style.transform="scale(.85)";
+  }}
+  onMouseUp={(e)=>{
+    e.currentTarget.style.transform="scale(1)";
+  }}
 >
-  ＋
+  +
 </button>
 </div>
   </div>

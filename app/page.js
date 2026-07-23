@@ -600,7 +600,7 @@ activeCategory === section.title
 inset 0 1px 0 rgba(255,255,255,.45)
 `,
  transition:".35s",
- overflow:"hidden",
+ overflow: "visible",
  cursor:"pointer",
  position:"relative",
 }}
@@ -616,23 +616,30 @@ inset 0 1px 0 rgba(255,255,255,.45)
 >
 <div
 style={{
-  width: 120,
-  height: 120,
-  borderRadius: 24,
-  background:
-"rgba(255,255,255,.18)",
-backdropFilter:"blur(10px)",
-  border:"1px solid rgba(212,175,55,.25)",
-  display:"flex",
-  alignItems:"center",
-  justifyContent:"center",
-  fontSize:40,
+  width:160,
+  height:160,
+  marginLeft:-35,
+  marginTop:-25,
+  marginBottom:-25,
+  borderRadius:"50%",
+  overflow:"hidden",
   flexShrink:0,
+  zIndex:2,
+  boxShadow:
+  "0 20px 45px rgba(0,0,0,.25), 0 0 25px rgba(245,197,66,.18)",
 }}
 >
-🍽️
+  <img
+    src={item.image || "/no-image.jpg"}
+    alt={item.name}
+    style={{
+  width:"100%",
+  height:"100%",
+  objectFit:"cover",
+}}
+  />
 </div>
-
+    
   <div
     style={{
       flex: 1,

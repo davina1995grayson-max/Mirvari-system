@@ -661,21 +661,24 @@ style={{
     }}
   >
     <div
-      style={{
-  lineHeight: 1.2,
-  letterSpacing: ".2px",
-  marginBottom: 8,
-  fontSize: "clamp(20px,4vw,28px)",
-  fontWeight: "700",
-  color: "#2b2418",
-  fontFamily: "'Cormorant Garamond', serif",
+style={{
+  lineHeight: 1.15,
+  letterSpacing: "0.5px",
+  marginBottom: 10,
+  fontSize:"clamp(22px,4vw,30px)",
+  fontWeight:"700",
+  color:"#3a2a16",
+  fontFamily:"'Cormorant Garamond', serif",
+  textShadow:
+  "0 1px 8px rgba(255,255,255,.35)",
 }}
-    >
-      {item.name}
+>
+{item.name}
 </div>
 <div
   style={{
-    width: 36,
+    width:70,
+    opacity:.7,
     height: 2,
     marginTop: 8,
     marginBottom: 12,
@@ -687,12 +690,12 @@ style={{
     {item.description && (
   <div
     style={{
-  color: "#b5b5b5",
-  fontSize: 15,
-  lineHeight: 1.7,
-  marginTop: 8,
-  marginBottom: 18,
-  opacity: .9,
+ color:"rgba(70,55,35,.75)",
+ fontSize:15,
+ lineHeight:1.6,
+ marginTop:10,
+ marginBottom:18,
+ fontFamily:"Inter, sans-serif",
 }}
   >
     {item.description}
@@ -723,7 +726,7 @@ style={{
     style={{
       color:"#b88a2a",
       fontSize:28,
-      fontWeight:700,
+      fontWeight:"600",
       fontFamily:"'Cormorant Garamond', serif",
       textShadow:
       "0 0 14px rgba(245,197,66,.35)",

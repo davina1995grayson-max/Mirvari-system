@@ -528,18 +528,26 @@ style={{
     style={{
       flexShrink: 0,
       background:
- activeCategory === section.title
- ? "linear-gradient(135deg,#f5c542,#d8a322)"
- : "rgba(255,255,255,.35)",
+activeCategory === section.title
+? "linear-gradient(180deg,#f8d86d,#d7a42c)"
+: "rgba(255,255,255,.18)",
 
+backdropFilter:"blur(16px)",
+WebkitBackdropFilter:"blur(16px)",
+
+border:
+activeCategory === section.title
+? "1.5px solid #d4af37"
+: "1.5px solid rgba(212,175,55,.75)",
+
+      
       color:
  activeCategory === section.title
  ? "#2b2418"
  : "#8c6a22",
 
-      border: "1px solid rgba(245,197,66,0.25)",
-      padding: "8px 16px",
-      borderRadius: 20,
+      padding:"12px 24px",
+      borderRadius: 999,
       fontSize: 13,
       cursor: "pointer",
       fontWeight: "700",
@@ -547,8 +555,17 @@ style={{
       transition: "all .25s ease",
       boxShadow:
 activeCategory === section.title
-? "0 10px 24px rgba(245,197,66,.45), inset 0 1px 1px rgba(255,255,255,.3)"
-: "0 8px 22px rgba(212,175,55,.25), inset 0 1px 8px rgba(255,255,255,.6)"
+? `
+0 0 0 1px rgba(255,240,190,.45),
+0 10px 30px rgba(212,175,55,.28),
+0 0 20px rgba(255,215,120,.35),
+inset 0 1px 0 rgba(255,255,255,.6)
+`
+: `
+0 0 0 1px rgba(255,230,170,.18),
+0 8px 22px rgba(212,175,55,.12),
+inset 0 1px 0 rgba(255,255,255,.55)
+`,
     }}
   >
     {section.title}

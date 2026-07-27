@@ -342,6 +342,22 @@ rgba(242,235,220,.9) 100%)
     >
       RESTAURANT
     </div>
+        <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 8,
+    color: "#d9b86a",
+    fontSize: 12,
+    fontWeight: 500,
+  }}
+>
+  ⭐⭐⭐⭐⭐
+  <span style={{ opacity: .75 }}>
+    Premium Restaurant
+  </span>
+</div>
   </div>
 </div>
         <div

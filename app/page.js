@@ -255,18 +255,30 @@ Zəhmət olmasa masanı seçin
     
 <div
   style={{
-    position: "sticky",
-    top: 0,
-    zIndex: 10000,
-    padding: "6px 12px 8px",
-  }}
+  position: "sticky",
+  top: 0,
+  zIndex: 10000,
+
+  padding: "6px 12px 8px",
+
+  background: "rgba(255,255,255,.10)",
+  backdropFilter: "blur(20px)",
+  WebkitBackdropFilter: "blur(20px)",
+
+  borderBottom: "1px solid rgba(212,175,55,.18)",
+
+  boxShadow: `
+    0 8px 25px rgba(0,0,0,.08),
+    0 0 20px rgba(212,175,55,.08)
+  `,
+}}
 >
   <div
   style={{
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 6,
+    marginBottom: 2,
   }}
 >
     <div
@@ -508,7 +520,7 @@ style={{
     overflowX: "auto",
     overflowY: "hidden",
     whiteSpace: "nowrap",
-    padding: "4px 12px",
+    padding: "2px 12px",
     scrollbarWidth: "none",
     msOverflowStyle: "none",
   }}

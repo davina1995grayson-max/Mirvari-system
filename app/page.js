@@ -258,7 +258,7 @@ Zəhmət olmasa masanı seçin
     position: "sticky",
     top: 0,
     zIndex: 10000,
-    padding: "10px 20px 18px",
+    padding: "6px 12px 10px",
   }}
 >
   <div
@@ -273,13 +273,13 @@ Zəhmət olmasa masanı seçin
   style={{
     display: "flex",
     alignItems: "center",
-    gap: 14,
+    gap: 8,
   }}
 >
   <div
     style={{
-  width: 60,
-  height: 60,
+  width: 42,
+height: 42,
   borderRadius: "50%",
   justifyContent: "center",
   alignItems: "center",
@@ -300,8 +300,8 @@ rgba(242,235,220,.9) 100%)
       alt="Mirvari"
       onClick={handleLogoClick}
       style={{
-        width: 52,
-        height: 52,
+        width: 36,
+height: 36,
         objectFit: "contain",
         cursor: "pointer",
       }}
@@ -383,8 +383,8 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 48,
-  height: 48,
+  width: 46,
+  height: 46,
   borderRadius: "50%",
   background: `
     radial-gradient(circle at 30% 30%,
@@ -398,7 +398,7 @@ onMouseLeave={(e) => {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: 20,
+  fontSize: 18,
   boxShadow: `
     0 8px 20px rgba(0,0,0,.08),
     inset 0 2px 4px rgba(255,255,255,.95),
@@ -425,8 +425,8 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 48,
-  height: 48,
+  width: 46,
+  height: 46,
   borderRadius: "50%",
   background: `
     radial-gradient(circle at 30% 30%,
@@ -440,7 +440,7 @@ onMouseLeave={(e) => {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: 20,
+  fontSize: 18,
   boxShadow: `
     0 8px 20px rgba(0,0,0,.08),
     inset 0 2px 4px rgba(255,255,255,.95),
@@ -467,8 +467,8 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 48,
-  height: 48,
+  width: 46,
+  height: 46,
   borderRadius: "50%",
   background: `
     radial-gradient(circle at 30% 30%,
@@ -482,7 +482,7 @@ onMouseLeave={(e) => {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: 20,
+  fontSize: 18,
   boxShadow: `
     0 8px 20px rgba(0,0,0,.08),
     inset 0 2px 4px rgba(255,255,255,.95),

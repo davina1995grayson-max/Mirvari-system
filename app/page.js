@@ -624,13 +624,13 @@ inset 0 1px 0 rgba(255,255,255,.55)
  display:"flex",
  justifyContent:"space-between",
  alignItems:"center",
- padding:"18px",
- marginBottom:22,
+ padding:"12px 16px",
+marginBottom:14,
+borderRadius:22,
  background:"rgba(255,255,255,0.12)",
  backdropFilter:"blur(4px)",
  WebkitBackdropFilter:"blur(4px)",
  border:"1px solid rgba(212,175,55,.25)",
- borderRadius:28,
  boxShadow:
 `
 0 15px 35px rgba(0,0,0,.12),
@@ -667,11 +667,11 @@ style={{
 >
 <div
 style={{
-  width:160,
-  height:160,
-  marginLeft:-35,
-  marginTop:-25,
-  marginBottom:-25,
+  width:110,
+height:110,
+marginLeft:-20,
+marginTop:-10,
+marginBottom:-10,
   borderRadius:"50%",
   overflow:"hidden",
   flexShrink:0,
@@ -703,7 +703,7 @@ style={{
   lineHeight: 1.15,
   letterSpacing: "0.5px",
   marginBottom: 10,
-  fontSize:"clamp(22px,4vw,30px)",
+  fontSize:"clamp(16px,2.8vw,22px)",
   fontWeight:"700",
   color:"#3a2a16",
   fontFamily:"'Cormorant Garamond', serif",
@@ -763,7 +763,7 @@ style={{
   <div
     style={{
       color:"#b88a2a",
-      fontSize:28,
+      fontSize:18,
       fontWeight:"600",
       fontFamily:"'Cormorant Garamond', serif",
       textShadow:
@@ -776,14 +776,14 @@ style={{
       <button
   onClick={(e) => addToCart(item, e)}
   style={{
-    width:52,
-    height:52,
-    borderRadius:"50%",
+    width:48,
+height:48,
+borderRadius:16,
     border:"1px solid rgba(255,255,255,.55)",
     background:
     "linear-gradient(145deg,#fff4c7,#e8b83e)",
     color:"#7d5a12",
-    fontSize:30,
+    fontSize:28,
     fontWeight:"500",
     cursor:"pointer",
     flexShrink:0,

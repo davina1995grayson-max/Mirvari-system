@@ -629,8 +629,8 @@ style={{
 >
 <div
 style={{
-  width:190,
-height:190,
+  width:160,
+height:160,
 
 marginLeft:-55,
 marginTop:-35,
@@ -639,6 +639,10 @@ marginBottom:-35,
   overflow:"hidden",
   flexShrink:0,
   zIndex:2,
+  position:"absolute",
+left:"-30px",
+top:"50%",
+transform:"translateY(-50%)",
   boxShadow:
   "0 20px 45px rgba(0,0,0,.25), 0 0 25px rgba(245,197,66,.18)",
 }}

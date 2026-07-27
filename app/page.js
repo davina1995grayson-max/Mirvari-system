@@ -258,7 +258,7 @@ Zəhmət olmasa masanı seçin
     position: "sticky",
     top: 0,
     zIndex: 10000,
-    padding: "6px 12px 10px",
+    padding: "6px 12px 8px",
   }}
 >
   <div
@@ -300,8 +300,8 @@ rgba(242,235,220,.9) 100%)
       alt="Mirvari"
       onClick={handleLogoClick}
       style={{
-        width: 36,
-height: 36,
+        width: 34,
+height: 34,
         objectFit: "contain",
         cursor: "pointer",
       }}
@@ -319,7 +319,7 @@ height: 36,
       style={{
         color: "#9d7424",
         fontFamily: "'Playfair Display', serif",
-        fontSize: 42,
+        fontSize: 30,
         letterSpacing: 0.5,
         fontStyle: "italic",
         fontWeight: 300,
@@ -334,10 +334,10 @@ height: 36,
     <div
       style={{
         color: "#b4934d",
-        fontSize: 13,
-        letterSpacing: 10,
+        fontSize: 8,
+        letterSpacing: 5,
+        marginTop: 1,
         fontWeight: 700,
-        marginTop: 3,
       }}
     >
       RESTAURANT
@@ -363,7 +363,7 @@ height: 36,
         <div
 style={{
   display:"flex",
-  gap:6,
+  gap:4,
   justifyContent:"flex-end",
   alignItems:"center",
 }}
@@ -383,8 +383,9 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 46,
-  height: 46,
+  width: 36,
+  height: 36,
+  fontSize: 16,
   borderRadius: "50%",
   background: `
     radial-gradient(circle at 30% 30%,
@@ -398,7 +399,6 @@ onMouseLeave={(e) => {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: 18,
   boxShadow: `
     0 8px 20px rgba(0,0,0,.08),
     inset 0 2px 4px rgba(255,255,255,.95),
@@ -425,8 +425,9 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 46,
-  height: 46,
+  width: 36,
+  height: 36,
+  fontSize: 16,
   borderRadius: "50%",
   background: `
     radial-gradient(circle at 30% 30%,
@@ -440,7 +441,6 @@ onMouseLeave={(e) => {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: 18,
   boxShadow: `
     0 8px 20px rgba(0,0,0,.08),
     inset 0 2px 4px rgba(255,255,255,.95),
@@ -467,8 +467,9 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 46,
-  height: 46,
+  width: 36,
+  height: 36,
+  fontSize: 16,
   borderRadius: "50%",
   background: `
     radial-gradient(circle at 30% 30%,
@@ -482,7 +483,6 @@ onMouseLeave={(e) => {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: 18,
   boxShadow: `
     0 8px 20px rgba(0,0,0,.08),
     inset 0 2px 4px rgba(255,255,255,.95),
@@ -516,7 +516,7 @@ style={{
     overflowX: "auto",
     overflowY: "hidden",
     whiteSpace: "nowrap",
-    padding: "6px 2px",
+    padding: "4px 12px",
     scrollbarWidth: "none",
     msOverflowStyle: "none",
   }}
@@ -562,14 +562,15 @@ activeCategory === section.title
  ? "#2b2418"
  : "#8c6a22",
 
-      padding:"16px 30px",
-fontSize:16,
-borderRadius:999,
-minHeight:58,minWidth:"fit-content",
+      padding: "4px 10px",
+fontSize:10,
+borderRadius:16,
+minHeight:42,
+      minWidth:"fit-content",
 display:"flex",
 alignItems:"center",
 justifyContent:"center",
-gap:8,
+gap:6,
       cursor: "pointer",
       fontWeight: "700",
       whiteSpace: "nowrap",
@@ -703,7 +704,7 @@ style={{
   lineHeight: 1.15,
   letterSpacing: "0.5px",
   marginBottom: 4,
-  fontSize:"clamp(16px,2.8vw,22px)",
+  fontSize:"18px",
   fontWeight:"700",
   color:"#3a2a16",
   fontFamily:"'Cormorant Garamond', serif",
@@ -729,8 +730,8 @@ style={{
   <div
     style={{
  color:"rgba(70,55,35,.75)",
-fontSize: 12,
-lineHeight: 1.4,
+fontSize:11,
+lineHeight:1.35,
 marginTop: 2,
 marginBottom: 8,
  fontFamily:"Inter, sans-serif",
@@ -763,7 +764,7 @@ marginBottom: 2,
   <div
     style={{
       color:"#b88a2a",
-      fontSize:18,
+      fontSize:16,
       fontWeight:"600",
       fontFamily:"'Cormorant Garamond', serif",
       textShadow:
@@ -776,26 +777,24 @@ marginBottom: 2,
       <button
   onClick={(e) => addToCart(item, e)}
   style={{
-    width:48,
-height:48,
-borderRadius:16,
+    width:38,
+height:38,
+fontSize:22,
+borderRadius:12,
     border:"1px solid rgba(255,255,255,.55)",
     background:
     "linear-gradient(145deg,#fff4c7,#e8b83e)",
     color:"#7d5a12",
-    fontSize:28,
     fontWeight:"500",
     cursor:"pointer",
     flexShrink:0,
     display:"flex",
     alignItems:"center",
     justifyContent:"center",
-    boxShadow:
-    `
-    0 8px 20px rgba(212,175,55,.35),
-    inset 0 3px 5px rgba(255,255,255,.8),
-    0 0 18px rgba(245,197,66,.35)
-    `,
+    boxShadow:`
+0 4px 12px rgba(212,175,55,.25),
+inset 0 1px 2px rgba(255,255,255,.7)
+`,
     transition:"all .25s ease",
   }}
   onMouseDown={(e)=>{

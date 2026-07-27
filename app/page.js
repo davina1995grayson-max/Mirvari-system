@@ -586,13 +586,13 @@ activeCategory === section.title
  display:"flex",
  justifyContent:"space-between",
  alignItems:"center",
- padding:"18px",
- marginBottom:22,
+ padding:"22px 26px",
+ marginBottom:34,
+ borderRadius:36,
  background:"rgba(255,255,255,0.12)",
  backdropFilter:"blur(4px)",
  WebkitBackdropFilter:"blur(4px)",
  border:"1px solid rgba(212,175,55,.25)",
- borderRadius:28,
  boxShadow:
 `
 0 15px 35px rgba(0,0,0,.12),
@@ -624,16 +624,17 @@ style={{
   display: "flex",
   alignItems: "center",
   width: "100%",
-  gap: 16,
+  gap: 26,
 }}
 >
 <div
 style={{
-  width:160,
-  height:160,
-  marginLeft:-35,
-  marginTop:-25,
-  marginBottom:-25,
+  width:190,
+height:190,
+
+marginLeft:-55,
+marginTop:-35,
+marginBottom:-35,
   borderRadius:"50%",
   overflow:"hidden",
   flexShrink:0,
@@ -649,6 +650,8 @@ style={{
   width:"100%",
   height:"100%",
   objectFit:"cover",
+  borderRadius:"50%",
+  transform:"scale(1.08)",
 }}
   />
 </div>

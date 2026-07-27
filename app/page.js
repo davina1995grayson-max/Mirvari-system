@@ -278,20 +278,11 @@ Zəhmət olmasa masanı seçin
 >
   <div
     style={{
-  width: 42,
-height: 42,
-  borderRadius: "50%",
+  width: 40,
+  height: 40,
+  display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  background: `
-radial-gradient(circle at 30% 30%,
-rgba(255,255,255,1),
-rgba(253,250,245,.95) 55%,
-rgba(242,235,220,.9) 100%)
-`,
-      backdropFilter: "blur(10px)",
-  border: "1px solid rgba(212,175,55,.35)",
-  boxShadow: "0 10px 30px rgba(0,0,0,.08), inset 0 1px 2px rgba(255,255,255,.9)",
   flexShrink: 0,
 }}
   >
@@ -300,11 +291,12 @@ rgba(242,235,220,.9) 100%)
       alt="Mirvari"
       onClick={handleLogoClick}
       style={{
-        width: 34,
-height: 34,
-        objectFit: "contain",
-        cursor: "pointer",
-      }}
+  width: 42,
+  height: 42,
+  objectFit: "contain",
+  cursor: "pointer",
+  filter: "drop-shadow(0 3px 10px rgba(212,175,55,.28))",
+}}
     />
   </div>
 

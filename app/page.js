@@ -496,7 +496,7 @@ style={{
   <div
   style={{
     display: "flex",
-    gap: 10,
+    gap: 16,
     overflowX: "auto",
     overflowY: "hidden",
     whiteSpace: "nowrap",
@@ -546,9 +546,14 @@ activeCategory === section.title
  ? "#2b2418"
  : "#8c6a22",
 
-      padding:"12px 24px",
-      borderRadius: 999,
-      fontSize: 13,
+      padding:"16px 30px",
+fontSize:16,
+borderRadius:999,
+minHeight:58,minWidth:"fit-content",
+display:"flex",
+alignItems:"center",
+justifyContent:"center",
+gap:8,
       cursor: "pointer",
       fontWeight: "700",
       whiteSpace: "nowrap",

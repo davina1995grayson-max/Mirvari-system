@@ -599,8 +599,8 @@ inset 0 1px 0 rgba(255,255,255,.55)
       {/* MENU */}
 <div
   style={{
-    padding: "0 18px",
-    maxWidth: 900,
+    padding: "0 10px",
+maxWidth: 700,
     margin: "0 auto",
   }}
 >
@@ -625,17 +625,17 @@ inset 0 1px 0 rgba(255,255,255,.55)
  justifyContent:"space-between",
  alignItems:"center",
  padding:"12px 16px",
-marginBottom:14,
+marginBottom:10,
 borderRadius:22,
- background:"rgba(255,255,255,0.12)",
+ background: "rgba(255,255,255,0.05)",
  backdropFilter:"blur(4px)",
  WebkitBackdropFilter:"blur(4px)",
- border:"1px solid rgba(212,175,55,.25)",
- boxShadow:
-`
-0 15px 35px rgba(0,0,0,.12),
-0 0 25px rgba(245,197,66,.18),
-inset 0 1px 0 rgba(255,255,255,.6)
+ border: "1px solid rgba(212,175,55,.28)",
+ boxShadow: `
+0 0 0 1px rgba(255,255,255,.18),
+0 8px 22px rgba(0,0,0,.10),
+0 0 16px rgba(212,175,55,.12),
+inset 0 1px 1px rgba(255,255,255,.55)
 `,
  transition:".35s",
  overflow: "visible",
@@ -659,11 +659,11 @@ style={{
   
 <div
   style={{
-  display: "flex",
-  alignItems: "center",
-  width: "100%",
-  gap: 16,
-}}
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+    gap: 10,
+  }}
 >
 <div
 style={{
@@ -702,7 +702,7 @@ marginBottom:-10,
 style={{
   lineHeight: 1.15,
   letterSpacing: "0.5px",
-  marginBottom: 10,
+  marginBottom: 4,
   fontSize:"clamp(16px,2.8vw,22px)",
   fontWeight:"700",
   color:"#3a2a16",
@@ -718,8 +718,8 @@ style={{
     width:70,
     opacity:.7,
     height: 2,
-    marginTop: 8,
-    marginBottom: 12,
+    marginTop: 4,
+    marginBottom: 8,
     borderRadius: 5,
     background:
       "linear-gradient(90deg,#f5c542,rgba(245,197,66,0))",
@@ -729,10 +729,10 @@ style={{
   <div
     style={{
  color:"rgba(70,55,35,.75)",
- fontSize:15,
- lineHeight:1.6,
- marginTop:10,
- marginBottom:18,
+fontSize: 12,
+lineHeight: 1.4,
+marginTop: 2,
+marginBottom: 8,
  fontFamily:"Inter, sans-serif",
 }}
   >
@@ -750,10 +750,10 @@ style={{
 <div>
   <div
     style={{
-      fontSize:11,
-      letterSpacing:3,
+      fontSize: 9,
+letterSpacing: 1,
+marginBottom: 2,
       color:"rgba(120,90,40,.65)",
-      marginBottom:5,
       textTransform:"uppercase",
     }}
   >

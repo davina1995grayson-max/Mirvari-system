@@ -495,7 +495,7 @@ style={{
   top: 0,
   zIndex: 10000,
 
-  padding: "8px 20px",
+  padding: "6px 8px",
 
   background: "transparent",
 
@@ -508,7 +508,7 @@ style={{
     overflowX: "auto",
     overflowY: "hidden",
     whiteSpace: "nowrap",
-    padding: "4px 2px",
+    padding: "4px 0px",
     scrollbarWidth: "none",
     msOverflowStyle: "none",
   }}
@@ -586,11 +586,12 @@ activeCategory === section.title
  ? "#2b2418"
  : "#8c6a22",
 
-      padding: "4px 10px",
+     padding: "5px 14px",
 fontSize:10,
-borderRadius:16,
-minHeight:42,
-      minWidth:"fit-content",
+borderRadius:999,
+height:32,
+minHeight:32,
+minWidth:"auto",
 display:"flex",
 alignItems:"center",
 justifyContent:"center",

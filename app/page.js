@@ -693,15 +693,13 @@ marginBottom:-10,
   >
     <div
 style={{
-  lineHeight: 1.15,
-  letterSpacing: "0.5px",
-  marginBottom: 4,
-  fontSize:"18px",
-  fontWeight:"700",
-  color:"#3a2a16",
-  fontFamily:"'Cormorant Garamond', serif",
-  textShadow:
-  "0 1px 8px rgba(255,255,255,.35)",
+  lineHeight: 1.2,
+  letterSpacing: ".2px",
+  marginBottom: 8,
+  fontSize: "18px",
+  fontWeight: "700",
+  color: "#2b2418",
+  fontFamily: "'Cormorant Garamond', serif",
 }}
 >
 {item.name}

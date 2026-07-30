@@ -513,6 +513,40 @@ style={{
     msOverflowStyle: "none",
   }}
 >
+<button
+  onClick={() => setActiveCategory("Hamısı")}
+  style={{
+    flexShrink: 0,
+
+    background:
+      activeCategory === "Hamısı"
+      ? "linear-gradient(180deg,#f8d86d,#d7a42c)"
+      : "rgba(255,255,255,.18)",
+
+    backdropFilter:"blur(16px)",
+    WebkitBackdropFilter:"blur(16px)",
+
+    border:"1.5px solid rgba(212,175,55,.75)",
+
+    color:"#8c6a22",
+
+    padding:"6px 12px",
+    fontSize:11,
+    borderRadius:999,
+
+    minHeight:58,
+
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+
+    cursor:"pointer",
+    fontWeight:"700",
+    whiteSpace:"nowrap",
+  }}
+>
+  ✨ Hamısı
+</button>
 {menuData.map((section) => (
   <button
     key={section.title}

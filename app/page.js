@@ -335,20 +335,15 @@ Zəhmət olmasa masanı seçin
       RESTAURANT
     </div>
         <div
-  style={{
-    display: "flex",
-    alignItems: "center",
-    gap: 6,
-    marginTop: 8,
-    color: "#d9b86a",
-    fontSize: 12,
-    fontWeight: 500,
-  }}
+style={{
+  marginTop:6,
+  color:"#b4934d",
+  fontSize:10,
+  letterSpacing:2,
+  fontStyle:"italic",
+}}
 >
-  ⭐⭐⭐⭐⭐
-  <span style={{ opacity: .75 }}>
-    Premium Restaurant
-  </span>
+  Hər loxmada incə bir zövq
 </div>
   </div>
 </div>

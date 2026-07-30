@@ -660,8 +660,8 @@ style={{
 >
 <div
 style={{
-  width:110,
-height:110,
+  width:95,
+height:95,
 marginLeft:-20,
 marginTop:-10,
 marginBottom:-10,

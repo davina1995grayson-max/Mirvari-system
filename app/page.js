@@ -504,11 +504,11 @@ style={{
   <div
   style={{
     display: "flex",
-    gap: 16,
+    gap: 8,
     overflowX: "auto",
     overflowY: "hidden",
     whiteSpace: "nowrap",
-    padding: "4px 12px",
+    padding: "4px 2px",
     scrollbarWidth: "none",
     msOverflowStyle: "none",
   }}
@@ -529,12 +529,11 @@ style={{
     border:"1.5px solid rgba(212,175,55,.75)",
 
     color:"#8c6a22",
-
-    padding:"6px 12px",
-    fontSize:11,
-    borderRadius:999,
-
-    minHeight:58,
+padding: "7px 18px",
+fontSize: 12,
+borderRadius: 999,
+height: 36,
+minWidth: "auto",
 
     display:"flex",
     alignItems:"center",
@@ -579,9 +578,8 @@ WebkitBackdropFilter:"blur(16px)",
 
 border:
 activeCategory === section.title
-? "1.5px solid #d4af37"
-: "1.5px solid rgba(212,175,55,.75)",
-
+? "1px solid #d4af37"
+: "1px solid rgba(212,175,55,.55)",
       
       color:
  activeCategory === section.title

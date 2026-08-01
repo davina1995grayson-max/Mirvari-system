@@ -649,7 +649,7 @@ maxWidth: 700,
       items: section.items.slice(0, 1)
     }))
   : menuData
-}.map((section) = (
+}.map((section) => (
   <div
     key={section.title}
     id={section.title}
@@ -855,7 +855,7 @@ inset 0 1px 2px rgba(255,255,255,.7)
 </div>
               ))}
           </div>
-        ))
+        ))}
       </div>
 
 {cart.length > 0 && (

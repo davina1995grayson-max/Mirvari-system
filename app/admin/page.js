@@ -47,10 +47,11 @@ export default function AdminPage() {
         }
 
         grouped[item.category].push({
-          name: item.name,
-          price: item.price,
-          available: item.available,
-        });
+  name: item.name,
+  price: item.price,
+  available: item.available,
+  recommended: item.recommended,
+});
       });
 
       const formatted = Object.keys(grouped).map((cat) => ({
@@ -109,10 +110,11 @@ export default function AdminPage() {
               items: [
                 ...c.items,
                 {
-                  name: newItemName,
-                  price: Number(newItemPrice),
-                  available: true,
-                },
+  name: newItemName,
+  price: Number(newItemPrice),
+  available: true,
+  recommended: false,
+},
               ],
             }
           : c
@@ -167,7 +169,25 @@ export default function AdminPage() {
       )
     );
   };
-
+  
+const toggleRecommended = (section, name) => {
+  setMenuData((prev) =>
+    prev.map((c) =>
+      c.title === section
+        ? {
+            ...c,
+            items: c.items.map((i) => ({
+              ...i,
+              recommended:
+                i.name === name
+                  ? !i.recommended
+                  : false,
+            })),
+          }
+        : c
+    )
+  );
+};
   // SAVE
   const uploadMenuToSupabase = async () => {
     const dishes = [];
@@ -175,11 +195,12 @@ export default function AdminPage() {
     menuData.forEach((section) => {
       section.items.forEach((item) => {
         dishes.push({
-          name: item.name,
-          price: item.price,
-          category: section.title,
-          available: item.available,
-        });
+  name: item.name,
+  price: item.price,
+  category: section.title,
+  available: item.available,
+  recommended: item.recommended,
+});
       });
     });
 
@@ -323,7 +344,13 @@ export default function AdminPage() {
               >
                 {item.available ? "🚫" : "✅"}
               </button>
-
+<button
+  onClick={() =>
+    toggleRecommended(section.title, item.name)
+  }
+>
+  {item.recommended ? "⭐" : "☆"}
+</button>
               <button
                 onClick={() => deleteItem(section.title, item.name)}
               >

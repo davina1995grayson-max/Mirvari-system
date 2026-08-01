@@ -73,6 +73,7 @@ const handleLogoClick = () => {
   if (!isBrowser) return;
 
   const handleScroll = () => {
+    if (activeCategory === "Hamısı") return;
   let current = menuData[0]?.title;
 
   menuData.forEach((section) => {
@@ -91,7 +92,7 @@ const handleLogoClick = () => {
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
-}, [menuData]);
+}, [menuData, activeCategory]);
  useEffect(() => {
   if (!activeCategory) return;
 

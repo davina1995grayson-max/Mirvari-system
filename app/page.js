@@ -712,8 +712,8 @@ inset 0 1px 1px rgba(255,255,255,.55)
   <div
     style={{
       position:"absolute",
-      top:10,
-      left:10,
+      top:-12,
+      right:10,
       zIndex:5,
       padding:"4px 10px",
       borderRadius:999,

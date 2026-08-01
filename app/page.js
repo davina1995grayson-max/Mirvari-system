@@ -643,13 +643,14 @@ maxWidth: 700,
     margin: "0 auto",
   }}
 >
-{activeCategory === "Hamısı"
-  ? menuData.map((section) => ({
-      ...section,
-      items: section.items.slice(0, 1)
-    }))
-  : menuData
-}.map((section) => (
+{(
+  activeCategory === "Hamısı"
+    ? menuData.map((section) => ({
+        ...section,
+        items: section.items.slice(0, 1),
+      }))
+    : menuData
+).map((section) => (
   <div
     key={section.title}
     id={section.title}

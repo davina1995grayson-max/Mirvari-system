@@ -521,7 +521,13 @@ style={{
   }}
 >
 <button
-  onClick={() => setActiveCategory("Hamısı")}
+  onClick={() => {
+    setActiveCategory("Hamısı");
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }}
   style={{
     flexShrink: 0,
 
@@ -637,7 +643,13 @@ maxWidth: 700,
     margin: "0 auto",
   }}
 >
-{menuData.map((section) => (
+{activeCategory === "Hamısı"
+  ? menuData.map((section) => ({
+      ...section,
+      items: section.items.slice(0, 1)
+    }))
+  : menuData
+}.map((section) => (
   <div
     key={section.title}
     id={section.title}

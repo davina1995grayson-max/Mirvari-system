@@ -166,7 +166,7 @@ const addToCart = (item, e) => {
   return (
   <div
     style={{
-      backgroundImage: dark ? "none" : "url('/images/pearl-header.webp')",
+      backgroundImage: dark ? "none" : "url('/images/pearl-header.png')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "repeat",
@@ -247,7 +247,7 @@ Zəhmət olmasa masanı seçin
   return (
   <div
     style={{
-      backgroundImage: "url('/images/pearl-header.webp')",
+      backgroundImage: "url('/images/pearl-header.png')",
       backgroundSize: "cover",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",

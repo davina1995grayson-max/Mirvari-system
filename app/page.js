@@ -649,7 +649,7 @@ maxWidth: 700,
       items: section.items.slice(0, 1)
     }))
   : menuData
-}.map((section) => (
+}.map((section) = (
   <div
     key={section.title}
     id={section.title}

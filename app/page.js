@@ -104,6 +104,11 @@ const handleLogoClick = () => {
     block: "nearest",
   });
 }, [activeCategory]);
+  useEffect(() => {
+  if (menuData.length > 0 && !activeCategory) {
+    setActiveCategory("Hamısı");
+  }
+}, [menuData]);
 
   // ===== ADD TO CART =====
 const addToCart = (item, e) => {

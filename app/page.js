@@ -688,16 +688,24 @@ borderRadius:22,
  backdropFilter:"blur(4px)",
  WebkitBackdropFilter:"blur(4px)",
  border: "1px solid rgba(212,175,55,.28)",
- boxShadow: `
+ transition:".35s",
+ overflow: "visible",
+ cursor:"pointer",
+ position:"relative",
+ boxShadow:
+activeCategory === "Hamısı"
+? `
+0 0 0 1px rgba(255,215,120,.45),
+0 12px 35px rgba(212,175,55,.18),
+0 0 24px rgba(255,215,120,.22),
+inset 0 1px 1px rgba(255,255,255,.55)
+`
+: `
 0 0 0 1px rgba(255,255,255,.18),
 0 8px 22px rgba(0,0,0,.10),
 0 0 16px rgba(212,175,55,.12),
 inset 0 1px 1px rgba(255,255,255,.55)
 `,
- transition:".35s",
- overflow: "visible",
- cursor:"pointer",
- position:"relative",
 }}
 >
   <div

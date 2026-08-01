@@ -373,10 +373,10 @@ onMouseLeave={(e) => {
   width: 34,
   height: 34,
   fontSize: 15,
-  borderRadius: "50%",
+  borderRadius: 14,
 
-  background:
-  "rgba(255,255,255,0.35)",
+ background:
+"rgba(255,255,255,0.28)",
 
   color:"#b88a2a",
 
@@ -393,11 +393,7 @@ onMouseLeave={(e) => {
   WebkitBackdropFilter:"blur(12px)",
 
   boxShadow:
-  `
-  0 4px 12px rgba(212,175,55,.15),
-  0 0 12px rgba(255,220,120,.25),
-  inset 0 1px 3px rgba(255,255,255,.8)
-  `,
+"0 6px 18px rgba(212,175,55,.18)",
 
   transition:"all .25s ease",
 }}
@@ -423,10 +419,10 @@ onMouseLeave={(e) => {
   width: 34,
   height: 34,
   fontSize: 15,
-  borderRadius: "50%",
+  borderRadius: 14,
 
-  background:
-  "rgba(255,255,255,0.35)",
+ background:
+"rgba(255,255,255,0.28)",
 
   color:"#b88a2a",
 
@@ -442,12 +438,8 @@ onMouseLeave={(e) => {
   backdropFilter:"blur(12px)",
   WebkitBackdropFilter:"blur(12px)",
 
-  boxShadow:
-  `
-  0 4px 12px rgba(212,175,55,.15),
-  0 0 12px rgba(255,220,120,.25),
-  inset 0 1px 3px rgba(255,255,255,.8)
-  `,
+ boxShadow:
+"0 6px 18px rgba(212,175,55,.18)",
 
   transition:"all .25s ease",
 }}
@@ -473,10 +465,10 @@ onMouseLeave={(e) => {
   width: 34,
   height: 34,
   fontSize: 15,
-  borderRadius: "50%",
+  borderRadius: 14,
 
-  background:
-  "rgba(255,255,255,0.35)",
+ background:
+"rgba(255,255,255,0.28)",
 
   color:"#b88a2a",
 
@@ -493,11 +485,7 @@ onMouseLeave={(e) => {
   WebkitBackdropFilter:"blur(12px)",
 
   boxShadow:
-  `
-  0 4px 12px rgba(212,175,55,.15),
-  0 0 12px rgba(255,220,120,.25),
-  inset 0 1px 3px rgba(255,255,255,.8)
-  `,
+"0 6px 18px rgba(212,175,55,.18)",
 
   transition:"all .25s ease",
 }}

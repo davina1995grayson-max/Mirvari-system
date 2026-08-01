@@ -652,7 +652,10 @@ maxWidth: 700,
   activeCategory === "Hamısı"
     ? menuData.map((section) => ({
         ...section,
-        items: section.items.slice(0, 1),
+        items: [
+  section.items.find((item) => item.recommended) ||
+  section.items[0]
+],
       }))
     : menuData.filter(
         (section) => section.title === activeCategory

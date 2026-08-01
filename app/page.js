@@ -855,7 +855,7 @@ inset 0 1px 2px rgba(255,255,255,.7)
 </div>
               ))}
           </div>
-        ))}
+        ))
       </div>
 
 {cart.length > 0 && (

@@ -708,6 +708,28 @@ inset 0 1px 1px rgba(255,255,255,.55)
 `,
 }}
 >
+  {activeCategory === "Hamısı" && (
+  <div
+    style={{
+      position:"absolute",
+      top:10,
+      left:10,
+      zIndex:5,
+      padding:"4px 10px",
+      borderRadius:999,
+      background:
+        "linear-gradient(135deg,#f8d86d,#d4af37)",
+      color:"#5a3d00",
+      fontSize:10,
+      fontWeight:700,
+      letterSpacing:.5,
+      boxShadow:
+        "0 5px 15px rgba(212,175,55,.35)",
+    }}
+  >
+    ⭐ Mirvari seçimi
+  </div>
+)}
   <div
 style={{
  position:"absolute",

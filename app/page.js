@@ -649,17 +649,17 @@ maxWidth: 700,
   }}
 >
 {(
-  activeCategory === "Hamısı"
-    ? menuData.map((section) => ({
-        ...section,
-        items: [
-  section.items.find((item) => item.recommended) ||
-  section.items[0]
-],
-      }))
-    : menuData.filter(
-        (section) => section.title === activeCategory
-      )
+activeCategory === "Hamısı"
+  ? menuData.map((section) => ({
+      ...section,
+      items: [
+        section.items.find((item) => item.recommended) ||
+        section.items[0],
+      ],
+    }))
+  : menuData.filter(
+      (section) => section.title === activeCategory
+    )
 ).map((section) => (
   <div
     key={section.title}

@@ -370,27 +370,36 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
- width: 32,
-height: 32,
-fontSize: 14,
+  width: 34,
+  height: 34,
+  fontSize: 15,
   borderRadius: "50%",
-  background: `
-    radial-gradient(circle at 30% 30%,
-    rgba(255,255,255,1),
-    rgba(250,247,241,.98) 55%,
-    rgba(242,235,220,.92) 100%)
+
+  background:
+  "rgba(255,255,255,0.35)",
+
+  color:"#b88a2a",
+
+  border:
+  "1px solid rgba(212,175,55,.35)",
+
+  cursor:"pointer",
+
+  display:"flex",
+  alignItems:"center",
+  justifyContent:"center",
+
+  backdropFilter:"blur(12px)",
+  WebkitBackdropFilter:"blur(12px)",
+
+  boxShadow:
+  `
+  0 4px 12px rgba(212,175,55,.15),
+  0 0 12px rgba(255,220,120,.25),
+  inset 0 1px 3px rgba(255,255,255,.8)
   `,
-  color: "#b88a2a",
-  border: "1px solid rgba(212,175,55,.25)",
-  cursor: "pointer",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  boxShadow: `
-0 5px 14px rgba(212,175,55,.15),
-inset 0 1px 2px rgba(255,255,255,.8)
-`,
-  transition: "all .2s ease",
+
+  transition:"all .25s ease",
 }}
   >
     🪑
@@ -411,27 +420,36 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
- width: 32,
-height: 32,
-fontSize: 14,
+  width: 34,
+  height: 34,
+  fontSize: 15,
   borderRadius: "50%",
-  background: `
-    radial-gradient(circle at 30% 30%,
-    rgba(255,255,255,1),
-    rgba(250,247,241,.98) 55%,
-    rgba(242,235,220,.92) 100%)
+
+  background:
+  "rgba(255,255,255,0.35)",
+
+  color:"#b88a2a",
+
+  border:
+  "1px solid rgba(212,175,55,.35)",
+
+  cursor:"pointer",
+
+  display:"flex",
+  alignItems:"center",
+  justifyContent:"center",
+
+  backdropFilter:"blur(12px)",
+  WebkitBackdropFilter:"blur(12px)",
+
+  boxShadow:
+  `
+  0 4px 12px rgba(212,175,55,.15),
+  0 0 12px rgba(255,220,120,.25),
+  inset 0 1px 3px rgba(255,255,255,.8)
   `,
-  color: "#b88a2a",
-  border: "1px solid rgba(212,175,55,.25)",
-  cursor: "pointer",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  boxShadow: `
-0 5px 14px rgba(212,175,55,.15),
-inset 0 1px 2px rgba(255,255,255,.8)
-`,
-  transition: "all .2s ease",
+
+  transition:"all .25s ease",
 }}
   >
     🔔
@@ -452,27 +470,36 @@ onMouseLeave={(e) => {
   e.currentTarget.style.transform = "scale(1)";
 }}
     style={{
-  width: 32,
-height: 32,
-fontSize: 14,
+  width: 34,
+  height: 34,
+  fontSize: 15,
   borderRadius: "50%",
-  background: `
-    radial-gradient(circle at 30% 30%,
-    rgba(255,255,255,1),
-    rgba(250,247,241,.98) 55%,
-    rgba(242,235,220,.92) 100%)
+
+  background:
+  "rgba(255,255,255,0.35)",
+
+  color:"#b88a2a",
+
+  border:
+  "1px solid rgba(212,175,55,.35)",
+
+  cursor:"pointer",
+
+  display:"flex",
+  alignItems:"center",
+  justifyContent:"center",
+
+  backdropFilter:"blur(12px)",
+  WebkitBackdropFilter:"blur(12px)",
+
+  boxShadow:
+  `
+  0 4px 12px rgba(212,175,55,.15),
+  0 0 12px rgba(255,220,120,.25),
+  inset 0 1px 3px rgba(255,255,255,.8)
   `,
-  color: "#b88a2a",
-  border: "1px solid rgba(212,175,55,.25)",
-  cursor: "pointer",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-boxShadow: `
-0 5px 14px rgba(212,175,55,.15),
-inset 0 1px 2px rgba(255,255,255,.8)
-`,
-  transition: "all .2s ease",
+
+  transition:"all .25s ease",
 }}
   >
     💳

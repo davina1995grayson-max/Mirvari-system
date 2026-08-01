@@ -654,7 +654,9 @@ maxWidth: 700,
         ...section,
         items: section.items.slice(0, 1),
       }))
-    : menuData
+    : menuData.filter(
+        (section) => section.title === activeCategory
+      )
 ).map((section) => (
   <div
     key={section.title}

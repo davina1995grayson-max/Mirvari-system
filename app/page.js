@@ -265,6 +265,9 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 10000,
     padding: "6px 12px 8px",
+    background: "rgba(245,240,225,0.35)",
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
   }}
 >
   <div
@@ -505,7 +508,7 @@ onMouseLeave={(e) => {
 <div
 style={{
   position: "sticky",
-  top: 0,
+  top: 115,
   zIndex: 10000,
 
   padding: "6px 8px",
@@ -644,8 +647,8 @@ inset 0 1px 0 rgba(255,255,255,.55)
       {/* MENU */}
 <div
   style={{
-    padding: "0 10px",
-maxWidth: 700,
+    padding: "20px 10px 0",
+    maxWidth: 700,
     margin: "0 auto",
   }}
 >

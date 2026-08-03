@@ -265,7 +265,7 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 10000,
     padding: "6px 12px 8px",
-    background: "rgba(245,240,225,0.35)",
+    background: "rgba(245,240,225,0.75)",
     backdropFilter: "blur(18px)",
     WebkitBackdropFilter: "blur(18px)",
   }}
@@ -508,7 +508,7 @@ onMouseLeave={(e) => {
 <div
 style={{
   position: "sticky",
-  top: 115,
+  top: 0,
   zIndex: 10000,
 
   padding: "6px 8px",

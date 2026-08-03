@@ -640,17 +640,6 @@ inset 0 1px 0 rgba(255,255,255,.55)
   </div>
 </div>
 </div>
-<div
-  style={{
-    height: 35,
-    position: "sticky",
-    top: 110,
-    zIndex: 9000,
-    background: "rgba(255,255,255,0.15)",
-    backdropFilter: "blur(12px)",
-    WebkitBackdropFilter: "blur(12px)",
-  }}
-/>
 
       {/* MENU */}
 <div

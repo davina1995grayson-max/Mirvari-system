@@ -265,6 +265,7 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 10000,
     padding: "6px 12px 8px",
+    background: "transparent",
   }}
 >
   <div
@@ -505,13 +506,10 @@ onMouseLeave={(e) => {
 <div
 style={{
   position: "sticky",
-  top: 0,
+  top: 120,
   zIndex: 10000,
-
   padding: "6px 8px",
-
   background: "transparent",
-
 }}
 >
   <div

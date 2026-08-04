@@ -263,9 +263,10 @@ Zəhmət olmasa masanı seçin
   style={{
     position: "sticky",
     top: 0,
-    zIndex: 10000,
+    zIndex: 1000,
     padding: "6px 12px 8px",
     background: "transparent",
+    isolation: "isolate",
   }}
 >
   <div
@@ -689,7 +690,8 @@ borderRadius:22,
  transition:".35s",
  overflow: "visible",
  cursor:"pointer",
- position:"relative",
+ position: "relative",
+zIndex: 1,
  boxShadow:
 activeCategory === "Hamısı"
 ? `

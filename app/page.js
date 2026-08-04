@@ -267,8 +267,7 @@ Zəhmət olmasa masanı seçin
     padding: "6px 12px 8px",
 
     background:
-      "linear-gradient(
-        to bottom,
+      "linear-gradient(to bottom,
         rgba(255,255,255,0.35),
         rgba(255,255,255,0.15),
         transparent

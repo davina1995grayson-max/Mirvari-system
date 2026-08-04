@@ -266,9 +266,6 @@ Zəhmət olmasa masanı seçin
     zIndex: 50,
     padding: "6px 12px 8px",
 
-    background:
-      "linear-gradient(to bottom, rgba(255,255,255,0.35) rgba(255,255,255,0.15), transparent )",
-
     backdropFilter: "blur(14px)",
     WebkitBackdropFilter: "blur(14px)",
 

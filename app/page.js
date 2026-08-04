@@ -508,7 +508,7 @@ onMouseLeave={(e) => {
 style={{
   position: "sticky",
   top: 120,
-  zIndex: 100,
+  zIndex: 60,
   padding: "6px 8px",
   background: "transparent",
 }}
@@ -643,9 +643,9 @@ inset 0 1px 0 rgba(255,255,255,.55)
       {/* MENU */}
 <div
   style={{
-    padding: "150px 10px 0",
-    maxWidth: 700,
-    margin: "0 auto",
+    position: "relative",
+    zIndex: 1,
+    padding: "20px 10px 0",
   }}
 >
 {(
@@ -691,7 +691,7 @@ borderRadius:22,
  overflow: "visible",
  cursor:"pointer",
  position: "relative",
-zIndex: 1,
+zIndex: 0,
  boxShadow:
 activeCategory === "Hamısı"
 ? `

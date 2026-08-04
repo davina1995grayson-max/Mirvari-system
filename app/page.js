@@ -514,12 +514,8 @@ style={{
   zIndex: 60,
 
   background:
-    "linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.25),
-      transparent
-    )",
-
+    "linear-gradient(  to bottom, rgba(255,255,255,0.25),  transparent )",
+  
   backdropFilter:"blur(10px)",
   WebkitBackdropFilter:"blur(10px)",
     }}

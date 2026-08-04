@@ -265,7 +265,18 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 50,
     padding: "6px 12px 8px",
-    background: "transparent",
+
+    background:
+      "linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.15),
+        transparent
+      )",
+
+    backdropFilter: "blur(14px)",
+    WebkitBackdropFilter: "blur(14px)",
+
     isolation: "isolate",
   }}
 >
@@ -509,10 +520,18 @@ style={{
   position: "sticky",
   top: 120,
   zIndex: 60,
-  padding: "6px 8px",
-  background: "transparent",
-}}
->
+
+  background:
+    "linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.25),
+      transparent
+    )",
+
+  backdropFilter:"blur(10px)",
+  WebkitBackdropFilter:"blur(10px)",
+    }}
+    >
   <div
   style={{
     display: "flex",

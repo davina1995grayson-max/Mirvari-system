@@ -263,7 +263,7 @@ Zəhmət olmasa masanı seçin
   style={{
     position: "sticky",
     top: 0,
-    zIndex: 1000,
+    zIndex: 50,
     padding: "6px 12px 8px",
     background: "transparent",
     isolation: "isolate",
@@ -508,7 +508,7 @@ onMouseLeave={(e) => {
 style={{
   position: "sticky",
   top: 120,
-  zIndex: 10000,
+  zIndex: 100,
   padding: "6px 8px",
   background: "transparent",
 }}
@@ -643,7 +643,7 @@ inset 0 1px 0 rgba(255,255,255,.55)
       {/* MENU */}
 <div
   style={{
-    padding: "20px 10px 0",
+    padding: "150px 10px 0",
     maxWidth: 700,
     margin: "0 auto",
   }}

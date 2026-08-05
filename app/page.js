@@ -506,16 +506,23 @@ onMouseLeave={(e) => {
 {/* CATEGORY BAR */}
 <div
 style={{
-  position: "relative",
-  zIndex: 10,
-
-  background:
-    "linear-gradient(  to bottom, rgba(255,255,255,0.25),  transparent )",
-  
-  backdropFilter:"blur(10px)",
-  WebkitBackdropFilter:"blur(10px)",
-    }}
-    >
+  position: "sticky",
+  top: 90,
+  zIndex: 200,
+  background: "rgba(255,255,255,0.01)",
+}}
+>
+ <div
+style={{
+  position:"absolute",
+  left:0,
+  right:0,
+  bottom:-25,
+  height:25,
+  background:"linear-gradient(to bottom, rgba(255,255,255,0), transparent)",
+  pointerEvents:"none",
+}}
+/>
   <div
   style={{
     display: "flex",

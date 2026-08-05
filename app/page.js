@@ -263,11 +263,13 @@ Zəhmət olmasa masanı seçin
   style={{
     position: "sticky",
     top: 0,
-    zIndex: 50,
+    zIndex: 1000,
     padding: "6px 12px 8px",
 
-    backdropFilter: "blur(14px)",
-    WebkitBackdropFilter: "blur(14px)",
+    background: "rgba(255,255,255,0.15)",
+
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
 
     isolation: "isolate",
   }}

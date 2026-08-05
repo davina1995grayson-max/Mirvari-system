@@ -701,7 +701,6 @@ borderRadius:22,
  overflow: "visible",
  cursor:"pointer",
  position: "relative",
-zIndex: 0,
  boxShadow:
 activeCategory === "Hamısı"
 ? `

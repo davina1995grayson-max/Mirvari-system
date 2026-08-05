@@ -265,12 +265,7 @@ Zəhmət olmasa masanı seçin
     top: 0,
     zIndex: 1000,
     padding: "6px 12px 8px",
-
-    background: "rgba(255,255,255,0.15)",
-
-    backdropFilter: "blur(18px)",
-    WebkitBackdropFilter: "blur(18px)",
-
+    background: "transparent",
     isolation: "isolate",
   }}
 >
@@ -511,9 +506,8 @@ onMouseLeave={(e) => {
 {/* CATEGORY BAR */}
 <div
 style={{
-  position: "sticky",
-  top: 120,
-  zIndex: 60,
+  position: "relative",
+  zIndex: 10,
 
   background:
     "linear-gradient(  to bottom, rgba(255,255,255,0.25),  transparent )",

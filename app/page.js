@@ -204,7 +204,7 @@ const addToCart = (item, e) => {
     style={{
       marginTop: 8,
       color: "#b4934d",
-      fontSize: 12,
+      fontSize: 20,
       letterSpacing: 2,
       fontStyle: "italic",
       fontFamily: "'Cormorant Garamond', serif",

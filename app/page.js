@@ -650,12 +650,16 @@ inset 0 1px 0 rgba(255,255,255,.55)
 </div>
 </div>
 
-      {/* MENU */}
+     {/* MENU */}
 <div
   style={{
-    position: "relative",
-    zIndex: 1,
-    padding: "20px 10px 0",
+    height: "calc(100vh - 190px)",
+    overflowY: "auto",
+    padding: "20px 10px 100px",
+    maxWidth: 700,
+    margin: "0 auto",
+
+    scrollbarWidth: "none",
   }}
 >
 {(

@@ -210,25 +210,9 @@ const addToCart = (item, e) => {
       fontFamily: "'Cormorant Garamond', serif",
     }}
   >
-    Hər loxmada incə bir zövq
+    Zəhmət olmasa masanızı seçin
   </div>
 </div>
-
-<p
-  style={{
-    textAlign: "center",
-    color: "#8c6a22",
-    fontSize: 18,
-    marginBottom: 35,
-    fontWeight: 600,
-    letterSpacing: 0.5,
-    fontFamily: "'Cormorant Garamond', serif",
-    textShadow:
-      "0 2px 10px rgba(212,175,55,.25)",
-  }}
->
-Zəhmət olmasa masanızı seçin
-</p>
 
     <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>
 </div>

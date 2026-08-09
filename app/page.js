@@ -172,8 +172,9 @@ const addToCart = (item, e) => {
     backgroundRepeat: "no-repeat",
 
     color: "#222",
-    minHeight: "100vh",
-    padding: 24,
+    height: "100vh",
+overflow: "hidden",
+padding: "10px 24px",
     fontFamily: "'Inter', sans-serif",
   }}
 >

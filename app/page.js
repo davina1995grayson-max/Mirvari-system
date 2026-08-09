@@ -191,7 +191,7 @@ const addToCart = (item, e) => {
     alt="Mirvari Restaurant"
     style={{
       width: "100%",
-      maxWidth: 330,
+      maxWidth: 520,
       height: "auto",
       display: "block",
       margin: "0 auto",
@@ -202,13 +202,13 @@ const addToCart = (item, e) => {
 
   <div
     style={{
-      marginTop: 8,
-      color: "#b4934d",
-      fontSize: 20,
-      letterSpacing: 2,
-      fontStyle: "italic",
-      fontFamily: "'Cormorant Garamond', serif",
-    }}
+  textAlign: "center",
+  color: "#b4934d",
+  fontSize: 18,
+  marginTop: 10,
+  marginBottom: 18,
+  fontWeight: 500,
+}}
   >
     Zəhmət olmasa masanızı seçin
   </div>
@@ -220,8 +220,8 @@ const addToCart = (item, e) => {
      <div style={{
   display: "grid",
   gridTemplateColumns: "repeat(4, 1fr)",
-  gap: 12,
-  maxWidth: 420,
+  gap: 10,
+  maxWidth: 390,
   margin: "0 auto"
 }}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map(num => (
@@ -233,9 +233,9 @@ const addToCart = (item, e) => {
     "linear-gradient(145deg, rgba(255,255,255,.75), rgba(245,197,66,.65))",
   border:
     "1px solid rgba(212,175,55,.65)",
-  padding: 18,
-  borderRadius: 18,
-  fontSize: 18,
+  padding: 14,
+borderRadius: 14,
+fontSize: 16,
   fontWeight: "400",
   color: "#7d5a12",
   boxShadow:

@@ -164,19 +164,18 @@ const addToCart = (item, e) => {
   // ===== LOADING =====
   if (table === null) {
   return (
-  <div
-    style={{
-      backgroundImage: dark ? "none" : "url('/images/pearl-header.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "repeat",
-      backgroundColor: dark ? "#0b0b0b" : "transparent",
+<div
+  style={{
+    backgroundImage: "url('/images/pearl-header.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
 
-      color: dark ? "#fff" : "#111",
-      minHeight: "100vh",
-      padding: 24,
-      fontFamily: "'Inter', sans-serif",
-    }}
+    color: "#222",
+    minHeight: "100vh",
+    padding: 24,
+    fontFamily: "'Inter', sans-serif",
+  }}
 >
 
 <div
@@ -227,15 +226,28 @@ Zəhmət olmasa masanı seçin
   key={num}
   onClick={() => setTable(num)}
   style={{
-    background: "linear-gradient(135deg, #f5c542, #e0aa2b)",
-    border: "none",
-    padding: 18,
-    borderRadius: 16,
-    fontSize: 18,
-    fontWeight: "bold"
-  }}
+  background:
+    "linear-gradient(145deg, rgba(255,255,255,.75), rgba(245,197,66,.65))",
+  border:
+    "1px solid rgba(212,175,55,.65)",
+  padding: 18,
+  borderRadius: 18,
+  fontSize: 18,
+  fontWeight: "700",
+  color: "#7d5a12",
+  boxShadow:
+    "0 10px 25px rgba(212,175,55,.25), inset 0 1px 5px rgba(255,255,255,.8)",
+  backdropFilter: "blur(10px)",
+  WebkitBackdropFilter: "blur(10px)",
+  cursor: "pointer",
+  transition: "all .25s ease",
+}}
 >
-  🪑 {num}
+<img 
+  src="/table.png"
+  width={70}
+  alt="table"
+/> {num}
 </button>
         ))}
       </div>

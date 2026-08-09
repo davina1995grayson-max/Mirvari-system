@@ -245,7 +245,7 @@ Zəhmət olmasa masanı seçin
 >
 <img 
   src="/table.png"
-  width={70}
+  width={45}
   alt="table"
 /> {num}
 </button>
@@ -420,7 +420,7 @@ onMouseLeave={(e) => {
   >
     <img 
   src="/table.png"
-  width={70}
+  width={30}
   alt="table"
 />
   </button>

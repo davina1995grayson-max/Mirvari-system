@@ -191,7 +191,7 @@ const addToCart = (item, e) => {
     alt="Mirvari Restaurant"
     style={{
       width: "100%",
-      maxWidth: 520,
+      maxWidth: 480,
       height: "auto",
       display: "block",
       margin: "0 auto",

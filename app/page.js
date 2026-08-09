@@ -205,8 +205,8 @@ const addToCart = (item, e) => {
   textAlign: "center",
   color: "#b4934d",
   fontSize: 18,
-  marginTop: 10,
-  marginBottom: 18,
+  marginTop: -20,
+  marginBottom: 20,
   fontWeight: 500,
 }}
   >

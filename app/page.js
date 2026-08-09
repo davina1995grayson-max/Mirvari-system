@@ -246,17 +246,17 @@ Zəhmət olmasa masanı seçin
   // ===== UI =====
   return (
   <div
-    style={{
-      backgroundImage: "url('/images/pearl-header.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "top center",
-      backgroundRepeat: "no-repeat",
-      backgroundAttachment: "fixed",
+  style={{
+    backgroundImage: "url('/images/pearl-header.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "top center",
+    backgroundRepeat: "no-repeat",
 
-      minHeight: "100vh",
+    height: "100vh",
+    overflow: "hidden",
 
-      color: "#222",
-    }}
+    color: "#222",
+  }}
 >
     
 <div

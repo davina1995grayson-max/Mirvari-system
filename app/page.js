@@ -419,7 +419,7 @@ onMouseLeave={(e) => {
 }}
   >
     <img 
-  src="/table.png"
+  src="/table-1.jpg"
   width={30}
   alt="table"
 />

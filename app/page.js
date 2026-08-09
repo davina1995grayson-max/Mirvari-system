@@ -182,7 +182,7 @@ const addToCart = (item, e) => {
   onClick={handleLogoClick}
   style={{
     textAlign: "center",
-    marginBottom: 25,
+    marginBottom: 20,
     cursor: "pointer",
   }}
 >
@@ -191,24 +191,43 @@ const addToCart = (item, e) => {
     alt="Mirvari Restaurant"
     style={{
       width: "100%",
-      maxWidth: 420,
+      maxWidth: 330,
       height: "auto",
       display: "block",
       margin: "0 auto",
+      filter:
+        "drop-shadow(0 8px 20px rgba(212,175,55,.25))",
     }}
   />
+
+  <div
+    style={{
+      marginTop: 8,
+      color: "#b4934d",
+      fontSize: 12,
+      letterSpacing: 2,
+      fontStyle: "italic",
+      fontFamily: "'Cormorant Garamond', serif",
+    }}
+  >
+    Hər loxmada incə bir zövq
+  </div>
 </div>
 
 <p
   style={{
     textAlign: "center",
-    color: "#d8b15a",
-    fontSize: 20,
-    marginBottom: 30,
-    fontWeight: 500,
+    color: "#8c6a22",
+    fontSize: 18,
+    marginBottom: 35,
+    fontWeight: 600,
+    letterSpacing: 0.5,
+    fontFamily: "'Cormorant Garamond', serif",
+    textShadow:
+      "0 2px 10px rgba(212,175,55,.25)",
   }}
 >
-Zəhmət olmasa masanı seçin
+Zəhmət olmasa masanızı seçin
 </p>
 
     <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>
@@ -233,7 +252,7 @@ Zəhmət olmasa masanı seçin
   padding: 18,
   borderRadius: 18,
   fontSize: 18,
-  fontWeight: "700",
+  fontWeight: "400",
   color: "#7d5a12",
   boxShadow:
     "0 10px 25px rgba(212,175,55,.25), inset 0 1px 5px rgba(255,255,255,.8)",

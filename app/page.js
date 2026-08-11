@@ -422,7 +422,7 @@ onMouseLeave={(e) => {
   transition:"all .25s ease",
 }}
   >
-    🪑🍽️🪑
+    🪑
   </button>
 
   <button

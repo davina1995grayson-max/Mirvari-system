@@ -424,7 +424,7 @@ onMouseLeave={(e) => {
   >
     <img 
   src="/table-1.jpg"
-  width={15}
+  width={30}
   alt="table"
 />
   </button>

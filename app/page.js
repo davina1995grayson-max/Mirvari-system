@@ -247,11 +247,7 @@ fontSize: 16,
   transition: "all .25s ease",
 }}
 >
-<img 
-  src="/table.png"
-  width={45}
-  alt="table"
-/> {num}
+🪑 {num}
 </button>
         ))}
       </div>

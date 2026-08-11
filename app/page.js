@@ -422,11 +422,7 @@ onMouseLeave={(e) => {
   transition:"all .25s ease",
 }}
   >
-    <img 
-  src="/table-1.jpg"
-  width={30}
-  alt="table"
-/>
+    🪑🍽️🪑
   </button>
 
   <button

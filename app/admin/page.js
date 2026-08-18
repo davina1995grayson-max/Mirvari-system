@@ -52,6 +52,7 @@ export default function AdminPage() {
   price: item.price,
   available: item.available,
   recommended: item.recommended,
+  image: item.image,
 });
       });
 
@@ -99,9 +100,32 @@ export default function AdminPage() {
     });
   };
 
+  const uploadImage = async (file) => {
+  if (!file) return "";
+
+  const fileName = `${Date.now()}-${file.name}`;
+
+  const { error } = await supabase.storage
+    .from("menu-images")
+    .upload(fileName, file);
+
+  if (error) {
+    console.log(error);
+    alert("Ошибка загрузки фото");
+    return "";
+  }
+
+  const { data } = supabase.storage
+    .from("menu-images")
+    .getPublicUrl(fileName);
+
+  return data.publicUrl;
+};
+
   // ITEMS
-  const addItem = () => {
+  const addItem = async () => {
     if (!selectedSection || !newItemName || !newItemPrice) return;
+    const imageUrl = await uploadImage(newItemImage);
 
     setMenuData((prev) =>
       prev.map((c) =>
@@ -113,6 +137,7 @@ export default function AdminPage() {
                 {
   name: newItemName,
   price: Number(newItemPrice),
+  image: imageUrl,
   available: true,
   recommended: false,
 },
@@ -201,6 +226,7 @@ const toggleRecommended = (section, name) => {
   category: section.title,
   available: item.available,
   recommended: item.recommended,
+  image: item.image || "",
 });
       });
     });

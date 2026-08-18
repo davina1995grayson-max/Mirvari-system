@@ -17,6 +17,7 @@ export default function AdminPage() {
 
   const [newItemName, setNewItemName] = useState("");
   const [newItemPrice, setNewItemPrice] = useState("");
+  const [newItemImage, setNewItemImage] = useState(null);
 
   const router = useRouter();
 
@@ -287,6 +288,14 @@ const toggleRecommended = (section, name) => {
         onChange={(e) => setNewItemPrice(e.target.value)}
       />
 
+          <input
+  type="file"
+  accept="image/*"
+  onChange={(e) =>
+    setNewItemImage(e.target.files[0])
+  }
+/>
+    
       <button onClick={addItem}>Add Item</button>
 
       <hr />

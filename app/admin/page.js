@@ -173,7 +173,15 @@ export default function AdminPage() {
 };
 
 
-const removeItemImage = (section, name) => {
+const removeItemImage = async (section, name) => {
+  const item = menuData
+    .find((c) => c.title === section)
+    ?.items.find((i) => i.name === name);
+
+  if (item?.image) {
+    await deleteImage(item.image);
+  }
+
   setMenuData((prev) =>
     prev.map((c) =>
       c.title === section

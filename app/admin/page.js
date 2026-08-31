@@ -124,17 +124,18 @@ export default function AdminPage() {
   const deleteImage = async (imageUrl) => {
   if (!imageUrl) return;
 
-  const fileName = imageUrl.split("/").pop();
+  const filePath = imageUrl.split("/menu-images/")[1];
 
   const { error } = await supabase.storage
     .from("menu-images")
-    .remove([fileName]);
+    .remove([filePath]);
 
   if (error) {
     console.log("Ошибка удаления фото:", error);
+  } else {
+    console.log("Фото удалено:", filePath);
   }
 };
-
   const updateItemImage = async (section, name, file) => {
   const imageUrl = await uploadImage(file);
 

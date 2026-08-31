@@ -121,8 +121,8 @@ export default function AdminPage() {
 
   return data.publicUrl;
 };
-  console.log("deleteImage получил:", imageUrl);
   const deleteImage = async (imageUrl) => {
+    console.log("deleteImage получил:", imageUrl);
   if (!imageUrl) {
     console.log("Нет ссылки на фото");
     return;

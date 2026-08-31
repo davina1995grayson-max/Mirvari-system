@@ -121,6 +121,7 @@ export default function AdminPage() {
 
   return data.publicUrl;
 };
+  console.log("deleteImage получил:", imageUrl);
   const deleteImage = async (imageUrl) => {
   if (!imageUrl) {
     console.log("Нет ссылки на фото");
@@ -239,9 +240,14 @@ const removeItemImage = (section, name) => {
     .find((c) => c.title === section)
     ?.items.find((i) => i.name === name);
 
-  if (itemToDelete?.image) {
-    await deleteImage(itemToDelete.image);
-  }
+  console.log("Удаляемое блюдо:", itemToDelete);
+
+if (itemToDelete?.image) {
+  console.log("Ссылка фото:", itemToDelete.image);
+  await deleteImage(itemToDelete.image);
+} else {
+  console.log("У блюда нет image");
+}
 
   setMenuData((prev) =>
     prev.map((c) =>

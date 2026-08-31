@@ -122,6 +122,45 @@ export default function AdminPage() {
   return data.publicUrl;
 };
 
+  const updateItemImage = async (section, name, file) => {
+  const imageUrl = await uploadImage(file);
+
+  if (!imageUrl) return;
+
+  setMenuData((prev) =>
+    prev.map((c) =>
+      c.title === section
+        ? {
+            ...c,
+            items: c.items.map((i) =>
+              i.name === name
+                ? { ...i, image: imageUrl }
+                : i
+            ),
+          }
+        : c
+    )
+  );
+};
+
+
+const removeItemImage = (section, name) => {
+  setMenuData((prev) =>
+    prev.map((c) =>
+      c.title === section
+        ? {
+            ...c,
+            items: c.items.map((i) =>
+              i.name === name
+                ? { ...i, image: "" }
+                : i
+            ),
+          }
+        : c
+    )
+  );
+};
+  
   // ITEMS
   const addItem = async () => {
     if (!selectedSection || !newItemName || !newItemPrice) return;
@@ -374,6 +413,27 @@ const toggleRecommended = (section, name) => {
                   updateItem(section.title, item.name, "price", Number(e.target.value))
                 }
               />
+                  <input
+  type="file"
+  accept="image/*"
+  onChange={(e) =>
+    updateItemImage(
+      section.title,
+      item.name,
+      e.target.files[0]
+    )
+  }
+/>
+
+{item.image && (
+  <button
+    onClick={() =>
+      removeItemImage(section.title, item.name)
+    }
+  >
+    🗑️ Фото
+  </button>
+)}
 
               <button
                 onClick={() => toggleItem(section.title, item.name)}

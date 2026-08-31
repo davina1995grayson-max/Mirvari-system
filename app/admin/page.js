@@ -127,20 +127,27 @@ export default function AdminPage() {
     return;
   }
 
-  const fileName = decodeURIComponent(
-    imageUrl.split("/").pop()
-  );
+  const parts = imageUrl.split("/menu-images/");
 
-  console.log("Удаляем файл:", fileName);
+  if (parts.length < 2) {
+    console.log("Не удалось получить путь файла");
+    return;
+  }
 
-  const { error } = await supabase.storage
+  const filePath = parts[1];
+
+  console.log("Пытаемся удалить:", filePath);
+
+  const { data, error } = await supabase.storage
     .from("menu-images")
-    .remove([fileName]);
+    .remove([filePath]);
+
+  console.log("Ответ Supabase:", data, error);
 
   if (error) {
-    console.log("Ошибка удаления фото:", error);
+    console.log("Ошибка удаления:", error);
   } else {
-    console.log("Фото удалено:", fileName);
+    console.log("Удаление успешно");
   }
 };
   const updateItemImage = async (section, name, file) => {

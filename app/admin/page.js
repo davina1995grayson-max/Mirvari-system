@@ -121,6 +121,19 @@ export default function AdminPage() {
 
   return data.publicUrl;
 };
+  const deleteImage = async (imageUrl) => {
+  if (!imageUrl) return;
+
+  const fileName = imageUrl.split("/").pop();
+
+  const { error } = await supabase.storage
+    .from("menu-images")
+    .remove([fileName]);
+
+  if (error) {
+    console.log("Ошибка удаления фото:", error);
+  }
+};
 
   const updateItemImage = async (section, name, file) => {
   const imageUrl = await uploadImage(file);
@@ -206,19 +219,26 @@ const removeItemImage = (section, name) => {
     );
   };
 
-  const deleteItem = (section, name) => {
-    setMenuData((prev) =>
-      prev.map((c) =>
-        c.title === section
-          ? {
-              ...c,
-              items: c.items.filter((i) => i.name !== name),
-            }
-          : c
-      )
-    );
-  };
+  const deleteItem = async (section, name) => {
+  const itemToDelete = menuData
+    .find((c) => c.title === section)
+    ?.items.find((i) => i.name === name);
 
+  if (itemToDelete?.image) {
+    await deleteImage(itemToDelete.image);
+  }
+
+  setMenuData((prev) =>
+    prev.map((c) =>
+      c.title === section
+        ? {
+            ...c,
+            items: c.items.filter((i) => i.name !== name),
+          }
+        : c
+    )
+  );
+};
   const toggleItem = (section, name) => {
     setMenuData((prev) =>
       prev.map((c) =>

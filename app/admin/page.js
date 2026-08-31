@@ -126,6 +126,7 @@ export default function AdminPage() {
   const addItem = async () => {
     if (!selectedSection || !newItemName || !newItemPrice) return;
     const imageUrl = await uploadImage(newItemImage);
+    console.log("IMAGE URL:", imageUrl);
 
     setMenuData((prev) =>
       prev.map((c) =>
@@ -359,6 +360,14 @@ const toggleRecommended = (section, name) => {
 
           {section.items.map((item) => (
             <div key={item.name} style={{ display: "flex", gap: 10 }}>
+              {item.image && (
+  <img
+    src={item.image}
+    width="60"
+    height="60"
+    style={{ objectFit: "cover", borderRadius: 10 }}
+  />
+)}
               <input
                 value={item.name}
                 onChange={(e) =>

@@ -308,6 +308,7 @@ const toggleRecommended = (section, name) => {
 };
   // SAVE
  const uploadMenuToSupabase = async () => {
+  console.log("НАЧАЛО СОХРАНЕНИЯ");
   const dishes = [];
 
   menuData.forEach((section) => {
@@ -353,6 +354,7 @@ const toggleRecommended = (section, name) => {
     }
   }
 
+   console.log("СОХРАНЕНИЕ ЗАКОНЧЕНО");
   alert("Меню обновлено!");
 };
 

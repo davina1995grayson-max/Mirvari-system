@@ -47,7 +47,8 @@ export default function AdminPage() {
           grouped[item.category] = [];
         }
 
-        grouped[item.category].push({
+       grouped[item.category].push({
+  id: item.id,
   name: item.name,
   price: item.price,
   available: item.available,
@@ -211,13 +212,15 @@ const removeItemImage = async (section, name) => {
               ...c,
               items: [
                 ...c.items,
-                {
+{
+  id: null,
   name: newItemName,
   price: Number(newItemPrice),
-  image: imageUrl,
+  image: "",
+  imageFile: newItemImage,
   available: true,
   recommended: false,
-},
+}
               ],
             }
           : c

@@ -38,7 +38,10 @@ export default function AdminPage() {
     if (!isAuth) return;
 
     const loadMenu = async () => {
-      const { data } = await supabase.from("menu").select("*");
+      const { data } = await supabase
+  .from("menu")
+  .select("*")
+  .order("id", { ascending: true });
 
       const grouped = {};
 

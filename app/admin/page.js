@@ -307,27 +307,54 @@ const toggleRecommended = (section, name) => {
   );
 };
   // SAVE
-  const uploadMenuToSupabase = async () => {
-    const dishes = [];
+ const uploadMenuToSupabase = async () => {
+  const dishes = [];
 
-    menuData.forEach((section) => {
-      section.items.forEach((item) => {
-        dishes.push({
-  name: item.name,
-  price: item.price,
-  category: section.title,
-  available: item.available,
-  recommended: item.recommended,
-  image: item.image || "",
-});
+  menuData.forEach((section) => {
+    section.items.forEach((item) => {
+      dishes.push({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        category: section.title,
+        available: item.available,
+        recommended: item.recommended,
+        image: item.image || "",
       });
     });
+  });
 
-    await supabase.from("menu").delete().neq("id", 0);
-    await supabase.from("menu").insert(dishes);
 
-    alert("Меню обновлено!");
-  };
+  for (const dish of dishes) {
+
+    // новое блюдо
+    if (!dish.id) {
+      const { id, ...newDish } = dish;
+
+      await supabase
+        .from("menu")
+        .insert(newDish);
+
+    } 
+    
+    // существующее блюдо
+    else {
+      await supabase
+        .from("menu")
+        .update({
+          name: dish.name,
+          price: dish.price,
+          category: dish.category,
+          available: dish.available,
+          recommended: dish.recommended,
+          image: dish.image,
+        })
+        .eq("id", dish.id);
+    }
+  }
+
+  alert("Меню обновлено!");
+};
 
   // LOGIN SCREEN
   if (!isAuth) {

@@ -394,9 +394,14 @@ const toggleRecommended = (section, name) => {
     <div style={{ padding: 20 }}>
       <h1>ADMIN PANEL</h1>
 
-      <button onClick={uploadMenuToSupabase}>
-        Загрузить в Supabase
-      </button>
+     <button 
+  onClick={() => {
+    console.log("КНОПКА НАЖАТА");
+    uploadMenuToSupabase();
+  }}
+>
+  Загрузить в Supabase
+</button>
 
       <button onClick={logout}>Выход</button>
 

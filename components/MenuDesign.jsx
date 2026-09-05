@@ -3,13 +3,14 @@
 export default function MenuDesign({ menuData }) {
   return (
     <div
-      style={{
-        minHeight: "100vh",
-        background: "#f7f1e6",
-        padding: "20px",
-        color: "#2b2418",
-      }}
-    >
+  style={{
+    minHeight: "100vh",
+    background: "#f7f1e6",
+    padding: "20px",
+    color: "#2b2418",
+    overflowY: "auto",
+  }}
+>
       <h1
         style={{
           textAlign: "center",

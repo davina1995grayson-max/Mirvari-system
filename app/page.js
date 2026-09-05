@@ -265,8 +265,8 @@ fontSize: 16,
     backgroundPosition: "top center",
     backgroundRepeat: "no-repeat",
 
-    height: "100vh",
-    overflow: "hidden",
+    minHeight: "100vh",
+    overflow: "visible",
 
     color: "#222",
   }}

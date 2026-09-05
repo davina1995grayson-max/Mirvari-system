@@ -457,8 +457,22 @@ const toggleRecommended = (section, name) => {
           </div>
 
           {section.items.map((item) => (
-            <div key={item.name} style={{ display: "flex", gap: 10 }}>
+  <div key={item.name} style={{ display: "flex", gap: 10 }}>
+
+    {item.image && (
+      <img
+        src={item.image}
+        width="60"
+        height="60"
+        style={{
+          objectFit: "cover",
+          borderRadius: "8px"
+        }}
+      />
+    )}
+
               <input
+                style={{ width: "140px" }}
                 value={item.name}
                 onChange={(e) =>
                   updateItem(section.title, item.name, "name", e.target.value)
@@ -466,6 +480,7 @@ const toggleRecommended = (section, name) => {
               />
 
               <input
+                style={{ width: "70px" }}
                 type="number"
                 value={item.price}
                 onChange={(e) =>

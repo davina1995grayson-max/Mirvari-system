@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "./supabase";
+import MenuDesign from "./components/MenuDesign";
 
 export default function Page() {
   const router = useRouter();

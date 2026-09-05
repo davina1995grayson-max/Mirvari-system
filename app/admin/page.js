@@ -1,4 +1,4 @@
-"use client";
+"use client"; 
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -38,7 +38,10 @@ export default function AdminPage() {
     if (!isAuth) return;
 
     const loadMenu = async () => {
-      const { data } = await supabase.from("menu").select("*");
+      const { data } = await supabase
+  .from("menu")
+  .select("*")
+  .order("id", { ascending: true });
 
       const grouped = {};
 
@@ -47,7 +50,7 @@ export default function AdminPage() {
           grouped[item.category] = [];
         }
 
-        grouped[item.category].push({
+       grouped[item.category].push({
   name: item.name,
   price: item.price,
   available: item.available,
@@ -100,8 +103,51 @@ export default function AdminPage() {
     });
   };
 
+  const compressImage = (file) => {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const canvas = document.createElement("canvas");
+
+    img.onload = () => {
+      const maxWidth = 800;
+      const scale = Math.min(maxWidth / img.width, 1);
+
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(
+        img,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      canvas.toBlob(
+        (blob) => {
+          resolve(
+            new File(
+              [blob],
+              file.name,
+              {
+                type: "image/jpeg",
+              }
+            )
+          );
+        },
+        "image/jpeg",
+        0.8
+      );
+    };
+
+    img.src = URL.createObjectURL(file);
+  });
+};
   const uploadImage = async (file) => {
   if (!file) return "";
+
+  file = await compressImage(file);
 
   const fileName = `${Date.now()}-${file.name}`;
 
@@ -121,12 +167,56 @@ export default function AdminPage() {
 
   return data.publicUrl;
 };
+  const deleteImage = async (imageUrl) => {
+    console.log("deleteImage получил:", imageUrl);
+  if (!imageUrl) {
+    console.log("Нет ссылки на фото");
+    return;
+  }
 
+  const parts = imageUrl.split("/menu-images/");
+
+  if (parts.length < 2) {
+    console.log("Не удалось получить путь файла");
+    return;
+  }
+
+  const filePath = parts[1];
+
+  console.log("Пытаемся удалить:", filePath);
+
+  const { data, error } = await supabase.storage
+    .from("menu-images")
+    .remove([filePath]);
+
+  console.log("Ответ Supabase:", data, error);
+
+  if (error) {
+    console.log("Ошибка удаления:", error);
+  } else {
+    console.log("Удаление успешно");
+  }
+};
   const updateItemImage = async (section, name, file) => {
-  const imageUrl = await uploadImage(file);
+  if (!file) return;
 
-  if (!imageUrl) return;
+  // ищем старое фото
+  const oldImage = menuData
+    .find((c) => c.title === section)
+    ?.items.find((i) => i.name === name)
+    ?.image;
 
+  // загружаем новое фото
+  const newImageUrl = await uploadImage(file);
+
+  if (!newImageUrl) return;
+
+  // удаляем старое фото
+  if (oldImage) {
+    await deleteImage(oldImage);
+  }
+
+  // меняем ссылку на новое фото
   setMenuData((prev) =>
     prev.map((c) =>
       c.title === section
@@ -134,7 +224,7 @@ export default function AdminPage() {
             ...c,
             items: c.items.map((i) =>
               i.name === name
-                ? { ...i, image: imageUrl }
+                ? { ...i, image: newImageUrl }
                 : i
             ),
           }
@@ -144,7 +234,15 @@ export default function AdminPage() {
 };
 
 
-const removeItemImage = (section, name) => {
+const removeItemImage = async (section, name) => {
+  const item = menuData
+    .find((c) => c.title === section)
+    ?.items.find((i) => i.name === name);
+
+  if (item?.image) {
+    await deleteImage(item.image);
+  }
+
   setMenuData((prev) =>
     prev.map((c) =>
       c.title === section
@@ -174,13 +272,15 @@ const removeItemImage = (section, name) => {
               ...c,
               items: [
                 ...c.items,
-                {
+{
+  id: null,
   name: newItemName,
   price: Number(newItemPrice),
-  image: imageUrl,
+  image: "",
+  imageFile: newItemImage,
   available: true,
   recommended: false,
-},
+}
               ],
             }
           : c
@@ -206,19 +306,31 @@ const removeItemImage = (section, name) => {
     );
   };
 
-  const deleteItem = (section, name) => {
-    setMenuData((prev) =>
-      prev.map((c) =>
-        c.title === section
-          ? {
-              ...c,
-              items: c.items.filter((i) => i.name !== name),
-            }
-          : c
-      )
-    );
-  };
+  const deleteItem = async (section, name) => {
+  const itemToDelete = menuData
+    .find((c) => c.title === section)
+    ?.items.find((i) => i.name === name);
 
+  console.log("Удаляемое блюдо:", itemToDelete);
+
+if (itemToDelete?.image) {
+  console.log("Ссылка фото:", itemToDelete.image);
+  await deleteImage(itemToDelete.image);
+} else {
+  console.log("У блюда нет image");
+}
+
+  setMenuData((prev) =>
+    prev.map((c) =>
+      c.title === section
+        ? {
+            ...c,
+            items: c.items.filter((i) => i.name !== name),
+          }
+        : c
+    )
+  );
+};
   const toggleItem = (section, name) => {
     setMenuData((prev) =>
       prev.map((c) =>
@@ -255,27 +367,27 @@ const toggleRecommended = (section, name) => {
   );
 };
   // SAVE
-  const uploadMenuToSupabase = async () => {
-    const dishes = [];
+ const uploadMenuToSupabase = async () => {
+  const dishes = [];
 
-    menuData.forEach((section) => {
-      section.items.forEach((item) => {
-        dishes.push({
-  name: item.name,
-  price: item.price,
-  category: section.title,
-  available: item.available,
-  recommended: item.recommended,
-  image: item.image || "",
-});
+  menuData.forEach((section) => {
+    section.items.forEach((item) => {
+      dishes.push({
+        name: item.name,
+        price: item.price,
+        category: section.title,
+        available: item.available,
+        recommended: item.recommended,
+        image: item.image || "",
       });
     });
+  });
 
-    await supabase.from("menu").delete().neq("id", 0);
-    await supabase.from("menu").insert(dishes);
+  await supabase.from("menu").delete().neq("id", 0);
+  await supabase.from("menu").insert(dishes);
 
-    alert("Меню обновлено!");
-  };
+  alert("Меню обновлено!");
+};
 
   // LOGIN SCREEN
   if (!isAuth) {
@@ -310,9 +422,14 @@ const toggleRecommended = (section, name) => {
     <div style={{ padding: 20 }}>
       <h1>ADMIN PANEL</h1>
 
-      <button onClick={uploadMenuToSupabase}>
-        Загрузить в Supabase
-      </button>
+     <button 
+  onClick={() => {
+    console.log("КНОПКА НАЖАТА");
+    uploadMenuToSupabase();
+  }}
+>
+  Загрузить в Supabase
+</button>
 
       <button onClick={logout}>Выход</button>
 
@@ -398,8 +515,22 @@ const toggleRecommended = (section, name) => {
           </div>
 
           {section.items.map((item) => (
-            <div key={item.name} style={{ display: "flex", gap: 10 }}>
+  <div key={item.name} style={{ display: "flex", gap: 10 }}>
+
+    {item.image && (
+      <img
+        src={item.image}
+        width="60"
+        height="60"
+        style={{
+          objectFit: "cover",
+          borderRadius: "8px"
+        }}
+      />
+    )}
+
               <input
+                style={{ width: "140px" }}
                 value={item.name}
                 onChange={(e) =>
                   updateItem(section.title, item.name, "name", e.target.value)
@@ -407,6 +538,7 @@ const toggleRecommended = (section, name) => {
               />
 
               <input
+                style={{ width: "70px" }}
                 type="number"
                 value={item.price}
                 onChange={(e) =>

@@ -51,7 +51,6 @@ export default function AdminPage() {
         }
 
        grouped[item.category].push({
-  id: item.id,
   name: item.name,
   price: item.price,
   available: item.available,
@@ -311,13 +310,11 @@ const toggleRecommended = (section, name) => {
 };
   // SAVE
  const uploadMenuToSupabase = async () => {
-  console.log("НАЧАЛО СОХРАНЕНИЯ");
   const dishes = [];
 
   menuData.forEach((section) => {
     section.items.forEach((item) => {
       dishes.push({
-        id: item.id,
         name: item.name,
         price: item.price,
         category: section.title,
@@ -328,36 +325,9 @@ const toggleRecommended = (section, name) => {
     });
   });
 
+  await supabase.from("menu").delete().neq("id", 0);
+  await supabase.from("menu").insert(dishes);
 
-  for (const dish of dishes) {
-
-    // новое блюдо
-    if (!dish.id) {
-      const { id, ...newDish } = dish;
-
-      await supabase
-        .from("menu")
-        .insert(newDish);
-
-    } 
-    
-    // существующее блюдо
-    else {
-      await supabase
-        .from("menu")
-        .update({
-          name: dish.name,
-          price: dish.price,
-          category: dish.category,
-          available: dish.available,
-          recommended: dish.recommended,
-          image: dish.image,
-        })
-        .eq("id", dish.id);
-    }
-  }
-
-   console.log("СОХРАНЕНИЕ ЗАКОНЧЕНО");
   alert("Меню обновлено!");
 };
 

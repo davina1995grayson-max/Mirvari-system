@@ -21,8 +21,8 @@ export default function MenuDesign({ menuData }) {
     src="/logo.png"
     alt="Mirvari Restaurant"
     style={{
-      width: "90%",
-      maxWidth: 420,
+      width: "75%",
+      maxWidth: 320,
       height: "auto",
       filter:
         "drop-shadow(0 8px 20px rgba(212,175,55,.25))",
@@ -31,7 +31,7 @@ export default function MenuDesign({ menuData }) {
 
   <div
     style={{
-      marginTop: 12,
+      marginTop: 6,
       color: "#8c6a22",
       fontSize: 13,
       fontStyle: "italic",

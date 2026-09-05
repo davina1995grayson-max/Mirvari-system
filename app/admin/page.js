@@ -155,10 +155,25 @@ export default function AdminPage() {
   }
 };
   const updateItemImage = async (section, name, file) => {
-  const imageUrl = await uploadImage(file);
+  if (!file) return;
 
-  if (!imageUrl) return;
+  // ищем старое фото
+  const oldImage = menuData
+    .find((c) => c.title === section)
+    ?.items.find((i) => i.name === name)
+    ?.image;
 
+  // загружаем новое фото
+  const newImageUrl = await uploadImage(file);
+
+  if (!newImageUrl) return;
+
+  // удаляем старое фото
+  if (oldImage) {
+    await deleteImage(oldImage);
+  }
+
+  // меняем ссылку на новое фото
   setMenuData((prev) =>
     prev.map((c) =>
       c.title === section
@@ -166,7 +181,7 @@ export default function AdminPage() {
             ...c,
             items: c.items.map((i) =>
               i.name === name
-                ? { ...i, image: imageUrl }
+                ? { ...i, image: newImageUrl }
                 : i
             ),
           }

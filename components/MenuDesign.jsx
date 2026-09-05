@@ -11,27 +11,48 @@ export default function MenuDesign({ menuData }) {
     overflowY: "auto",
   }}
 >
-      <h1
-        style={{
-          textAlign: "center",
-          color: "#b88a2a",
-          fontFamily: "serif",
-          fontSize: 42,
-          marginTop: 20,
-        }}
-      >
-        Mirvari
-      </h1>
+<div
+  style={{
+    textAlign: "center",
+    marginBottom: 30,
+  }}
+>
+  <img
+    src="/logo.png"
+    alt="Mirvari Restaurant"
+    style={{
+      width: "90%",
+      maxWidth: 420,
+      height: "auto",
+      filter:
+        "drop-shadow(0 8px 20px rgba(212,175,55,.25))",
+    }}
+  />
 
-      <p
-        style={{
-          textAlign: "center",
-          color: "#8c6a22",
-          letterSpacing: 3,
-        }}
-      >
-        RESTAURANT
-      </p>
+  <div
+    style={{
+      marginTop: -10,
+      color: "#b4934d",
+      fontSize: 14,
+      letterSpacing: 4,
+      fontWeight: 600,
+    }}
+  >
+    RESTAURANT
+  </div>
+
+  <div
+    style={{
+      marginTop: 12,
+      color: "#8c6a22",
+      fontSize: 13,
+      fontStyle: "italic",
+      letterSpacing: 1,
+    }}
+  >
+    Hər loxmada incə bir zövq
+  </div>
+</div>
 
       <div
   style={{

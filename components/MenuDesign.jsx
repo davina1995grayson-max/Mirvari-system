@@ -31,18 +31,6 @@ export default function MenuDesign({ menuData }) {
 
   <div
     style={{
-      marginTop: -10,
-      color: "#b4934d",
-      fontSize: 14,
-      letterSpacing: 4,
-      fontWeight: 600,
-    }}
-  >
-    RESTAURANT
-  </div>
-
-  <div
-    style={{
       marginTop: 12,
       color: "#8c6a22",
       fontSize: 13,
@@ -56,7 +44,7 @@ export default function MenuDesign({ menuData }) {
 
       <div
   style={{
-    marginTop: 40,
+    marginTop: 20,
   }}
 >
   {menuData?.map((section) => (

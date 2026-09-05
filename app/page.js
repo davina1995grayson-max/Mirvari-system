@@ -179,8 +179,6 @@ padding: "10px 24px",
     fontFamily: "'Inter', sans-serif",
   }}
 >
-
-    <MenuDesign menuData={menuData} />
     
 <div
   onClick={handleLogoClick}
@@ -273,6 +271,8 @@ fontSize: 16,
     color: "#222",
   }}
 >
+  
+    <MenuDesign menuData={menuData} />
     
 <div
   style={{

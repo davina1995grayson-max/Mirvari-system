@@ -1,6 +1,6 @@
 "use client";
 
-export default function MenuDesign() {
+export default function MenuDesign({ menuData }) {
   return (
     <div
       style={{

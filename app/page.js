@@ -180,6 +180,8 @@ padding: "10px 24px",
   }}
 >
 
+    <MenuDesign />
+    
 <div
   onClick={handleLogoClick}
   style={{

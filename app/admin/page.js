@@ -103,8 +103,51 @@ export default function AdminPage() {
     });
   };
 
+  const compressImage = (file) => {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const canvas = document.createElement("canvas");
+
+    img.onload = () => {
+      const maxWidth = 800;
+      const scale = Math.min(maxWidth / img.width, 1);
+
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(
+        img,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      canvas.toBlob(
+        (blob) => {
+          resolve(
+            new File(
+              [blob],
+              file.name,
+              {
+                type: "image/jpeg",
+              }
+            )
+          );
+        },
+        "image/jpeg",
+        0.8
+      );
+    };
+
+    img.src = URL.createObjectURL(file);
+  });
+};
   const uploadImage = async (file) => {
   if (!file) return "";
+
+  file = await compressImage(file);
 
   const fileName = `${Date.now()}-${file.name}`;
 

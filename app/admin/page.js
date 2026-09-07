@@ -368,6 +368,12 @@ const toggleRecommended = (section, name) => {
 };
   // SAVE
  const uploadMenuToSupabase = async () => {
+
+  if (!menuData || menuData.length === 0) {
+    alert("Меню пустое. Загрузка отменена!");
+    return;
+  }
+
   const dishes = [];
 
   menuData.forEach((section) => {
@@ -383,6 +389,11 @@ const toggleRecommended = (section, name) => {
     });
   });
 
+   if (dishes.length === 0) {
+  alert("Нет блюд для загрузки");
+  return;
+   }
+   
   await supabase.from("menu").delete().neq("id", 0);
   await supabase.from("menu").insert(dishes);
 

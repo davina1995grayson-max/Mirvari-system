@@ -202,3 +202,4 @@ const DEFAULT_MENU = [
   },
 ];
 
+export { DEFAULT_MENU };

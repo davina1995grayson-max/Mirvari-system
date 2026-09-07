@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../supabase";
+import { DEFAULT_MENU } from "../menuData";
 
 export default function AdminPage() {
   const ADMIN_PASSWORD = "edik6762";

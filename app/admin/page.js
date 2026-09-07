@@ -375,7 +375,7 @@ const toggleRecommended = (section, name) => {
  const uploadMenuToSupabase = async () => {
 
   if (!menuData || menuData.length === 0) {
-    alert("Меню пустое. Загрузка отменена!");
+    alert("Ошибка: меню пустое. Загрузка отменена!");
     return;
   }
 
@@ -394,15 +394,46 @@ const toggleRecommended = (section, name) => {
     });
   });
 
-   if (dishes.length === 0) {
-  alert("Нет блюд для загрузки");
-  return;
-   }
-   
-  await supabase.from("menu").delete().neq("id", 0);
-  await supabase.from("menu").insert(dishes);
 
-  alert("Меню обновлено!");
+  if (dishes.length === 0) {
+    alert("Ошибка: нет блюд для загрузки!");
+    return;
+  }
+
+
+  const confirmUpload = confirm(
+    `Загрузить ${dishes.length} блюд в базу?`
+  );
+
+  if (!confirmUpload) return;
+
+
+  const { error: deleteError } = await supabase
+    .from("menu")
+    .delete()
+    .neq("id", 0);
+
+
+  if (deleteError) {
+    alert("Ошибка удаления старого меню");
+    console.log(deleteError);
+    return;
+  }
+
+
+  const { error: insertError } = await supabase
+    .from("menu")
+    .insert(dishes);
+
+
+  if (insertError) {
+    alert("Ошибка загрузки меню");
+    console.log(insertError);
+    return;
+  }
+
+
+  alert("Меню успешно обновлено!");
 };
 
   // LOGIN SCREEN

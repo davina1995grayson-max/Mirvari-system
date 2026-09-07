@@ -44,6 +44,10 @@ export default function AdminPage() {
   .select("*")
   .order("id", { ascending: true });
 
+      if (!data || data.length === 0) {
+  setMenuData(DEFAULT_MENU);
+  return;
+}
       const grouped = {};
 
       data?.forEach((item) => {

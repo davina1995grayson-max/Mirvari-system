@@ -253,7 +253,14 @@ const handleLogoClick = () => {
         .from("menu")
         .select("*");
 
-      if (!data) return;
+      const menuSource = data && data.length > 0
+  ? data
+  : DEFAULT_MENU.flatMap(section =>
+      section.items.map(item => ({
+        ...item,
+        category: section.title,
+      }))
+    );
 
       const grouped = {};
 

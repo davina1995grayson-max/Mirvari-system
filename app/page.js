@@ -264,7 +264,7 @@ const handleLogoClick = () => {
 
       const grouped = {};
 
-      data.forEach((item) => {
+      menuSource.forEach((item) => {
         if (!grouped[item.category]) grouped[item.category] = [];
         grouped[item.category].push(item);
       });

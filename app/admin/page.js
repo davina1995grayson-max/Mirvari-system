@@ -281,8 +281,8 @@ const removeItemImage = async (section, name) => {
   id: null,
   name: newItemName,
   price: Number(newItemPrice),
-  image: "",
-  imageFile: newItemImage,
+  image: imageUrl,
+imageFile: null,
   available: true,
   recommended: false,
 }
@@ -379,6 +379,12 @@ const toggleRecommended = (section, name) => {
     return;
   }
 
+  const { data: currentMenu } = await supabase
+    .from("menu")
+    .select("id");
+
+  const currentCount = currentMenu?.length || 0;
+
   const dishes = [];
 
   menuData.forEach((section) => {
@@ -400,7 +406,14 @@ const toggleRecommended = (section, name) => {
     return;
   }
 
+ if (currentCount > 20 && dishes.length < currentCount / 2) {
+  const allow = confirm(
+    `В базе сейчас ${currentCount} блюд.\nВы пытаетесь загрузить только ${dishes.length}.\n\nТочно продолжить?`
+  );
 
+  if (!allow) return;
+}
+   
   const confirmUpload = confirm(
     `Загрузить ${dishes.length} блюд в базу?`
   );

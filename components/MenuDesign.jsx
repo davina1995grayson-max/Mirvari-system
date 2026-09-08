@@ -77,19 +77,21 @@ export default function MenuDesign({ menuData }) {
       height: "100%",
       background: "rgba(0,0,0,0.35)",
       zIndex: 1000,
+      overflow: "hidden",
     }}
   >
     <div
-      onClick={(e) => e.stopPropagation()}
-      style={{
-        width: "80%",
-        maxWidth: 350,
-        height: "100%",
-        background: "#f7f1e6",
-        padding: 25,
-        boxShadow: "5px 0 20px rgba(0,0,0,.2)",
-      }}
-    >
+  onClick={(e) => e.stopPropagation()}
+  style={{
+    width: "80%",
+    maxWidth: 350,
+    height: "100vh",
+    background: "#f7f1e6",
+    padding: 25,
+    boxShadow: "5px 0 20px rgba(0,0,0,.2)",
+    overflowY: "auto",
+  }}
+>
       <div
         style={{
           display: "flex",

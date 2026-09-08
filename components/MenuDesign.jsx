@@ -96,15 +96,15 @@ export default function MenuDesign({ menuData }) {
 <div
   onClick={(e) => e.stopPropagation()}
   style={{
-    width: "80%",
-    maxWidth: 350,
-    height: "100%",
-    maxHeight: "100vh",
-    background: "#f7f1e6",
-    padding: 25,
-    boxShadow: "5px 0 20px rgba(0,0,0,.2)",
-    overflowY: "scroll",
-  }}
+  width: "80%",
+  maxWidth: 350,
+  height: "100vh",
+  background: "#f7f1e6",
+  padding: "25px 25px 80px 25px",
+  boxSizing: "border-box",
+  boxShadow: "5px 0 20px rgba(0,0,0,.2)",
+  overflowY: "auto",
+}}
 >
       <div
         style={{

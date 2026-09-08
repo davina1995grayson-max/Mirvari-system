@@ -19,10 +19,28 @@ export default function MenuDesign({ menuData }) {
 >
 <div
   style={{
+    position: "relative",
     textAlign: "center",
     marginBottom: 30,
   }}
 >
+
+  <button
+    onClick={() => setOpenCategories(true)}
+    style={{
+      position: "absolute",
+      left: 0,
+      top: 20,
+      border: "none",
+      background: "transparent",
+      fontSize: 32,
+      color: "#b88a2a",
+      cursor: "pointer",
+    }}
+  >
+    ☰
+  </button>
+
   <img
     src="/logo.png"
     alt="Mirvari Restaurant"
@@ -47,22 +65,83 @@ export default function MenuDesign({ menuData }) {
     Hər loxmada incə bir zövq
   </div>
 
-  <button
-  onClick={() => setOpenCategories(true)}
-  style={{
-    display: "block",
-    margin: "30px auto",
-    padding: "14px 35px",
-    borderRadius: "30px",
-    border: "1px solid #d4af37",
-    background: "#fff",
-    color: "#8c6a22",
-    fontSize: "18px",
-  }}
->
-  ☰ Категории
-</button>
 </div>
+      {openCategories && (
+  <div
+    onClick={() => setOpenCategories(false)}
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      background: "rgba(0,0,0,0.35)",
+      zIndex: 1000,
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        width: "80%",
+        maxWidth: 350,
+        height: "100%",
+        background: "#f7f1e6",
+        padding: 25,
+        boxShadow: "5px 0 20px rgba(0,0,0,.2)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h2
+          style={{
+            color: "#b88a2a",
+          }}
+        >
+          Категории
+        </h2>
+
+        <button
+          onClick={() => setOpenCategories(false)}
+          style={{
+            border: "none",
+            background: "none",
+            fontSize: 24,
+          }}
+        >
+          ✕
+        </button>
+      </div>
+
+      {menuData?.map((section) => (
+        <button
+          key={section.title}
+          onClick={() => {
+            setSelectedCategory(section.title);
+            setOpenCategories(false);
+          }}
+          style={{
+            width: "100%",
+            padding: 15,
+            marginBottom: 10,
+            borderRadius: 15,
+            border: "1px solid rgba(212,175,55,.5)",
+            background: "#fff",
+            textAlign: "left",
+            fontSize: 16,
+            color: "#2b2418",
+          }}
+        >
+          🍽 {section.title}
+        </button>
+      ))}
+    </div>
+  </div>
+)}
 
       <div
   style={{

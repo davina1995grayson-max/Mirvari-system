@@ -165,7 +165,12 @@ style={{
     marginTop: 20,
   }}
 >
-  {menuData?.map((section) => (
+{(selectedCategory
+  ? menuData.filter(
+      (section) => section.title === selectedCategory
+    )
+  : menuData
+).map((section) => (
     <div
       key={section.title}
       style={{

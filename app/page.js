@@ -47,9 +47,10 @@ const handleLogoClick = () => {
   useEffect(() => {
     const loadMenu = async () => {
       const { data } = await supabase
-        .from("menu")
-        .select("*");
-
+  .from("menu")
+  .select("*")
+  .order("id", { ascending: true });
+      
       const menuSource = data && data.length > 0
   ? data
   : DEFAULT_MENU.flatMap(section =>
@@ -69,7 +70,7 @@ const handleLogoClick = () => {
       setMenuData(
         Object.keys(grouped).map((cat) => ({
           title: cat,
-          items: grouped[cat],
+          items: grouped[cat].sort((a, b) => a.id - b.id),
         }))
       );
     };

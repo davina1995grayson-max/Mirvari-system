@@ -153,7 +153,7 @@ style={{
             color: "#2b2418",
           }}
         >
-          🍽 {section.title}
+           {section.title}
         </button>
       ))}
     </div>
@@ -188,53 +188,71 @@ style={{
         {section.title}
       </h2>
 
-      {section.items?.map((item) => (
-        <div
-          key={item.name}
+      <div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: 15,
+  }}
+>
+  {section.items?.map((item) => (
+    <div
+      key={item.name}
+      style={{
+        background: "#fff",
+        borderRadius: 20,
+        overflow: "hidden",
+        border: "1px solid rgba(212,175,55,.25)",
+        boxShadow: "0 8px 20px rgba(0,0,0,.08)",
+      }}
+    >
+
+      {item.image && (
+        <img
+          src={item.image}
+          alt={item.name}
           style={{
-            background: "rgba(255,255,255,0.6)",
-            borderRadius: 20,
-            padding: 15,
-            marginBottom: 12,
-            border: "1px solid rgba(212,175,55,.25)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            width: "100%",
+            height: 150,
+            objectFit: "cover",
+          }}
+        />
+      )}
+
+      <div
+        style={{
+          padding: 12,
+          textAlign: "center",
+        }}
+      >
+
+        <div
+          style={{
+            fontSize: 16,
+            fontWeight: 700,
+            minHeight: 45,
           }}
         >
-          <div>
-            <div
-              style={{
-                fontSize: 18,
-                fontWeight: 700,
-              }}
-            >
-              {item.name}
-            </div>
-
-            <div
-              style={{
-                color: "#b88a2a",
-                marginTop: 5,
-              }}
-            >
-              {item.price} ₼
-            </div>
-          </div>
-
-          {item.image && (
-            <img
-              src={item.image}
-              style={{
-                width: 70,
-                height: 70,
-                borderRadius: "50%",
-                objectFit: "cover",
-              }}
-            />
-          )}
+          {item.name}
         </div>
-      ))}
+
+
+        <div
+          style={{
+            marginTop: 8,
+            color: "#b88a2a",
+            fontSize: 18,
+            fontWeight: 700,
+          }}
+        >
+          {item.price} ₼
+        </div>
+
+      </div>
+
+    </div>
+  ))}
+</div>
     </div>
   ))}
 </div>

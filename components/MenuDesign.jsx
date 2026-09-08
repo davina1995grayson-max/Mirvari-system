@@ -90,18 +90,20 @@ export default function MenuDesign({ menuData }) {
       background: "rgba(0,0,0,0.35)",
       zIndex: 1000,
       overflow: "hidden",
+      display: "flex",
     }}
   >
-    <div
+<div
   onClick={(e) => e.stopPropagation()}
   style={{
     width: "80%",
     maxWidth: 350,
-    height: "100vh",
+    height: "100%",
+    maxHeight: "100vh",
     background: "#f7f1e6",
     padding: 25,
     boxShadow: "5px 0 20px rgba(0,0,0,.2)",
-    overflowY: "auto",
+    overflowY: "scroll",
   }}
 >
       <div

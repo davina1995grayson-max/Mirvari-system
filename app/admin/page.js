@@ -56,6 +56,7 @@ export default function AdminPage() {
         }
 
        grouped[item.category].push({
+  id: item.id,       
   name: item.name,
   price: item.price,
   available: item.available,

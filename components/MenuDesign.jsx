@@ -1,6 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 export default function MenuDesign({ menuData }) {
+  
+  const [openCategories, setOpenCategories] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  
   return (
     <div
   style={{

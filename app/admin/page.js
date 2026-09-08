@@ -388,19 +388,19 @@ const toggleRecommended = (section, name) => {
 
   const dishes = [];
 
-  menuData.forEach((section) => {
-    section.items.forEach((item) => {
-      dishes.push({
-        name: item.name,
-        price: item.price,
-        category: section.title,
-        available: item.available,
-        recommended: item.recommended,
-        image: item.image || "",
-      });
+menuData.forEach((section) => {
+  section.items.forEach((item) => {
+    dishes.push({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      category: section.title,
+      available: item.available,
+      recommended: item.recommended,
+      image: item.image || "",
     });
   });
-
+});
 
   if (dishes.length === 0) {
     alert("Ошибка: нет блюд для загрузки!");
@@ -421,31 +421,34 @@ const toggleRecommended = (section, name) => {
 
   if (!confirmUpload) return;
 
+  for (const dish of dishes) {
 
-  const { error: deleteError } = await supabase
-    .from("menu")
-    .delete()
-    .neq("id", 0);
+  if (dish.id) {
+    await supabase
+      .from("menu")
+      .update({
+        name: dish.name,
+        price: dish.price,
+        category: dish.category,
+        available: dish.available,
+        recommended: dish.recommended,
+        image: dish.image,
+      })
+      .eq("id", dish.id);
 
-
-  if (deleteError) {
-    alert("Ошибка удаления старого меню");
-    console.log(deleteError);
-    return;
+  } else {
+    await supabase
+      .from("menu")
+      .insert({
+        name: dish.name,
+        price: dish.price,
+        category: dish.category,
+        available: dish.available,
+        recommended: dish.recommended,
+        image: dish.image,
+      });
   }
-
-
-  const { error: insertError } = await supabase
-    .from("menu")
-    .insert(dishes);
-
-
-  if (insertError) {
-    alert("Ошибка загрузки меню");
-    console.log(insertError);
-    return;
-  }
-
+              }
 
   alert("Меню успешно обновлено!");
 };

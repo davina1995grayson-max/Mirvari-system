@@ -46,6 +46,22 @@ export default function MenuDesign({ menuData }) {
   >
     Hər loxmada incə bir zövq
   </div>
+
+  <button
+  onClick={() => setOpenCategories(true)}
+  style={{
+    display: "block",
+    margin: "30px auto",
+    padding: "14px 35px",
+    borderRadius: "30px",
+    border: "1px solid #d4af37",
+    background: "#fff",
+    color: "#8c6a22",
+    fontSize: "18px",
+  }}
+>
+  ☰ Категории
+</button>
 </div>
 
       <div

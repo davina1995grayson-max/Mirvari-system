@@ -1,11 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function MenuDesign({ menuData }) {
   
   const [openCategories, setOpenCategories] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  useEffect(() => {
+  if (openCategories) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [openCategories]);
   
   return (
     <div

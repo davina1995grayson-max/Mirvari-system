@@ -213,7 +213,7 @@ style={{
           alt={item.name}
           style={{
             width: "100%",
-            height: 150,
+            height: 120,
             objectFit: "cover",
           }}
         />
@@ -221,14 +221,14 @@ style={{
 
       <div
         style={{
-          padding: 12,
-          textAlign: "center",
+          padding: "10px 8px 14px",
+textAlign: "center",
         }}
       >
 
         <div
           style={{
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: 700,
             minHeight: 45,
           }}

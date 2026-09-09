@@ -229,6 +229,7 @@ transition:"all .25s ease",
 </div>
 
 </div>
+    
       {openCategories && (
   <div
     onClick={() => setOpenCategories(false)}

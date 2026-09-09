@@ -281,7 +281,12 @@ fontSize: 16,
   }}
 >
   
-    <MenuDesign menuData={menuData} />
+<MenuDesign
+  menuData={menuData}
+  callWaiter={callWaiter}
+  callBill={callBill}
+  setTable={setTable}
+/>
     
 <div
   style={{

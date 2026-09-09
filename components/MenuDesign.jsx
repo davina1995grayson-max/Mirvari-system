@@ -245,7 +245,7 @@ textAlign: "center",
             fontWeight: 700,
           }}
         >
-          {item.price} ₼
+          {item.price} AZN
         </div>
 
       </div>

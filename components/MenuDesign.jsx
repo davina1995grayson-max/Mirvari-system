@@ -217,17 +217,10 @@ boxShadow:
 
 transition:"all .25s ease",
 }}
-
 > 
-
 💳
-
   </button>  
-
   </div>
-
-</div>
-
 </div>
     
       {openCategories && (

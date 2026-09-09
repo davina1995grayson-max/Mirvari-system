@@ -3,7 +3,16 @@
 import { useState, useEffect } from "react";
 
 export default function MenuDesign({ menuData }) {
-  
+
+  const callWaiter = () => {
+  const text = `👨🏻‍🍳 OFİSİANT ÇAĞIRILDI\n🪑 Masa: ${table}`;
+  window.open(`https://wa.me/994553976762?text=${encodeURIComponent(text)}`);
+};
+
+const callBill = () => {
+  const text = `💳 HESAB İSTƏNİLDİ\n🪑 Masa: ${table}`;
+  window.open(`https://wa.me/994553976762?text=${encodeURIComponent(text)}`);
+};
   const [openCategories, setOpenCategories] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
 

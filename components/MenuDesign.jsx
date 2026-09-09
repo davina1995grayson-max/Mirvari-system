@@ -31,51 +31,202 @@ export default function MenuDesign({ menuData }) {
 >
 <div
   style={{
-    position: "relative",
-    textAlign: "center",
-    marginBottom: 30,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "8px 5px",
+    marginBottom: 20,
+    position: "sticky",
+    top: 0,
+    zIndex: 20,
+    background: "#f7f1e6",
   }}
 >
 
-  <button
-    onClick={() => setOpenCategories(true)}
-    style={{
-      position: "absolute",
-      left: 0,
-      top: 20,
-      border: "none",
-      background: "transparent",
-      fontSize: 32,
-      color: "#b88a2a",
-      cursor: "pointer",
-    }}
-  >
-    ☰
-  </button>
-
-  <img
-    src="/logo.png"
-    alt="Mirvari Restaurant"
-    style={{
-      width: "75%",
-      maxWidth: 320,
-      height: "auto",
-      filter:
-        "drop-shadow(0 8px 20px rgba(212,175,55,.25))",
-    }}
-  />
-
+  {/* Слева */}
   <div
     style={{
-      marginTop: 6,
-      color: "#8c6a22",
-      fontSize: 13,
-      fontStyle: "italic",
-      letterSpacing: 1,
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
     }}
   >
-    Hər loxmada incə bir zövq
+
+    <button
+      onClick={() => setOpenCategories(true)}
+      style={{
+        border: "none",
+        background: "transparent",
+        fontSize: 28,
+        color: "#b88a2a",
+        padding: 0,
+      }}
+    >
+      ☰
+    </button>
+
+
+    <img
+      src="/logo.png"
+      alt="Mirvari"
+      style={{
+        width: 90,
+        height: "auto",
+      }}
+    />
+
   </div>
+
+
+  {/* Справа */}
+  <div
+    style={{
+      display: "flex",
+      gap: 8,
+    }}
+  >
+
+        <button
+          onClick={() => setTable(null)}
+
+          onMouseDown={(e) => {
+            e.currentTarget.style.transform = "scale(0.88)";
+          }}
+
+          onMouseUp={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+          }}
+
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+          }}
+          
+          style={{
+            width: 38,
+            height: 38,
+            fontSize: 17,
+            borderRadius: 14,
+            background:
+              "rgba(255,255,255,0.28)",
+            color:"#b88a2a",
+            border:
+              "1px solid rgba(212,175,55,.35)",
+            cursor:"pointer",
+            display:"flex",
+            alignItems:"center",
+            justifyContent:"center",
+            backdropFilter:"blur(12px)",
+            WebkitBackdropFilter:"blur(12px)",
+            boxShadow:
+              "0 6px 18px rgba(212,175,55,.18)",
+            transition:"all .25s ease",
+          }}
+        >                 
+            🪑
+           </button> 
+    
+            <button
+              onClick={callWaiter}
+
+              onMouseDown={(e) => {
+                e.currentTarget.style.transform = "scale(0.88)";
+              }}
+
+              onMouseUp={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+              
+              style={{
+                width: 38,
+height: 38,
+fontSize: 17,
+borderRadius: 14,
+
+background:
+"rgba(255,255,255,0.28)",
+
+color:"#b88a2a",
+
+border:
+"1px solid rgba(212,175,55,.35)",
+
+cursor:"pointer",
+
+display:"flex",
+alignItems:"center",
+justifyContent:"center",
+
+backdropFilter:"blur(12px)",
+WebkitBackdropFilter:"blur(12px)",
+
+boxShadow:
+"0 6px 18px rgba(212,175,55,.18)",
+
+transition:"all .25s ease",
+}}
+
+> 
+
+👨🏻‍🍳
+
+  </button> 
+    
+    <button
+        onClick={callBill}
+
+onMouseDown={(e) => {
+e.currentTarget.style.transform = "scale(0.88)";
+}}
+
+onMouseUp={(e) => {
+e.currentTarget.style.transform = "scale(1)";
+}}
+
+onMouseLeave={(e) => {
+e.currentTarget.style.transform = "scale(1)";
+}}
+style={{
+width: 38,
+height: 38,
+fontSize: 17,
+borderRadius: 14,
+
+background:
+"rgba(255,255,255,0.28)",
+
+color:"#b88a2a",
+
+border:
+"1px solid rgba(212,175,55,.35)",
+
+cursor:"pointer",
+
+display:"flex",
+alignItems:"center",
+justifyContent:"center",
+
+backdropFilter:"blur(12px)",
+WebkitBackdropFilter:"blur(12px)",
+
+boxShadow:
+"0 6px 18px rgba(212,175,55,.18)",
+
+transition:"all .25s ease",
+}}
+
+> 
+
+💳
+
+  </button>  
+
+  </div>
+
+</div>
 
 </div>
       {openCategories && (

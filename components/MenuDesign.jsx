@@ -2,7 +2,12 @@
 
 import { useState, useEffect } from "react";
 
-export default function MenuDesign({ menuData }) {
+export default function MenuDesign({
+  menuData,
+  callWaiter,
+  callBill,
+  setTable
+}) {
 
   const callWaiter = () => {
   const text = `👨🏻‍🍳 OFİSİANT ÇAĞIRILDI\n🪑 Masa: ${table}`;

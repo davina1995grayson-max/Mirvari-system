@@ -213,7 +213,7 @@ style={{
           alt={item.name}
           style={{
             width: "100%",
-            height: 120,
+            height: 110,
             objectFit: "cover",
           }}
         />
@@ -230,7 +230,7 @@ textAlign: "center",
           style={{
             fontSize: 15,
             fontWeight: 700,
-            minHeight: 45,
+            minHeight: 30,
           }}
         >
           {item.name}
@@ -239,7 +239,7 @@ textAlign: "center",
 
         <div
           style={{
-            marginTop: 8,
+            marginTop: 4,
             color: "#b88a2a",
             fontSize: 18,
             fontWeight: 700,

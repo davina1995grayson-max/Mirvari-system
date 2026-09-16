@@ -289,16 +289,15 @@ fontSize: 16,
   return (
   <div
   style={{
-    backgroundImage: "url('/images/pearl-header.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "top center",
-    backgroundRepeat: "no-repeat",
-
-    minHeight: "100vh",
-    overflow: "visible",
-
-    color: "#222",
-  }}
+  background:
+    "radial-gradient(circle at 15% 10%, rgba(255,255,255,.95), transparent 32%)," +
+    "radial-gradient(circle at 85% 30%, rgba(245,197,66,.10), transparent 28%)," +
+    "radial-gradient(circle at 20% 80%, rgba(255,255,255,.75), transparent 30%)," +
+    "linear-gradient(135deg, #f8f5ee 0%, #eee8dc 48%, #f7f3eb 100%)",
+  minHeight: "100vh",
+  overflow: "visible",
+  color: "#222",
+}}
 >
     
 <div

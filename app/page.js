@@ -26,6 +26,17 @@ const callBill = () => {
 };
   const [activeCategory, setActiveCategory] = useState(null);
   const [openCategories, setOpenCategories] = useState(false);
+  useEffect(() => {
+  if (openCategories) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [openCategories]);
   const categoryRefs = useRef({});
   const [search, setSearch] = useState("");
   const cartRef = useRef(null);

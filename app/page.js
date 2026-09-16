@@ -25,6 +25,7 @@ const callBill = () => {
   window.open(`https://wa.me/994553976762?text=${encodeURIComponent(text)}`);
 };
   const [activeCategory, setActiveCategory] = useState(null);
+  const [openCategories, setOpenCategories] = useState(false);
   const categoryRefs = useRef({});
   const [search, setSearch] = useState("");
   const cartRef = useRef(null);
@@ -298,13 +299,34 @@ fontSize: 16,
     marginBottom: 6,
   }}
 >
-    <div
+<div
   style={{
     display: "flex",
     alignItems: "center",
     gap: 8,
   }}
 >
+  <button
+    onClick={() => setOpenCategories(true)}
+    style={{
+      width: 38,
+      height: 38,
+      borderRadius: 14,
+      border: "1px solid rgba(212,175,55,.35)",
+      background: "rgba(255,255,255,.28)",
+      color: "#b88a2a",
+      fontSize: 22,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      cursor: "pointer",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      boxShadow: "0 6px 18px rgba(212,175,55,.18)",
+    }}
+  >
+    ☰
+  </button>
   <div
     style={{
   width: 40,
@@ -524,152 +546,164 @@ onMouseLeave={(e) => {
 </div>
   </div>
 
-{/* CATEGORY BAR */}
-<div
-style={{
-  position: "sticky",
-  top: 90,
-  zIndex: 200,
-  background: "rgba(255,255,255,0.01)",
-}}
->
- <div
-style={{
-  position:"absolute",
-  left:0,
-  right:0,
-  bottom:-25,
-  height:25,
-  background:"linear-gradient(to bottom, rgba(255,255,255,0), transparent)",
-  pointerEvents:"none",
-}}
-/>
+{openCategories && (
   <div
-  style={{
-    display: "flex",
-    gap: 8,
-    overflowX: "auto",
-    overflowY: "hidden",
-    whiteSpace: "nowrap",
-    padding: "4px 0px",
-    scrollbarWidth: "none",
-    msOverflowStyle: "none",
-  }}
->
-<button
-  onClick={() => {
-    setActiveCategory("Hamısı");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }}
-  style={{
-    flexShrink: 0,
-
-    background:
-      activeCategory === "Hamısı"
-      ? "linear-gradient(180deg,#f8d86d,#d7a42c)"
-      : "rgba(255,255,255,.18)",
-
-    backdropFilter:"blur(16px)",
-    WebkitBackdropFilter:"blur(16px)",
-
-    border:"1.5px solid rgba(212,175,55,.75)",
-
-    color:"#8c6a22",
-padding: "7px 18px",
-fontSize: 12,
-borderRadius: 999,
-height: 36,
-minWidth: "auto",
-
-    display:"flex",
-    alignItems:"center",
-    justifyContent:"center",
-
-    cursor:"pointer",
-    fontWeight:"700",
-    whiteSpace:"nowrap",
-  }}
->
-  ✨ Hamısı
-</button>
-{menuData.map((section) => (
-  <button
-    key={section.title}
-    id={"cat-" + section.title}
-    onClick={() => {
-      setActiveCategory(section.title);
-      const el = document.getElementById(section.title);
-
-      if (el) {
-        const y =
-          el.getBoundingClientRect().top +
-          window.pageYOffset -
-          280;
-
-        window.scrollTo({
-          top: y,
-          behavior: "smooth",
-        });
-      }
-    }}
+    onClick={() => setOpenCategories(false)}
     style={{
-      flexShrink: 0,
-      background:
-activeCategory === section.title
-? "linear-gradient(180deg,#f8d86d,#d7a42c)"
-: "rgba(255,255,255,.18)",
-
-backdropFilter:"blur(16px)",
-WebkitBackdropFilter:"blur(16px)",
-
-border:
-activeCategory === section.title
-? "1px solid #d4af37"
-: "1px solid rgba(212,175,55,.55)",
-      
-      color:
- activeCategory === section.title
- ? "#2b2418"
- : "#8c6a22",
-
-     padding: "5px 14px",
-fontSize:10,
-borderRadius:999,
-height:32,
-minHeight:32,
-minWidth:"auto",
-display:"flex",
-alignItems:"center",
-justifyContent:"center",
-gap:6,
-      cursor: "pointer",
-      fontWeight: "700",
-      whiteSpace: "nowrap",
-      transition: "all .25s ease",
-      boxShadow:
-activeCategory === section.title
-? `
-0 0 0 1px rgba(255,240,190,.45),
-0 10px 30px rgba(212,175,55,.28),
-0 0 20px rgba(255,215,120,.35),
-inset 0 1px 0 rgba(255,255,255,.6)
-`
-: `
-0 0 0 1px rgba(255,230,170,.18),
-0 8px 22px rgba(212,175,55,.12),
-inset 0 1px 0 rgba(255,255,255,.55)
-`,
+      position: "fixed",
+      inset: 0,
+      background: "rgba(30,25,18,.35)",
+      backdropFilter: "blur(5px)",
+      WebkitBackdropFilter: "blur(5px)",
+      zIndex: 10000,
+      display: "flex",
     }}
   >
-    {section.title}
-  </button>
-))}
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        width: "82%",
+        maxWidth: 360,
+        height: "100%",
+        background: "rgba(250,246,238,.97)",
+        boxShadow: "10px 0 35px rgba(0,0,0,.18)",
+        padding: "24px 20px",
+        boxSizing: "border-box",
+        overflowY: "auto",
+      }}
+    >
+
+      {/* Заголовок */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginBottom: 25,
+        }}
+      >
+        <div>
+          <div
+            style={{
+              color: "#9d7424",
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 28,
+              fontStyle: "italic",
+            }}
+          >
+            Mirvari
+          </div>
+
+          <div
+            style={{
+              color: "#b4934d",
+              fontSize: 9,
+              letterSpacing: 3,
+              marginTop: 3,
+            }}
+          >
+            CATEGORIES
+          </div>
+        </div>
+
+        <button
+          onClick={() => setOpenCategories(false)}
+          style={{
+            width: 38,
+            height: 38,
+            borderRadius: 14,
+            border: "1px solid rgba(212,175,55,.35)",
+            background: "rgba(255,255,255,.5)",
+            color: "#9d7424",
+            fontSize: 20,
+            cursor: "pointer",
+          }}
+        >
+          ✕
+        </button>
+      </div>
+
+      {/* Все блюда */}
+      <button
+        onClick={() => {
+          setActiveCategory("Hamısı");
+          setOpenCategories(false);
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
+        style={{
+          width: "100%",
+          padding: "15px 16px",
+          marginBottom: 10,
+          borderRadius: 16,
+          border: "1px solid rgba(212,175,55,.55)",
+          background:
+            activeCategory === "Hamısı"
+              ? "linear-gradient(135deg,#f8d86d,#d7a42c)"
+              : "rgba(255,255,255,.65)",
+          color: "#7d5a12",
+          textAlign: "left",
+          fontSize: 15,
+          fontWeight: 700,
+          cursor: "pointer",
+        }}
+      >
+        ✨ Hamısı
+      </button>
+
+      {/* Категории */}
+      {menuData.map((section) => (
+        <button
+          key={section.title}
+          onClick={() => {
+            setActiveCategory(section.title);
+            setOpenCategories(false);
+
+            setTimeout(() => {
+              const el = document.getElementById(section.title);
+
+              if (el) {
+                const y =
+                  el.getBoundingClientRect().top +
+                  window.pageYOffset -
+                  120;
+
+                window.scrollTo({
+                  top: y,
+                  behavior: "smooth",
+                });
+              }
+            }, 100);
+          }}
+          style={{
+            width: "100%",
+            padding: "14px 16px",
+            marginBottom: 9,
+            borderRadius: 16,
+            border:
+              activeCategory === section.title
+                ? "1px solid #d4af37"
+                : "1px solid rgba(212,175,55,.28)",
+            background:
+              activeCategory === section.title
+                ? "linear-gradient(135deg,#f8d86d,#d7a42c)"
+                : "rgba(255,255,255,.55)",
+            color: "#2b2418",
+            textAlign: "left",
+            fontSize: 14,
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          {section.title}
+        </button>
+      ))}
+    </div>
   </div>
-</div>
-</div>
+)}
 
      {/* MENU */}
 <div

@@ -29,6 +29,7 @@ const callBill = () => {
   const categoryRefs = useRef({});
   const [search, setSearch] = useState("");
   const cartRef = useRef(null);
+  const menuScrollRef = useRef(null);
   const [logoClicks, setLogoClicks] = useState(0);
 const handleLogoClick = () => {
   setLogoClicks((prev) => {
@@ -121,6 +122,14 @@ const handleLogoClick = () => {
   }
 }, [menuData]);
 
+  useEffect(() => {
+  if (!menuScrollRef.current) return;
+
+  menuScrollRef.current.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, [activeCategory]);
   // ===== ADD TO CART =====
 const addToCart = (item, e) => {
   setCart((prev) => {
@@ -707,6 +716,7 @@ onMouseLeave={(e) => {
 
      {/* MENU */}
 <div
+  ref={menuScrollRef}
   style={{
     height: "calc(100vh - 190px)",
     overflowY: "auto",

@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "./supabase";
-import MenuDesign from "../components/MenuDesign";
 import { DEFAULT_MENU } from "./menuData";
 
 export default function Page() {
@@ -280,13 +279,6 @@ fontSize: 16,
     color: "#222",
   }}
 >
-  
-<MenuDesign
-  menuData={menuData}
-  callWaiter={callWaiter}
-  callBill={callBill}
-  setTable={setTable}
-/>
     
 <div
   style={{

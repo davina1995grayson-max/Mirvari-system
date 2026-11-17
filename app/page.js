@@ -565,6 +565,57 @@ onMouseLeave={(e) => {
 </div>
   </div>
 
+{/* Горизонтальные категории */}
+<div
+  style={{
+    display: "flex",
+    gap: 9,
+    overflowX: "auto",
+    padding: "12px 14px 16px",
+    scrollbarWidth: "none",
+    maxWidth: 760,
+    margin: "0 auto",
+    position: "relative",
+    zIndex: 5,
+  }}
+>
+  {["Hamısı", ...menuData.map((section) => section.title)].map((category) => (
+    <button
+      key={category}
+      onClick={() => {
+        setActiveCategory(category);
+        if (menuScrollRef.current) {
+          menuScrollRef.current.scrollTop = 0;
+        }
+      }}
+      style={{
+        flexShrink: 0,
+        padding: "10px 17px",
+        borderRadius: 30,
+        border:
+          activeCategory === category
+            ? "1px solid #d4af37"
+            : "1px solid rgba(212,175,55,.25)",
+        background:
+          activeCategory === category
+            ? "linear-gradient(135deg,#f8d86d,#d7a42c)"
+            : "rgba(255,255,255,.72)",
+        color: "#795819",
+        fontSize: 13,
+        fontWeight: 600,
+        whiteSpace: "nowrap",
+        cursor: "pointer",
+        boxShadow:
+          activeCategory === category
+            ? "0 4px 12px rgba(184,138,42,.18)"
+            : "none",
+      }}
+    >
+      {category}
+    </button>
+  ))}
+</div>
+
 {openCategories && (
   <div
     onClick={() => setOpenCategories(false)}

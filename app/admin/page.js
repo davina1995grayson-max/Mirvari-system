@@ -19,6 +19,7 @@ export default function AdminPage() {
   const [newItemName, setNewItemName] = useState("");
   const [newItemPrice, setNewItemPrice] = useState("");
   const [newItemImage, setNewItemImage] = useState(null);
+  const [imagesToDelete, setImagesToDelete] = useState([]);
 
   const router = useRouter();
 

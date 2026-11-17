@@ -325,27 +325,6 @@ fontSize: 16,
     gap: 8,
   }}
 >
-  <button
-    onClick={() => setOpenCategories(true)}
-    style={{
-      width: 38,
-      height: 38,
-      borderRadius: 14,
-      border: "1px solid rgba(212,175,55,.35)",
-      background: "rgba(255,255,255,.28)",
-      color: "#b88a2a",
-      fontSize: 22,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      cursor: "pointer",
-      backdropFilter: "blur(12px)",
-      WebkitBackdropFilter: "blur(12px)",
-      boxShadow: "0 6px 18px rgba(212,175,55,.18)",
-    }}
-  >
-    ☰
-  </button>
   <div
     style={{
   width: 40,

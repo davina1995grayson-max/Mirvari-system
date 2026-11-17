@@ -372,119 +372,158 @@ const toggleRecommended = (section, name) => {
 };
 
   // SAVE
-  const uploadMenuToSupabase = async () => {
-    if (!menuData || menuData.length === 0) {
-      alert("Ошибка: меню пустое. Загрузка отменена!");
-      return;
+const uploadMenuToSupabase = async () => {
+  if (!menuData || menuData.length === 0) {
+    alert("Ошибка: меню пустое. Загрузка отменена!");
+    return;
+  }
+
+  const dishes = menuData.flatMap((section, sectionIndex) =>
+    section.items.map((item, itemIndex) => ({
+      ...item,
+      category: section.title,
+      sectionIndex,
+      itemIndex,
+    }))
+  );
+
+  if (dishes.length === 0) {
+    alert("Ошибка: нет блюд для загрузки!");
+    return;
+  }
+
+  try {
+    const { data: currentMenu, error: loadError } = await supabase
+      .from("menu")
+      .select("id");
+
+    if (loadError) throw loadError;
+
+    const currentCount = currentMenu?.length || 0;
+
+    if (currentCount > 20 && dishes.length < currentCount / 2) {
+      const allow = confirm(
+        `В базе сейчас ${currentCount} блюд.\nВы пытаетесь загрузить только ${dishes.length}.\n\nТочно продолжить?`
+      );
+
+      if (!allow) return;
     }
 
-    const dishes = menuData.flatMap((section, sectionIndex) =>
-      section.items.map((item, itemIndex) => ({
-        ...item,
-        category: section.title,
-        sectionIndex,
-        itemIndex,
-      }))
+    const confirmUpload = confirm(
+      `Загрузить ${dishes.length} блюд в базу?`
     );
 
-    if (dishes.length === 0) {
-      alert("Ошибка: нет блюд для загрузки!");
-      return;
-    }
+    if (!confirmUpload) return;
 
-    try {
-      const { data: currentMenu, error: loadError } = await supabase
-        .from("menu")
-        .select("id");
+    const queuedAtSave = [...imagesToDelete];
 
-      if (loadError) throw loadError;
+    for (const dish of dishes) {
+      const dishData = {
+        name: dish.name,
+        price: dish.price,
+        category: dish.category,
+        available: dish.available,
+        recommended: dish.recommended,
+        image: dish.image || "",
+      };
 
-      const currentCount = currentMenu?.length || 0;
-
-      if (currentCount > 20 && dishes.length < currentCount / 2) {
-        const allow = confirm(
-          `В базе сейчас ${currentCount} блюд.\nВы пытаетесь загрузить только ${dishes.length}.\n\nТочно продолжить?`
-        );
-
-        if (!allow) return;
-      }
-
-      const confirmUpload = confirm(
-        `Загрузить ${dishes.length} блюд в базу?`
-      );
-
-      if (!confirmUpload) return;
-
-      for (const dish of dishes) {
-        const dishData = {
-          name: dish.name,
-          price: dish.price,
-          category: dish.category,
-          available: dish.available,
-          recommended: dish.recommended,
-          image: dish.image || "",
-        };
-
-        if (dish.id !== null && dish.id !== undefined) {
-          const { error } = await supabase
-            .from("menu")
-            .update(dishData)
-            .eq("id", dish.id);
-
-          if (error) throw error;
-        } else {
-          const { data, error } = await supabase
-            .from("menu")
-            .insert(dishData)
-            .select("id")
-            .single();
-
-          if (error) throw error;
-
-          dish.id = data.id;
-
-          setMenuData((prev) =>
-            prev.map((section, sIndex) =>
-              sIndex !== dish.sectionIndex
-                ? section
-                : {
-                    ...section,
-                    items: section.items.map((item, iIndex) =>
-                      iIndex !== dish.itemIndex
-                        ? item
-                        : { ...item, id: data.id }
-                    ),
-                  }
-            )
-          );
-        }
-      }
-
-      const idsToKeep = dishes.map((dish) => dish.id);
-
-      const idsToDelete = currentMenu
-        .filter((item) => !idsToKeep.includes(item.id))
-        .map((item) => item.id);
-
-      if (idsToDelete.length > 0) {
+      if (dish.id !== null && dish.id !== undefined) {
         const { error } = await supabase
           .from("menu")
-          .delete()
-          .in("id", idsToDelete);
+          .update(dishData)
+          .eq("id", dish.id);
 
         if (error) throw error;
+      } else {
+        const { data, error } = await supabase
+          .from("menu")
+          .insert(dishData)
+          .select("id")
+          .single();
+
+        if (error) throw error;
+
+        dish.id = data.id;
+
+        setMenuData((prev) =>
+          prev.map((section, sIndex) =>
+            sIndex !== dish.sectionIndex
+              ? section
+              : {
+                  ...section,
+                  items: section.items.map((item, iIndex) =>
+                    iIndex !== dish.itemIndex
+                      ? item
+                      : { ...item, id: data.id }
+                  ),
+                }
+          )
+        );
       }
-
-      alert("Меню успешно обновлено!");
-    } catch (error) {
-      console.error("Ошибка сохранения меню:", error);
-      alert(
-        "Не удалось полностью сохранить меню.\n\n" +
-        (error.message || "Проверь интернет и попробуй ещё раз.")
-      );
     }
-  };
 
+    const idsToKeep = dishes.map((dish) => dish.id);
+
+    const idsToDelete = currentMenu
+      .filter((item) => !idsToKeep.includes(item.id))
+      .map((item) => item.id);
+
+    if (idsToDelete.length > 0) {
+      const { error } = await supabase
+        .from("menu")
+        .delete()
+        .in("id", idsToDelete);
+
+      if (error) throw error;
+    }
+
+    const imagesStillUsed = new Set(
+      dishes.map((dish) => dish.image).filter(Boolean)
+    );
+
+    const imagesStillInUse = queuedAtSave.filter(
+      (url) => imagesStillUsed.has(url)
+    );
+
+    const imagesPendingDeletion = queuedAtSave.filter(
+      (url) => !imagesStillUsed.has(url)
+    );
+
+    const failedImageDeletes = [];
+
+    for (const imageUrl of imagesPendingDeletion) {
+      const deleted = await deleteImage(imageUrl);
+
+      if (!deleted) {
+        failedImageDeletes.push(imageUrl);
+      }
+    }
+
+    setImagesToDelete((prev) => [
+      ...new Set([
+        ...prev.filter((url) => !queuedAtSave.includes(url)),
+        ...imagesStillInUse,
+        ...failedImageDeletes,
+      ]),
+    ]);
+
+    if (failedImageDeletes.length > 0) {
+      alert(
+        "Меню сохранено, но не удалось удалить " +
+        failedImageDeletes.length +
+        " старых фото. Повтори сохранение, чтобы попробовать ещё раз."
+      );
+    } else {
+      alert("Меню успешно обновлено!");
+    }
+  } catch (error) {
+    console.error("Ошибка сохранения меню:", error);
+    alert(
+      "Не удалось полностью сохранить меню.\n\n" +
+      (error.message || "Проверь интернет и попробуй ещё раз.")
+    );
+  }
+};
 
   // LOGIN SCREEN
   if (!isAuth) {

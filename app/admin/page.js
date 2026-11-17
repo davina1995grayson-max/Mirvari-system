@@ -372,86 +372,121 @@ const toggleRecommended = (section, name) => {
     )
   );
 };
+
   // SAVE
- const uploadMenuToSupabase = async () => {
+  const uploadMenuToSupabase = async () => {
+    if (!menuData || menuData.length === 0) {
+      alert("Ошибка: меню пустое. Загрузка отменена!");
+      return;
+    }
 
-  if (!menuData || menuData.length === 0) {
-    alert("Ошибка: меню пустое. Загрузка отменена!");
-    return;
-  }
+    const dishes = menuData.flatMap((section, sectionIndex) =>
+      section.items.map((item, itemIndex) => ({
+        ...item,
+        category: section.title,
+        sectionIndex,
+        itemIndex,
+      }))
+    );
 
-  const { data: currentMenu } = await supabase
-    .from("menu")
-    .select("id");
+    if (dishes.length === 0) {
+      alert("Ошибка: нет блюд для загрузки!");
+      return;
+    }
 
-  const currentCount = currentMenu?.length || 0;
+    try {
+      const { data: currentMenu, error: loadError } = await supabase
+        .from("menu")
+        .select("id");
 
-  const dishes = [];
+      if (loadError) throw loadError;
 
-menuData.forEach((section) => {
-  section.items.forEach((item) => {
-    dishes.push({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      category: section.title,
-      available: item.available,
-      recommended: item.recommended,
-      image: item.image || "",
-    });
-  });
-});
+      const currentCount = currentMenu?.length || 0;
 
-  if (dishes.length === 0) {
-    alert("Ошибка: нет блюд для загрузки!");
-    return;
-  }
+      if (currentCount > 20 && dishes.length < currentCount / 2) {
+        const allow = confirm(
+          `В базе сейчас ${currentCount} блюд.\nВы пытаетесь загрузить только ${dishes.length}.\n\nТочно продолжить?`
+        );
 
- if (currentCount > 20 && dishes.length < currentCount / 2) {
-  const allow = confirm(
-    `В базе сейчас ${currentCount} блюд.\nВы пытаетесь загрузить только ${dishes.length}.\n\nТочно продолжить?`
-  );
+        if (!allow) return;
+      }
 
-  if (!allow) return;
-}
-   
-  const confirmUpload = confirm(
-    `Загрузить ${dishes.length} блюд в базу?`
-  );
+      const confirmUpload = confirm(
+        `Загрузить ${dishes.length} блюд в базу?`
+      );
 
-  if (!confirmUpload) return;
+      if (!confirmUpload) return;
 
-  for (const dish of dishes) {
+      for (const dish of dishes) {
+        const dishData = {
+          name: dish.name,
+          price: dish.price,
+          category: dish.category,
+          available: dish.available,
+          recommended: dish.recommended,
+          image: dish.image || "",
+        };
 
-  if (dish.id) {
-    await supabase
-      .from("menu")
-      .update({
-        name: dish.name,
-        price: dish.price,
-        category: dish.category,
-        available: dish.available,
-        recommended: dish.recommended,
-        image: dish.image,
-      })
-      .eq("id", dish.id);
+        if (dish.id !== null && dish.id !== undefined) {
+          const { error } = await supabase
+            .from("menu")
+            .update(dishData)
+            .eq("id", dish.id);
 
-  } else {
-    await supabase
-      .from("menu")
-      .insert({
-        name: dish.name,
-        price: dish.price,
-        category: dish.category,
-        available: dish.available,
-        recommended: dish.recommended,
-        image: dish.image,
-      });
-  }
-              }
+          if (error) throw error;
+        } else {
+          const { data, error } = await supabase
+            .from("menu")
+            .insert(dishData)
+            .select("id")
+            .single();
 
-  alert("Меню успешно обновлено!");
-};
+          if (error) throw error;
+
+          dish.id = data.id;
+
+          setMenuData((prev) =>
+            prev.map((section, sIndex) =>
+              sIndex !== dish.sectionIndex
+                ? section
+                : {
+                    ...section,
+                    items: section.items.map((item, iIndex) =>
+                      iIndex !== dish.itemIndex
+                        ? item
+                        : { ...item, id: data.id }
+                    ),
+                  }
+            )
+          );
+        }
+      }
+
+      const idsToKeep = dishes.map((dish) => dish.id);
+
+      const idsToDelete = currentMenu
+        .filter((item) => !idsToKeep.includes(item.id))
+        .map((item) => item.id);
+
+      if (idsToDelete.length > 0) {
+        const { error } = await supabase
+          .from("menu")
+          .delete()
+          .in("id", idsToDelete);
+
+        if (error) throw error;
+      }
+
+      alert("Меню успешно обновлено!");
+    } catch (error) {
+      console.error("Ошибка сохранения меню:", error);
+      alert(
+        "Не удалось полностью сохранить меню.\n\n" +
+        (error.message || "Проверь интернет и попробуй ещё раз.")
+      );
+    }
+  };
+
 
   // LOGIN SCREEN
   if (!isAuth) {

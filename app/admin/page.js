@@ -309,20 +309,19 @@ imageFile: null,
       )
     );
   };
-
-  const deleteItem = async (section, name) => {
+  
+const deleteItem = async (section, name) => {
   const itemToDelete = menuData
     .find((c) => c.title === section)
     ?.items.find((i) => i.name === name);
 
-  console.log("Удаляемое блюдо:", itemToDelete);
-
-if (itemToDelete?.image) {
-  console.log("Ссылка фото:", itemToDelete.image);
-  await deleteImage(itemToDelete.image);
-} else {
-  console.log("У блюда нет image");
-}
+  if (itemToDelete?.image) {
+    setImagesToDelete((prev) =>
+      prev.includes(itemToDelete.image)
+        ? prev
+        : [...prev, itemToDelete.image]
+    );
+  }
 
   setMenuData((prev) =>
     prev.map((c) =>
@@ -335,6 +334,7 @@ if (itemToDelete?.image) {
     )
   );
 };
+
   const toggleItem = (section, name) => {
     setMenuData((prev) =>
       prev.map((c) =>

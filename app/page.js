@@ -766,34 +766,21 @@ activeCategory === "Hamısı"
                 <div
   key={item.name}
   style={{
- display:"flex",
- justifyContent:"space-between",
- alignItems:"center",
- padding:"12px 16px",
-marginBottom:10,
-borderRadius:22,
- background: "rgba(255,255,255,0.05)",
- backdropFilter:"blur(4px)",
- WebkitBackdropFilter:"blur(4px)",
- border: "1px solid rgba(212,175,55,.28)",
- transition:".35s",
- overflow: "visible",
- cursor:"pointer",
- position: "relative",
- boxShadow:
-activeCategory === "Hamısı"
-? `
-0 0 0 1px rgba(255,215,120,.45),
-0 12px 35px rgba(212,175,55,.18),
-0 0 24px rgba(255,215,120,.22),
-inset 0 1px 1px rgba(255,255,255,.55)
-`
-: `
-0 0 0 1px rgba(255,255,255,.18),
-0 8px 22px rgba(0,0,0,.10),
-0 0 16px rgba(212,175,55,.12),
-inset 0 1px 1px rgba(255,255,255,.55)
-`,
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "18px 20px",
+  marginBottom: 16,
+  borderRadius: 26,
+  background: "linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,250,239,.72))",
+  backdropFilter: "blur(14px)",
+  WebkitBackdropFilter: "blur(14px)",
+  border: "1px solid rgba(212,175,55,.30)",
+  transition: "all .3s ease",
+  overflow: "visible",
+  cursor: "pointer",
+  position: "relative",
+  boxShadow: "0 10px 28px rgba(130,100,45,.10), inset 0 1px 2px rgba(255,255,255,.95)",
 }}
 >
   {activeCategory === "Hamısı" && (
@@ -842,8 +829,8 @@ style={{
 >
 <div
 style={{
-  width:95,
-height:95,
+  width: 112,
+height: 112,
 marginLeft:-20,
 marginTop:-10,
 marginBottom:-10,
@@ -878,8 +865,8 @@ style={{
   lineHeight: 1.2,
   letterSpacing: ".2px",
   marginBottom: 8,
-  fontSize: "18px",
-  fontWeight: "700",
+  fontSize: "23px",
+fontWeight: "500",
   color: "#2b2418",
   fontFamily: "'Cormorant Garamond', serif",
 }}

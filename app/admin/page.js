@@ -174,56 +174,51 @@ export default function AdminPage() {
 
   return data.publicUrl;
 };
-  const deleteImage = async (imageUrl) => {
-    console.log("deleteImage получил:", imageUrl);
-  if (!imageUrl) {
-    console.log("Нет ссылки на фото");
-    return;
-  }
+  
+const deleteImage = async (imageUrl) => {
+  if (!imageUrl) return false;
 
   const parts = imageUrl.split("/menu-images/");
 
-  if (parts.length < 2) {
-    console.log("Не удалось получить путь файла");
-    return;
+  if (parts.length < 2 || !parts[1]) {
+    console.log("Не удалось получить путь файла:", imageUrl);
+    return false;
   }
 
-  const filePath = parts[1];
+  const filePath = decodeURIComponent(
+    parts[1].split("?")[0]
+  );
 
-  console.log("Пытаемся удалить:", filePath);
-
-  const { data, error } = await supabase.storage
+  const { error } = await supabase.storage
     .from("menu-images")
     .remove([filePath]);
 
-  console.log("Ответ Supabase:", data, error);
-
   if (error) {
-    console.log("Ошибка удаления:", error);
-  } else {
-    console.log("Удаление успешно");
+    console.log("Ошибка удаления фото:", error);
+    return false;
   }
+
+  return true;
 };
-  const updateItemImage = async (section, name, file) => {
+
+const updateItemImage = async (section, name, file) => {
   if (!file) return;
 
-  // ищем старое фото
   const oldImage = menuData
     .find((c) => c.title === section)
     ?.items.find((i) => i.name === name)
     ?.image;
 
-  // загружаем новое фото
   const newImageUrl = await uploadImage(file);
 
   if (!newImageUrl) return;
 
-  // удаляем старое фото
-  if (oldImage) {
-    await deleteImage(oldImage);
+  if (oldImage && oldImage !== newImageUrl) {
+    setImagesToDelete((prev) =>
+      prev.includes(oldImage) ? prev : [...prev, oldImage]
+    );
   }
 
-  // меняем ссылку на новое фото
   setMenuData((prev) =>
     prev.map((c) =>
       c.title === section
@@ -240,14 +235,15 @@ export default function AdminPage() {
   );
 };
 
-
 const removeItemImage = async (section, name) => {
   const item = menuData
     .find((c) => c.title === section)
     ?.items.find((i) => i.name === name);
 
   if (item?.image) {
-    await deleteImage(item.image);
+    setImagesToDelete((prev) =>
+      prev.includes(item.image) ? prev : [...prev, item.image]
+    );
   }
 
   setMenuData((prev) =>
@@ -265,6 +261,7 @@ const removeItemImage = async (section, name) => {
     )
   );
 };
+
   
   // ITEMS
   const addItem = async () => {
